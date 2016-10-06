@@ -8,10 +8,7 @@ before_script:
   - psql -c 'create database database_test;' -U postgres
   - psql -U postgres -c "create extension postgis"
  
-# uncomment and edit the following line if your project needs to run something other than `rake`:
-#script: bundle exec rspec spec
-#service:
-# - mysql
+
  
 services:
   - postgresql
