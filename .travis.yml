@@ -8,3 +8,5 @@ rvm:
 #script: bundle exec rspec spec
 service:
  - mysql
+ 
+ #
