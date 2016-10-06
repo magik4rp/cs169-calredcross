@@ -3,10 +3,14 @@ rvm:
  - 2.2.2
 # - jruby
 # - rbx-2
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
  
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec
 #service:
 # - mysql
  
- #
+services:
+  - postgresql
