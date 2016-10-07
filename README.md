@@ -15,9 +15,6 @@ CS169 Project - Cal Red Cross Website
 <a href="https://shrouded-atoll-13659.herokuapp.com/"><div>Link to Heroku App</div></a>
 <a href="https://www.pivotaltracker.com/n/projects/1885881"><div>Link to PivotalTracker</div></a>
 
-
-<a href="https://www.youtube.com/watch?v=ikJCHKU3v2U&feature=youtu.be"><div>Link to Customer Video</div></a>
-
 A brief explanation of the customer's business:
 Our customer is looking for a central platform to use for Red Cross Members. We
 need to be able to keep track of important info such as events. Right now, they
