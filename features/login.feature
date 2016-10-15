@@ -17,7 +17,7 @@ Background: members in database
   | Bryant   | member  | 24     | inactive |
   | Jordan   | member  | 23     | inactive |
  
-Scenario: officer sign up
+Scenario: officer signs up
   When I go to the login page
   And  I check "I am an officer"
   And  I fill in "name" with "Curry"
@@ -27,7 +27,7 @@ Scenario: officer sign up
   And  I press "Sign Up"
   Then I should be on successful sign up page
   
-Scenario: member sign up
+Scenario: members sign up
   When I go to the login page
   And  I check "I am a member"
   And  I fill in "name" with "James"
