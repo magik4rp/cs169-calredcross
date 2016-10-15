@@ -16,6 +16,7 @@ Background: members in database
   | Iverson  | member  | 3      | inactive |
   | Bryant   | member  | 24     | inactive |
   | Jordan   | member  | 23     | inactive |
+
  
 Scenario: officer signs up
   When I go to the login page
