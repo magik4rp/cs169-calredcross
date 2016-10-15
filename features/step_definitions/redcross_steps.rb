@@ -10,7 +10,7 @@ Given /the following members exist/ do |members_table|
   end
 end
 
-Then /I see all members/ do
+Then /^I see all members/ do
   # Make sure that all the members in the members table are visible.
   Members.all
 end
