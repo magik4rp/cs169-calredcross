@@ -50,3 +50,6 @@ Scenario: officer promotes a member
   When  I follow "promote member: Iverson"
   And   I follow "Iverson role"
   Then  I should see "officer"
+  
+  
+  
