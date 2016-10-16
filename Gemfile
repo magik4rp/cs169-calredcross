@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 
 #gem 'cucumber-rails'
 
+gem 'devise'
+
 gem 'sqlite3'
 
 
