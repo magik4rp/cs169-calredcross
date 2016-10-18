@@ -1,5 +1,13 @@
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+  </style>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>-->
+  <!--<script src="../app/assets/javascripts/test.js"></script>-->
+  <!--<%= javascript_include_tag('test.js') %>-->
+</head>
 <div id="background"></div>
-<h2>Sign up</h2>
+<h2 id="sign-up-button">Sign up</h2>
 
 <div id="lightbox">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -19,6 +27,7 @@
   <div class="email field">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
+    <img class="login-symbol" src="/images/email.png">
   </div>
 
   <div class="field">
@@ -27,6 +36,7 @@
     <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
     <!--<% end %>-->
     <%= f.password_field :password, autocomplete: "off" %>
+    <img class="login-symbol" src="/images/password.png">
   </div>
 
   <div class="field">
