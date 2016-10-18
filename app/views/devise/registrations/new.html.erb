@@ -6,18 +6,18 @@
   <%= devise_error_messages! %>
 
 
-  <div class = "name"> 
-    <%= f.label :name %> <br /> 
+  <div class = "name field"> 
+    <%= f.label :name %> 
     <%= f.text_field :name, autofocus: true %> 
   </div>
   
-  <div class = "major"> 
-    <%= f.label :major %> <br /> 
+  <div class = "major field"> 
+    <%= f.label :major %>  
     <%= f.text_field :major, autofocus: true %> 
   </div>
   
-  <div class="email">
-    <%= f.label :email %><br />
+  <div class="email field">
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 

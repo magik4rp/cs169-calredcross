@@ -19,21 +19,23 @@ p {
 #lightbox {
     padding: 20px;
     width: 400px;
-    height: 250px;
+    height: 400px;
     background-color: white;
     position: absolute;
-    top: calc(50% - 125px);
+    top: calc(50% - 200px);
     left: calc(50% - 200px);
 }
 label {
     display: inline-block !important;
     position: absolute;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 .field {
     text-align: center;
     display: block;
     border: black solid 2px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     height: 40px;
 }
 input {
@@ -44,4 +46,14 @@ input {
 }
 input:onfocus {
     outline: none;
+}
+
+input[type="submit"] {
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #ED1B2E;
+    color: white;
+    position: relative;
+    float: right;
 }
