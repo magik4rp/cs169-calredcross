@@ -14,10 +14,10 @@ services:
 script:
   - bundle exec rake db:drop
   - bundle exec rake db:create
-#  - bundle exec rake db:migrate
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:migrate
+#  - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare 
-  - bin/rails db:migrate RAILS_ENV=test
+#  - bin/rails db:migrate RAILS_ENV=test
   - bundle exec rspec 
   - bundle exec cucumber
     
