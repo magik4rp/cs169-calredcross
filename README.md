@@ -2,11 +2,11 @@
 CS169 Project - Cal Red Cross Website 
 
 
-<a href="https://codeclimate.com/github/rails/rails/badges/gpa.svg"><img src="https://codeclimate.com/github/rails/rails/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/hiftekhar/cs169-calredcross"><img src="https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/gpa.svg" /></a>
 
-<a href="https://codeclimate.com/github/rails/rails/badges/coverage.svg"><img src="https://codeclimate.com/github/rails/rails/badges/coverage.svg" /></a>
+<a href="https://codeclimate.com/github/hiftekhar/cs169-calredcross/coverage"><img src="https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/coverage.svg" /></a>
 
-<a href="https://codeclimate.com/github/rails/rails/badges/issue_count.svg"><img src="https://codeclimate.com/github/rails/rails/badges/issue_count.svg" /></a>
+<a href="https://codeclimate.com/github/hiftekhar/cs169-calredcross"><img src="https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/issue_count.svg" /></a>
 
 
 <a href="https://travis-ci.org/hiftekhar/cs169-calredcross.svg?branch=master"><img src = "https://travis-ci.org/hiftekhar/cs169-calredcross.svg?branch=master" />
