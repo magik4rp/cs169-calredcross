@@ -8,7 +8,18 @@ before_script:
   - psql -c 'create database database_test;' -U postgres
   - psql -U postgres -c "create extension postgis"
  
-
- 
 services:
   - postgresql
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+  - bundle exec cucumber
+after_script:
+  - bundle exec rake send_to_codeclimate 
+  
+  
+addons:
+    code_climate:
+        repo_token: d74176fde575088c24c9da69450fe3aa6bdfc53eddbce39b19829ece849acc11
