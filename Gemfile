@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 
-##ruby '2.3.0' 
+ruby '2.3.0' 
 
 #gem 'cucumber-rails'
 
 gem 'devise'
 
 gem 'sqlite3'
-gem "codeclimate-test-reporter", group: :test, require: nil
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -62,13 +62,13 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'codeclimate-test-reporter', require: nil
   gem 'oauth2'
   gem 'rack_session_access'
   gem 'factory_girl'
   gem 'webmock'
   gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
