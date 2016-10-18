@@ -16,12 +16,12 @@ script:
 #  - bin/rails db:migrate RAILS_ENV=test
 #  - bundle exec rake db:create
 #  - bundle exec rake db:migrate
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
+#  - RAILS_ENV=test bundle exec rake db:migrate --trace
 #  - bundle exec rake db:test:prepare 
 #  - bin/rails db:migrate RAILS_ENV=test
 #  - bundle exec rspec 
-   - bundle exec cucumber
-#  - bundle exec rake
+#   - bundle exec cucumber
+  - bundle exec rake
     
 after_script:
   - bundle exec rake send_to_codeclimate 
