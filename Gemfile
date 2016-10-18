@@ -44,10 +44,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
-group :test do
-  gem 'codeclimate-test-reporter', require: nil
-end
-
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -66,6 +62,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'codeclimate-test-reporter', require: nil
   gem 'oauth2'
   gem 'rack_session_access'
   gem 'factory_girl'
