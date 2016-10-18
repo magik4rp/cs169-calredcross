@@ -6,3 +6,4 @@ languages:
 exclude_paths:
 - "app/controllers/news_controller.rb"
 - "app/controllers/posts_controller.rb"
+- "coverage/assets/0.10.0/application.js"
