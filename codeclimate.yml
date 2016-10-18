@@ -1,0 +1,8 @@
+languages:
+  Ruby: true
+  JavaScript: true
+  PHP: true
+  Python: true
+exclude_paths:
+- "app/controllers/news_controller.rb"
+- "app/controllers/posts_controller.rb"
