@@ -68,7 +68,7 @@ group :test do
   gem 'webmock'
   gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
-  gem 'codeclimate-test-reporter', require: nil
+#  gem 'codeclimate-test-reporter', require: nil
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
