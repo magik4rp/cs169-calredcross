@@ -37,7 +37,8 @@ engines:
     - 6a4bdc088dd92ddc7121e675734fcbad
     - e0c3905c2ef4d220d7d4773289f18732
     - 3cd4f158a52d9edfd77669b83058d8da   
-    - 5e98926627c19c41b3b10b1e8a460d58
+    - 5e98926627c19c41b3b10b1e8a460d58  
+    
     
   coffeelint:
     enabled: true
