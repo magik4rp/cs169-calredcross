@@ -7,11 +7,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
-<<<<<<< HEAD
-=======
-#gem 'sqlite3'
 
->>>>>>> 5665ad95426d5698591409c96942b92d4deb034b
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
