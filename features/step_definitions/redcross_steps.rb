@@ -75,7 +75,6 @@ end
 #  pending
 #end
 
- 
 
 Then /I should be on the (".*") page/ do
   pending
