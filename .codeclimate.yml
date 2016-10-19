@@ -9,6 +9,7 @@ engines:
     exclude_fingerprints:
     - 5e98926627c19c41b3b10b1e8a460d58 
     - aa2f5ec79d399a73f0c9ebbabc230aab
+    - f9c98e4e5a4730fd291fb5d5c456b464
   coffeelint:
     enabled: true
   duplication:
