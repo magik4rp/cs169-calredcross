@@ -1,5 +1,12 @@
 require "simplecov"
-SimpleCov.start
+SimpleCov.start do 
+  add_filter 'app/controllers/application_controller.rb'
+  add_filter 'app/controllers/news_controller.rb'
+  add_filter 'features/step_definitions/redcross_steps.rb'
+  add_filter 'features/step_definitions/web_steps.rb'
+  add_filter 'features/support/paths.rb'
+  add_filter 'features/support/selectors.rb'
+end 
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
