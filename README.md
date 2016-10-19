@@ -10,7 +10,7 @@ CS169 Project - Cal Red Cross Website
 
 [![Build Status](https://travis-ci.org/hiftekhar/cs169-calredcross.svg?branch=master)](https://travis-ci.org/hiftekhar/cs169-calredcross)
 
-<a href="https://shrouded-atoll-13659.herokuapp.com/"><div>Link to Heroku App</div></a>
+<a href="https://pure-woodland-44319.herokuapp.com//"><div>Link to Heroku App</div></a>
 <a href="https://www.pivotaltracker.com/n/projects/1885881"><div>Link to PivotalTracker</div></a>
 
 

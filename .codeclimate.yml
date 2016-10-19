@@ -44,6 +44,9 @@ engines:
     enabled: true
   duplication:
     enabled: true
+    exclude_fingerprints:
+    - a493a604b888117652c1c9303270ddfa
+    - 5e98926627c19c41b3b10b1e8a460d58
     config:
       languages:
       - ruby
@@ -52,10 +55,17 @@ engines:
       - php
   eslint:
     enabled: true
+    exclude_fingerprints:
+    - 81f1db8cc66fe7d124f1ecde5904b4e5
   fixme:
     enabled: true
   rubocop:
     enabled: true
+    exclude_fingerprints:
+    - 470047cc9dd16445f5293f41cc75f6bf
+    - 0674a00db22cecf3bebf3e49dfa2a011
+    
+    
 ratings:
   paths:
   - Gemfile.lock
