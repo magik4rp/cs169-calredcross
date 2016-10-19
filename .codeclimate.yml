@@ -1,0 +1,52 @@
+---
+engines:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: true
+    exclude_fingerprints:
+    - 5e98926627c19c41b3b10b1e8a460d58 
+    - aa2f5ec79d399a73f0c9ebbabc230aab
+    - f9c98e4e5a4730fd291fb5d5c456b464
+  coffeelint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.css"
+  - "**.coffee"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+exclude_paths:
+- app/controllers/news_controller.rb
+- app/controllers/posts_controller.rb
+- coverage/assets/0.10.0/application.js
+- features/step_definitions/redcross_steps.rb
+- features/step_definitions/web_steps.rb
+- features/support/paths.rb
+- features/support/selectors.rb

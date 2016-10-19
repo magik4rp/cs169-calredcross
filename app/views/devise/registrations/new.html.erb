@@ -1,25 +1,39 @@
+<div id="background"></div>
 <h2>Sign up</h2>
 
+<div id="lightbox">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+
+  <div class = "name field"> 
+    <%= f.label :name %> 
+    <%= f.text_field :name, autofocus: true %> 
+  </div>
+  
+  <div class = "major field"> 
+    <%= f.label :major %>  
+    <%= f.text_field :major, autofocus: true %> 
+  </div>
+  
+  <div class="email field">
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <!--<% if @minimum_password_length %>-->
+    <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+    <!--<% end %>-->
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
+
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  </div> 
 
   <div class="actions">
     <%= f.submit "Sign up" %>
