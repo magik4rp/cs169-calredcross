@@ -6,7 +6,7 @@ CS169 Project - Cal Red Cross Website
 
 <a href="https://codeclimate.com/github/hiftekhar/cs169-calredcross/coverage"><img src="https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/coverage.svg" /></a>
 
-<a href="https://codeclimate.com/github/hiftekhar/cs169-calredcross"><img src="https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/issue_count.svg" /></a>
+[![Issue Count](https://codeclimate.com/github/hiftekhar/cs169-calredcross/badges/issue_count.svg)](https://codeclimate.com/github/hiftekhar/cs169-calredcross)
 
 [![Build Status](https://travis-ci.org/hiftekhar/cs169-calredcross.svg?branch=master)](https://travis-ci.org/hiftekhar/cs169-calredcross)
 
