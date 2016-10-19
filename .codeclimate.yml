@@ -25,6 +25,17 @@ engines:
     - 4e733ec6a3a12078e470f949afdc3f68 
     - 247efdae4dfa8fa4dcf19f52e40c8c79    
     - 8ab8d4f045344c58faf2ebc9be3f1584   
+    - 5e98926627c19c41b3b10b1e8a460d58
+    - a493a604b888117652c1c9303270ddfa
+    - 81f1db8cc66fe7d124f1ecde5904b4e5
+    - 826a7d7a3cd8ed1e4d64015f939319ce
+    - 83e941cdb5c3b97525f59037896685ed
+    - f662baf121cfd6de78b8901447a8f432
+    - b65b94533303491d36c67b198c847778
+    - 0674a00db22cecf3bebf3e49dfa2a011
+    - 470047cc9dd16445f5293f41cc75f6bf
+    - 6a4bdc088dd92ddc7121e675734fcbad
+
     
   coffeelint:
     enabled: true
