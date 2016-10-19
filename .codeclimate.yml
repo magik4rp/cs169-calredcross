@@ -10,6 +10,13 @@ engines:
     - 5e98926627c19c41b3b10b1e8a460d58 
     - aa2f5ec79d399a73f0c9ebbabc230aab
     - f9c98e4e5a4730fd291fb5d5c456b464
+    - 591f7bb20b6b0e3aa2583570ebf6f998 
+    - 5b9b516a73d56d8fa95d0a5f17daf636
+    - 9620a0c3759e44e51d1841b2d9349ec7
+    - 546044e01acf95e0c6f660329ab86165
+    - 36d9446a2f8dc6cc56b1433d165705e1 
+    - 261508f2f9b3deec5a88644ea49cc47a
+    
   coffeelint:
     enabled: true
   duplication:
