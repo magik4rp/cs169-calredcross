@@ -35,20 +35,4 @@ Scenario: members sign up
   And  I fill in password with "gswbetterthancavs"
   And  I press "Sign up"
   Then I go to the successful sign up page 
- 
-#Scenario: officer approves a member
-#  Given I am the officer
-#  And   I am on the pending approval page
-#  When  I follow "Approve this member request"
-#  Then  I should be on the approval successful page
- 
-#Scenario: officer promotes a member
-#  Given I am an officer
-#  And   I am on members page
-#  Then  I see all members
-#  When  I follow "promote member: Iverson"
-#  And   I follow "Iverson role"
-#  Then  I should see "officer"
-  
-  
   

@@ -100,7 +100,8 @@
         null,
         null,
         null,
-        null,
+        1,
+        1,
         null,
         null,
         null
@@ -132,6 +133,7 @@
         null,
         null,
         null,
+        1,
         null,
         null,
         null,
@@ -497,39 +499,69 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/controllers/application_controller.rb": [
+      "/home/ubuntu/workspace/cs169-calredcross/features/step_definitions/profile_steps.rb": [
+        null,
         1,
-        1,
+        4,
+        null,
+        null,
         1,
         0,
         null,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/helpers/application_helper.rb": [
+        null,
         1,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/helpers/home_helper.rb": [
+        0,
+        null,
+        null,
         1,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/helpers/news_helper.rb": [
+        0,
+        null,
+        null,
         1,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/helpers/posts_helper.rb": [
+        0,
+        null,
+        null,
         1,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/helpers/success_helper.rb": [
+        0,
+        null,
+        null,
         1,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/models/news.rb": [
+        0,
+        null,
+        null,
         1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null
       ]
     },
-    "timestamp": 1476845324
+    "timestamp": 1477280692
   }
 }
