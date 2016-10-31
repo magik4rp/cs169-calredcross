@@ -12,10 +12,10 @@
         <div class="personal-info">
             <!--This block will cause ERROR untill the User model and the ProfileCtrl are implemented properly-->
             Name: <h2 id="name"><%= current_user.name %></h2>
-            Test Name: <p><%= @name %></p>
+            Test Name: <p><%= @user.name %></p>
             <img src="/images/email.png">
             Email:
-            <p><%= current_user.email %></p>
+            <p><%= @user.email %></p>
         </div>
 
         <div class="contribution">
