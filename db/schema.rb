@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 20161031000942) do
     t.datetime "updated_at",                          null: false
     t.string   "major"
     t.string   "name"
-    t.integer  "is_officer"
-    t.integer  "sem_hours"
-    t.integer  "total_hours"
+    t.integer  "is_officer",             default: 0
+    t.integer  "sem_hours",              default: 0
+    t.integer  "total_hours",            default: 0
     t.string   "status"
     t.string   "level"
     t.text     "description"
