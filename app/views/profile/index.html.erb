@@ -11,18 +11,18 @@
         <img id="avatar">
         <div class="personal-info">
             <!--This block will cause ERROR untill the User model and the ProfileCtrl are implemented properly-->
-            <h2 id="name"><%= @user.name %></h2>
+            <h2 id="name"><%= current_user.name %></h2>
             <img src="/images/email.png">
             Email:
             <p><%= current_user.email %></p>
         </div>
         <% if false %>
             <div class="contribution">
-                <%= @user.semHours %> 
+                <%= current_user.semHours %> 
                 <p>Semester hours</p>
-                <%= @user.level %>
+                <%= current_user.level %>
                 <p>Level</p>
-                <%= @user.totalHours %>
+                <%= current_user.totalHours %>
                 <p>Total hours</p>
             </div>
         <% end %>
