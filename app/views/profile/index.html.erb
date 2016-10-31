@@ -11,7 +11,7 @@
         <img id="avatar">
         <div class="personal-info">
             <!--This block will cause ERROR untill the User model and the ProfileCtrl are implemented properly-->
-            <h2 id="name"><%= @user.name %></h2>
+            Name: <h2 id="name"><%= current_user.name %></h2>
             <img src="/images/email.png">
             Email:
             <p><%= current_user.email %></p>
