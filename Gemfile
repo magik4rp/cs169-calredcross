@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 #gem 'cucumber-rails'
 
 gem 'devise'
-
+gem 'paperclip', '~> 4.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
