@@ -55,15 +55,6 @@ body {
     margin-right: auto;
     margin-top: 10px;
 }
-.event {
-    display: inline-block;
-    position: relative;
-    background-color: white;
-    padding: 35px;
-    padding-top: 10px;
-    width: 30%;
-    height: 360px;
-}
 .tagged-pics {
     display: inline-block;
     width: 67%;
@@ -219,4 +210,27 @@ input[type="file"]:focus {
     right: -35px;
     top: 5px;
 }
-    
+.tagged-pics {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    width: calc(70% - 10px);
+    height: 365px;
+    float: right;
+    padding: 20px;
+}
+.event {
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    padding: 35px;
+    padding-top: 10px;
+    width: 30%;
+    height: 360px;
+    float: left;
+}
+.tagged-photo {
+    display: flex;
+    position: relative;
+    width: calc(33% - 10px);
+}
