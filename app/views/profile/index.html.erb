@@ -4,38 +4,46 @@
 </head>
 <body>
     <div class="profile-header">
-        <a href="/"><img id="logo" src="/images/logo2.png"></a>
+        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
     </div>
+    <div id="profile-container">
+        <div class="top-bar">
+            <div class="avatar">
+                <%= image_tag(@user.avatar.url(:thumb)) %>
+            </div>
+            <div class="personal-info">
+                <div id="name-section">
+                    <div id="profile-name"><%= @user.name %></div>
+                    <div id="status-badge">Active</div>
+                </div>
+                <img id="email-symbol" src="/images/email.png"><p id="profile-email"><%= @user.email %></p>
+                <div id="about-me">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </div>
     
-    <div class="top-bar">
-        <div class="avatar">
-            <%= image_tag(@user.avatar.url(:thumb)) %>
-        </div>
-        <div class="personal-info">
-            <h2 id="name"><%= @user.name %></h2>
-            <img src="/images/email.png"><p><%= @user.email %></p>
-        </div>
-
-        <div class="contribution">
-            <%= @user.sem_hours %> 
-            <p>Semester hours</p>
-            <%= @user.level %>
-            <p>Level</p>
-            <%= @user.total_hours %>
-            <p>Total hours</p>
-        </div>
-
-    </div>
+            <div class="contribution">
+                <%= @user.sem_hours %> 
+                <p>Semester hours</p>
+                <%= @user.level %>
+                <p>Level</p>
+                <%= @user.total_hours %>
+                <p>Total hours</p>
+            </div>
     
-    <div class="event">
-        <h2>Events</h2>
-    </div>
-    
-    <div class="tagged-pics">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
+        </div>
+        <div class="bottom-section">
+            <div class="event">
+                <h2>Events</h2>
+            </div>
+            
+            <div class="tagged-pics">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

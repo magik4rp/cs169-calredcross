@@ -1,9 +1,16 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+a:hover {
+    background: none !important;
+}
 
 .profile-header {
     background-color: #ED1B2E;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
 }
 
 body {
@@ -14,4 +21,114 @@ body {
     width: 100%;
     height: 100%;
     overflow: scroll;
+}
+#navbar-logo {
+    height: 50px;
+}
+#profile-container {
+    position: relative;
+    margin-top: 38px;
+    background-color: #D7D7D8;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+.top-bar {
+    position: relative;
+    display: block;
+    width: 95%;
+    height: 200px;
+    padding: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.bottom-section {
+    width: 95%;
+    height: calc(60% - 10px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.event {
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    padding-top: 10px;
+    width: 30%;
+    height: 300px;
+}
+.tagged-pics {
+    display: inline-block;
+    width: 67%;
+    background-color: white;
+    position: relative;
+}
+.avatar {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+.personal-info {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    vertical-align: top;
+    width: 400px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.contribution {
+    display: inline-block;
+    position: relative;
+    top: 0px;
+}
+
+.avatar img {
+    width: 150px;
+}
+#profile-name {
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: center !important;
+}
+#status-badge {
+    background-color: #357B2C;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-5px);
+    margin-left: 5px;
+}
+#name-section {
+    vertical-align: center;
+}
+#profile-email {
+    font-size: 12px !important;
+    display: inline-block;
+    margin-left: 5px !important;
+}
+#email-symbol{
+    display: inline-block;
+}
+#about-me {
+    margin-top: 15px;
 }
