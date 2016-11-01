@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <%= javascript_include_tag('profile.js') %>
 </head>
 
 <body>
@@ -9,8 +10,13 @@
     </div>
     <div id="profile-container">
         <div class="top-bar">
+            <div id="edit-container">
+                <img src="images/white_edit.png" id="top-edit">
+            </div>
             <div class="avatar">
-                <%= image_tag(@user.avatar.url(:thumb)) %>
+                <%= image_tag(@user.avatar.url(:thumb), :class => "profile-image") %>
+                <label for="myFile" id="edit-photo">Edit Photo</label>
+                <input type="file" id="myFile">
             </div>
             <div class="personal-info">
                 <div id="name-section">
@@ -24,12 +30,21 @@
             </div>
     
             <div class="contribution">
-                <%= @user.sem_hours %> 
-                <p>Semester hours</p>
-                <%= @user.level %>
-                <p>Level</p>
-                <%= @user.total_hours %>
-                <p>Total hours</p>
+                <div class="hours">
+                    <!--<%= @user.sem_hours %> -->
+                    <div class="num-hours">5</div>
+                    <p class="hours-text">Semester hours</p>
+                </div>
+                <div class="hours">
+                    <%= @user.level %>
+                    <img id="medal" src="images/bronze_medal.png">
+                    <p class="hours-text">Level</p>
+                </div>
+                <div class="hours">
+                    <!--<%= @user.total_hours %>-->
+                    <div class="num-hours">10</div>
+                    <p class="hours-text">Total hours</p>
+                </div>
             </div>
     
         </div>
@@ -47,5 +62,23 @@
             </div>
         </div>
     </div>
+    <script>
+            $("#edit-container").click(function() {
+                console.log("EDIT");
+                $(this).toggleClass("active");
+                
+                var $div=$('#about-me'), isEditable=$div.is('.editable');
+                $div.prop('contenteditable',!isEditable).toggleClass('editable')
+                $div.toggleClass("active");
+                
+                var $name=$('#profile-name'), isEditable=$name.is('.editable');
+                $name.prop('contenteditable',!isEditable).toggleClass('editable')
+                $name.toggleClass("active");
+            });
+             $('#myFile').change(function(e) {
+                    var img = URL.createObjectURL(e.target.files[0]);
+                    $(".profile-image").attr("src", img);
+                });
+    </script>
 </body>
 </html>
