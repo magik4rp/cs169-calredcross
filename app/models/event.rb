@@ -18,4 +18,5 @@ class Event < ApplicationRecord
         self.update_attribute(:description, newDescription)
     end
     
+    #needs to query the database to get the whole list of events
 end
