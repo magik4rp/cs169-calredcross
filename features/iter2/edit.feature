@@ -10,23 +10,42 @@ Background: member in database
 	|Huda			| jdoe@berkeley.edu	| CS			| active	| 0						| 5					| 10					|
 
 Scenario: user updates name
-    When I am on the profile page 
-    And I click on “Edit” button
-    And I fill in name with “Huda Iftekhar”
-		And I click "Edit" button 
-		Then I should see name updated with "Huda Iftekhar"
+    
+	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button 
+    And I fill in the name with “Huda Iftekhar”
+	Then I should see name updated with "Huda Iftekhar"
 	
-# Sad path: invalid email (empty string)
+ #Sad path: invalid email (empty string)
 Scenario: user updates name  
-	When I am on the profile page
-	And I click on "Edit" button  
-	And I fill in name with ""
-	And I click "Edit" button 
-	Then I should see "Error: No name"  
+	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button  
+	And I fill in the name with ""
+	Then I will get the message of "Error: No name"   
 
 Scenario: user updates description  
-  When I am on the profile page 
-	And I click on “Edit” button
-	And I fill in description with "Hello World!" 
-  And I click on "Edit" button 
-	Then I see description updated with "Hello World!" 
+  	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button 
+	And I fill in the description with "Hello World!" 
+	Then I should see description updated with "Hello World!" 
