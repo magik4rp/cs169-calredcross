@@ -2,6 +2,13 @@ class ProfileController < ApplicationController
 
   def index
     @user = current_user
+    @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
+    @events = Event.all.last(3)
+    if current_user.level == "gold"
+      @level = "gold_status.png"
+    elsif current_user.level == "bronze"
+      @level = "bronze_medal.png"
+    end
   end
 
   def update 

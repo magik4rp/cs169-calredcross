@@ -37,6 +37,12 @@ Event.create!([{
   date: DateTime.parse("10/01/2016 17:00"),
   location: "Cory Hall",
   description: "This is another fake event"
+},
+{
+  name: "dummyEvent3",
+  date: DateTime.parse("02/11/2016 18:00"),
+  location: "Dwinelle",
+  description: "This is a fake today event"
 }])
 
 p "Created #{Event.count} events"

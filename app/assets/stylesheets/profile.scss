@@ -218,7 +218,7 @@ input[type="file"]:focus {
     width: calc(70% - 10px);
     height: 365px;
     float: right;
-    padding: 20px;
+    padding: 10px;
 }
 .event {
     display: inline-block;
@@ -231,10 +231,59 @@ input[type="file"]:focus {
     float: left;
 }
 .tagged-photo {
-    display: flex;
+    display: inline-flex;
     position: relative;
-    width: calc(33% - 10px);
+    height: calc(50% - 5px);
 }
 .edit_user input[type="submit"] {
     display: none;
+}
+#event-timeline {
+    height: 70%;
+    width: 2px;
+    background: black;
+    position: absolute;
+    left: 100px;
+}
+.event-object {
+    display: block;
+    position: relative;
+    width: 275px;
+    height: 100px;
+    left: -65px;
+}
+.event-date {
+    position: relative;
+    float: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 65px;
+    padding-right: 10px;
+    display: inline-block;
+}
+.event-today {
+    position: relative;
+    text: #ff1313;
+    float: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 65px;
+    padding-right: 10px;
+    display: inline-block;
+}
+.event-dot {
+    display: inline-block;
+    position: relative;
+    margin-left: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    
+}
+.event-name {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    margin-left: 20px;
 }
