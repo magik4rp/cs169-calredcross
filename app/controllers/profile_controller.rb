@@ -2,6 +2,7 @@ class ProfileController < ApplicationController
 
   def index
     @user = current_user
+    @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
   end
 
   def update 

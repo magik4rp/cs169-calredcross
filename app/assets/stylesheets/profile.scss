@@ -218,7 +218,7 @@ input[type="file"]:focus {
     width: calc(70% - 10px);
     height: 365px;
     float: right;
-    padding: 20px;
+    padding: 10px;
 }
 .event {
     display: inline-block;
@@ -231,10 +231,11 @@ input[type="file"]:focus {
     float: left;
 }
 .tagged-photo {
-    display: flex;
+    display: inline-flex;
     position: relative;
-    width: calc(33% - 10px);
+    height: calc(50% - 5px);
 }
 .edit_user input[type="submit"] {
     display: none;
 }
+
