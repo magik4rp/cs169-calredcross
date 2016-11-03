@@ -28,6 +28,14 @@ class User < ApplicationRecord
     self.update_attribute(:description, new_description)
   end
   
+  def editAvatar(new_avatar)
+    File.open("new_avatar", 'wb') do |f|
+      f.write new_avatar
+      self.update_attribute(:avatar, f)
+    end
+    
+  end
+  
   # Actions only happen iff the current user is an officer
   def updateRanking(id)
     member = User.find(id)

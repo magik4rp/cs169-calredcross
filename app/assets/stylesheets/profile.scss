@@ -112,7 +112,7 @@ input[type="file"]:focus {
     cursor: pointer;
     display: block !important;
 }
-#myFile {
+#user_avatar {
     height: 1px;
     width: 1px;
 }
@@ -234,4 +234,7 @@ input[type="file"]:focus {
     display: flex;
     position: relative;
     width: calc(33% - 10px);
+}
+.edit_user input[type="submit"] {
+    display: none;
 }
