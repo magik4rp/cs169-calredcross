@@ -233,7 +233,8 @@ input[type="file"]:focus {
 .tagged-photo {
     display: inline-flex;
     position: relative;
-    height: calc(50% - 5px);
+    height: calc(75% - 5px);
+    margin: 20px;
 }
 .edit_user input[type="submit"] {
     display: none;
