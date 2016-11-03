@@ -15,6 +15,10 @@
             </div>
             <div class="avatar">
                 <%= image_tag(current_user.avatar.url(:thumb), :class => "profile-image") %>
+                <%= form_for current_user, :url => {:action => 'update'}, :html => { :multipart => true } do |form| %>
+                  <%= form.file_field :avatar %>
+                  <%= form.submit "upload" %>
+                <% end %>
                 <label for="myFile" id="edit-photo">Edit Photo</label>
                 <input type="file" id="myFile">
             </div>
@@ -25,7 +29,7 @@
                 </div>
                 <img id="email-symbol" src="/images/email.png"><p id="profile-email"><%= current_user.email %></p>
                 <div id="about-me">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <%= current_user.description %>
                 </div>
             </div>
     
@@ -66,6 +70,21 @@
             $("#edit-container").click(function() {
                 console.log("EDIT");
                 $(this).toggleClass("active");
+                if (!$(this).hasClass("active")) {
+                    $.ajax({
+                        type : 'post',
+                        url : "/profile/update",
+                        data : {"details": $("#about-me").text(),
+                            "name": $("#profile-name").text()
+                        },    
+                        dataType : 'json',
+                        async : false,
+                        context : document.body,
+                        success : function(response) {
+                            alert("Done");
+                        }
+                      });
+                }
                 
                 var $div=$('#about-me'), isEditable=$div.is('.editable');
                 $div.prop('contenteditable',!isEditable).toggleClass('editable')
