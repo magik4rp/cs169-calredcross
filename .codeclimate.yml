@@ -3,12 +3,15 @@ engines:
   brakeman:
     enabled: true
     exclude_fingerprints:
+    - c01430e3fbec59e5366235480b042ee7
     - f0ee1cc1980474c82a013645508f002dcc801e00db5592f7dd8cd6bdb93c73fe
   bundler-audit:
     enabled: true
   csslint:
     enabled: true
     exclude_fingerprints:
+     
+    - 482abe0499cb1f31d65e90939e19abe7
     - 5e98926627c19c41b3b10b1e8a460d58 
     - aa2f5ec79d399a73f0c9ebbabc230aab
     - f9c98e4e5a4730fd291fb5d5c456b464
@@ -49,7 +52,7 @@ engines:
     - af907b6c265e7882e0424d46807aff55
     - 889926470f1dfa7db1601df2dcaa15d5
     - 7db9cf381633777ae7187470290f8177
-    - 3edf8a199c82d20aeb586f83c4dde294
+    - 3edf8a199c82d20aeb586f83c4dde294 
     
     
   coffeelint:
@@ -59,6 +62,7 @@ engines:
     exclude_fingerprints:
     - a493a604b888117652c1c9303270ddfa
     - 5e98926627c19c41b3b10b1e8a460d58
+    - c01430e3fbec59e5366235480b042ee7
     config:
       languages:
       - ruby
@@ -68,7 +72,8 @@ engines:
   eslint:
     enabled: true
     exclude_fingerprints:
-    - 81f1db8cc66fe7d124f1ecde5904b4e5
+    - 81f1db8cc66fe7d124f1ecde5904b4e5 
+    - 4208b399dc0e1f005fc19566e5e1cf27
   fixme:
     enabled: true
   rubocop:
@@ -76,6 +81,7 @@ engines:
     exclude_fingerprints:
     - 470047cc9dd16445f5293f41cc75f6bf
     - 0674a00db22cecf3bebf3e49dfa2a011
+    - 7db9cf381633777ae7187470290f8177
     
     
 ratings:
