@@ -40,8 +40,7 @@
                     <p class="hours-text">Semester hours</p>
                 </div>
                 <div class="hours">
-                    <%= current_user.level %>
-                    <img id="medal" src="images/bronze_medal.png">
+                    <%= image_tag(@level, :class => "tagged-photo") %>
                     <p class="hours-text">Level</p>
                 </div>
                 <div class="hours">
@@ -55,17 +54,26 @@
         <div class="bottom-section">
             <div class="event">
                 <h2>Events</h2>
+                <div id="event-timeline">
+                    <% @events.last(6).each do |event| %>
+                       <div class="event-object">
+                            <div class="event-date">
+                                <%= event.date %>
+                            </div>
+                            <div class= "event-dot">
+                            </div>
+                            <div class= "event-name">
+                                <%= event.name %>
+                            </div>
+                        </div>
+                    <%end %>
+                </div>
             </div>
             
             <div class="tagged-pics">
                 <% @images.first(6).each do |image| %>
                    <%= image_tag(image, :class => "tagged-photo") %>
                 <%end %>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div>
-                </div>
             </div>
         </div>
     </div>
