@@ -3,6 +3,8 @@ engines:
   brakeman:
     enabled: true
     exclude_fingerprints:
+    
+    - ec4e8ec84992fcf40f9c2bc49b03e03c
     - c01430e3fbec59e5366235480b042ee7
     - f0ee1cc1980474c82a013645508f002dcc801e00db5592f7dd8cd6bdb93c73fe
   bundler-audit:
@@ -10,7 +12,11 @@ engines:
   csslint:
     enabled: true
     exclude_fingerprints:
+    - b736c3186889793c2900cdac4754f2c5
      
+    - 42e82625574339fec98d6e026473c232
+    - f0356f5ca707b302e84dd5d1ea0173b2
+    - cc49af1a111611be5820814a6dee0a2a
     - 482abe0499cb1f31d65e90939e19abe7
     - 5e98926627c19c41b3b10b1e8a460d58 
     - aa2f5ec79d399a73f0c9ebbabc230aab
@@ -79,6 +85,12 @@ engines:
   rubocop:
     enabled: true
     exclude_fingerprints:
+    - af907b6c265e7882e0424d46807aff55
+    
+    - 3edf8a199c82d20aeb586f83c4dde294
+    - 889926470f1dfa7db1601df2dcaa15d5
+    - 43dfe59cf4fd69038208ade5daa870ba
+    - 80d78108cca777cc727b3f32e281f021
     - 470047cc9dd16445f5293f41cc75f6bf
     - 0674a00db22cecf3bebf3e49dfa2a011
     - 7db9cf381633777ae7187470290f8177
