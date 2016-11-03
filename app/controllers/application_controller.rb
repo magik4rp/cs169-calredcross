@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     
   
   def after_sign_in_path_for(users)
-    profile_index_path #your path
+    root_path #your path
   end
 
   
