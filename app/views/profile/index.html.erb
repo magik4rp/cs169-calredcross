@@ -19,8 +19,8 @@
                   <%= form.file_field :avatar %>
                   <%= form.submit "upload" %>
                 <% end %>
-                <label for="myFile" id="edit-photo">Edit Photo</label>
-                <input type="file" id="myFile">
+                <label for="user_avatar" id="edit-photo">Edit Photo</label>
+                <!--<input type="file" id="myFile">-->
             </div>
             <div class="personal-info">
                 <div id="name-section">
@@ -94,9 +94,10 @@
                 $name.prop('contenteditable',!isEditable).toggleClass('editable')
                 $name.toggleClass("active");
             });
-             $('#myFile').change(function(e) {
+             $('#user_avatar').change(function(e) {
                     var img = URL.createObjectURL(e.target.files[0]);
                     $(".profile-image").attr("src", img);
+                    $(".edit_user").submit();
                 });
     </script>
 </body>
