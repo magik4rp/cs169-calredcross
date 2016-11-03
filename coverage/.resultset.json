@@ -569,12 +569,12 @@
         null,
         null,
         1,
-        2,
-        2,
+        0,
+        0,
         null,
         null,
         null,
-        2,
+        0,
         null,
         null,
         null,
@@ -711,18 +711,6 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/controllers/home_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/cs169-calredcross/app/models/news.rb": [
-        1,
-        null
-      ],
       "/home/ubuntu/workspace/cs169-calredcross/app/controllers/profile_controller.rb": [
         1,
         null,
@@ -732,8 +720,9 @@
         2,
         2,
         0,
+        null,
+        null,
         2,
-        0,
         null,
         null,
         null,
@@ -778,8 +767,12 @@
         null,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/cs169-calredcross/app/models/news.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1478141103
+    "timestamp": 1478141689
   }
 }

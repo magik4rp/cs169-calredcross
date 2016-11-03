@@ -6,7 +6,8 @@ class ProfileController < ApplicationController
     @events = Event.all.last(3)
     if current_user.level == "gold"
       @level = "gold_status.png"
-    elsif current_user.level == "bronze"
+    # elsif current_user.level == "bronze"
+    else
       @level = "bronze_medal.png"
     end
   end
