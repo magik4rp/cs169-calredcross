@@ -261,6 +261,16 @@ input[type="file"]:focus {
     padding-right: 10px;
     display: inline-block;
 }
+.event-today {
+    position: relative;
+    text: #ff1313;
+    float: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 65px;
+    padding-right: 10px;
+    display: inline-block;
+}
 .event-dot {
     display: inline-block;
     position: relative;

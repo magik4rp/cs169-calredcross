@@ -57,9 +57,15 @@
                 <div id="event-timeline">
                     <% @events.last(6).each do |event| %>
                        <div class="event-object">
-                            <div class="event-date">
-                                <%= event.date %>
-                            </div>
+                           <% if event.date.today? %>
+                               <div class="event-today">
+                                    <%= event.date.strftime("%b %d") %>
+                                </div>
+                            <% else %>
+                                <div class="event-date">
+                                    <%= event.date.strftime("%b %d") %>
+                                </div>
+                            <% end %>
                             <div class= "event-dot">
                             </div>
                             <div class= "event-name">
