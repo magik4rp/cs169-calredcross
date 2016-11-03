@@ -10,8 +10,12 @@ CS169 Project - Cal Red Cross Website
 
 [![Build Status](https://travis-ci.org/hiftekhar/cs169-calredcross.svg?branch=master)](https://travis-ci.org/hiftekhar/cs169-calredcross)
 
-<a href="https://pure-woodland-44319.herokuapp.com//"><div>Link to Heroku App</div></a>
+<a href="https://hidden-bastion-94010.herokuapp.com/"><div>Link to Heroku App</div></a>
 <a href="https://www.pivotaltracker.com/n/projects/1885881"><div>Link to PivotalTracker</div></a>
+
+
+The dummy account you should use to log in is: sampleofficer@gmail.com
+Password is: Dummyofficer123!
 
 
 A brief explanation of the customer's business:
@@ -25,3 +29,6 @@ make it easier to make events on the Calendar since the current one is too
 lengthy (maybe embed a Google calendar). The officers want to be able to see all
 members and edit the member status.They also want a photo gallery, and be able
 to track member hours. There is no legacy code, we are starting from scratch.
+
+
+
