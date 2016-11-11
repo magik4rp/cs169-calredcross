@@ -13,6 +13,10 @@
             <div id="edit-container">
                 <img src="images/white_edit.png" id="top-edit">
             </div>
+            <div id="edit-help">
+                Click here to toggle edit your profile. Editable text will turn red, uneditable text will turn black.
+                <div id="edit-help-carrot"></div>
+            </div>
             <div class="avatar">
                 <%= image_tag(current_user.avatar.url(:thumb), :class => "profile-image") %>
                 <%= form_for current_user, :url => {:action => 'update'}, :html => { :multipart => true } do |form| %>
@@ -40,7 +44,7 @@
                     <p class="hours-text">Semester hours</p>
                 </div>
                 <div class="hours">
-                    <%= image_tag(@level, :class => "tagged-photo") %>
+                    <%= image_tag(@level) %>
                     <p class="hours-text">Level</p>
                 </div>
                 <div class="hours">

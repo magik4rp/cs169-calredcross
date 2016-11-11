@@ -6,10 +6,19 @@ class User < ApplicationRecord
   # Set validation
   validates :name, :email, :major, presence: true
   
-  
+  # Set default values for description.
+  after_initialize :init
+ 
   # Set default avatar to be /public/images/missing_ava.png
   has_attached_file :avatar, :styles => { :medium => "225x225>", :thumb => "100x100#" }, :default_url => "/images/:style/missing_ava.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  # Initialize default values.
+  def init
+      self.description  ||= "Here's a short description about yourself. You should update this because you know you better than we know you :) "           #will set the default value only if it's nil
+      self.sem_hours ||= 0 #let's you set a default association
+      self.total_hours ||= 0
+  end
 
   # Actions can be done by any member
   def isOfficer
