@@ -321,3 +321,11 @@ input[type="file"]:focus {
 #edit-container:hover + #edit-help {
     opacity: 0.6;
 }
+#no-events {
+    color: #ED1B2E;
+    font-family: Italic;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: calc(50% - 50px);
+}

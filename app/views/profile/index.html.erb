@@ -58,26 +58,33 @@
         <div class="bottom-section">
             <div class="event">
                 <h2>Events</h2>
-                <div id="event-timeline">
-                    <% @events.last(6).each do |event| %>
-                       <div class="event-object">
-                           <% if event.date.today? %>
-                               <div class="event-today">
-                                    <%= event.date.strftime("%b %d") %>
+                <% if !@events.empty? %>
+                    <div id="event-timeline">
+                        <% @events.last(6).each do |event| %>
+                           <div class="event-object">
+                               <% if event.date.today? %>
+                                   <div class="event-today">
+                                        <%= event.date.strftime("%b %d") %>
+                                    </div>
+                                <% else %>
+                                    <div class="event-date">
+                                        <b><%= event.date.strftime("%b %d") %></b>
+                                    </div>
+                                <% end %>
+                                <div class= "event-dot">
                                 </div>
-                            <% else %>
-                                <div class="event-date">
-                                    <b><%= event.date.strftime("%b %d") %></b>
+                                <div class= "event-name">
+                                    <%= event.name %>
                                 </div>
-                            <% end %>
-                            <div class= "event-dot">
                             </div>
-                            <div class= "event-name">
-                                <%= event.name %>
-                            </div>
-                        </div>
-                    <%end %>
-                </div>
+                        <%end %>
+                    </div>
+                <% end %>
+                <% if @events.empty? %>
+                    <div id="no-events">
+                        No events to see here.
+                    </div>
+                <% end %>
             </div>
             
             <div class="tagged-pics">
