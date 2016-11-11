@@ -3,12 +3,21 @@ engines:
   brakeman:
     enabled: true
     exclude_fingerprints:
+    
+    - ec4e8ec84992fcf40f9c2bc49b03e03c
+    - c01430e3fbec59e5366235480b042ee7
     - f0ee1cc1980474c82a013645508f002dcc801e00db5592f7dd8cd6bdb93c73fe
   bundler-audit:
     enabled: true
   csslint:
     enabled: true
     exclude_fingerprints:
+    - b736c3186889793c2900cdac4754f2c5
+     
+    - 42e82625574339fec98d6e026473c232
+    - f0356f5ca707b302e84dd5d1ea0173b2
+    - cc49af1a111611be5820814a6dee0a2a
+    - 482abe0499cb1f31d65e90939e19abe7
     - 5e98926627c19c41b3b10b1e8a460d58 
     - aa2f5ec79d399a73f0c9ebbabc230aab
     - f9c98e4e5a4730fd291fb5d5c456b464
@@ -37,7 +46,19 @@ engines:
     - 6a4bdc088dd92ddc7121e675734fcbad
     - e0c3905c2ef4d220d7d4773289f18732
     - 3cd4f158a52d9edfd77669b83058d8da   
-    - 5e98926627c19c41b3b10b1e8a460d58  
+    - 5e98926627c19c41b3b10b1e8a460d58
+    - 80d78108cca777cc727b3f32e281f021
+    - 2fbbbac787c01fbbe37ae7ad91abe812
+    - 89e27146aadda429161c6d83783d60e7
+    - de4e30af2642040b5653c88f679017be
+    - 2fbbbac787c01fbbe37ae7ad91abe812
+    - 451b8dc48c7deadfcaa3f8b02a7d7227
+    - fa6a140fe518585ca97802ca184fcd10
+    - 43dfe59cf4fd69038208ade5daa870ba
+    - af907b6c265e7882e0424d46807aff55
+    - 889926470f1dfa7db1601df2dcaa15d5
+    - 7db9cf381633777ae7187470290f8177
+    - 3edf8a199c82d20aeb586f83c4dde294 
     
     
   coffeelint:
@@ -47,6 +68,7 @@ engines:
     exclude_fingerprints:
     - a493a604b888117652c1c9303270ddfa
     - 5e98926627c19c41b3b10b1e8a460d58
+    - c01430e3fbec59e5366235480b042ee7
     config:
       languages:
       - ruby
@@ -56,14 +78,22 @@ engines:
   eslint:
     enabled: true
     exclude_fingerprints:
-    - 81f1db8cc66fe7d124f1ecde5904b4e5
+    - 81f1db8cc66fe7d124f1ecde5904b4e5 
+    - 4208b399dc0e1f005fc19566e5e1cf27
   fixme:
     enabled: true
   rubocop:
     enabled: true
     exclude_fingerprints:
+    - af907b6c265e7882e0424d46807aff55
+    
+    - 3edf8a199c82d20aeb586f83c4dde294
+    - 889926470f1dfa7db1601df2dcaa15d5
+    - 43dfe59cf4fd69038208ade5daa870ba
+    - 80d78108cca777cc727b3f32e281f021
     - 470047cc9dd16445f5293f41cc75f6bf
     - 0674a00db22cecf3bebf3e49dfa2a011
+    - 7db9cf381633777ae7187470290f8177
     
     
 ratings:

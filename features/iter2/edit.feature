@@ -6,57 +6,46 @@ Feature: profile page
 
 Background: member in database
 	Given the following member exists:
-	| email			| year		| major		| years in club |
-	| jdoe@berkeley.edu	| senior		| CS		| 2		|
+	|name			| email							| major		| status	| is_officer	| sem_hours	| total_hours	|
+	|Huda			| jdoe@berkeley.edu	| CS			| active	| 0						| 5					| 10					|
 
-Scenario: user updates email
-    When I am on the profile page 
-	And I hover over the email
-	And I click on “Edit” button
-	And I fill in email with “huda@berkeley.edu”
-	And I click “Save”
-	Then I see new email updated in my profile page
+Scenario: user updates name
+    
+	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button 
+    And I fill in the name with “Huda Iftekhar”
+	Then I should see name updated with "Huda Iftekhar"
 	
-# Sad path: invalid email (not a berkeley email)
-Scenario: User updates email 
-	When I am on the profile page
-	And I hover over the email
-	And I click on "Edit" button
-	And I fill in email with "huda@gmail.com"
-	And I click "Save"
-	Then I see please use a berkeley email 
+ #Sad path: invalid email (empty string)
+Scenario: user updates name  
+	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button  
+	And I fill in the name with ""
+	Then I will get the message of "Error: No name"   
 
-Scenario: user updates year
-    When I am on the profile page 
-	And I hover over the year
-	And I click on “Edit” button
-	And I fill in year with “Junior”
-	And I click “Save”
-	Then I see new year updated in my profile page
-	
-# No sad path for year because we give options 
-
-Scenario: user updates major
-    When I am on the profile page 
-    And I hover over the year 
-	And hover to the major
-	And I click on “Edit” button
-	And I fill in major with “Psychology”
-	And I click “Save”
-	Then I see new major updated in my profile page
-
-Scenario: user updates years in club
-    When I am on the profile page
-	And I hover over the years in club
-	And I click on “Edit” button
-	And I fill in years in club with 3
-	And I click “Save”
-	Then I see new years in club updated in my profile page
-	
-Scenario: user updates hours and medal in club 
-	When I am on the profile page
-	And I click on the "Edit" button
-	And I fill in hours with 20 
-	And I click "Save"
-	Then I see new hours updated in my profile page 
-	And I see that the medal color should be silver 
+Scenario: user updates description  
+  	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up"
+	Then I go to the successful sign up page
+    And I am on the profile page 
+    And I click the edit button 
+	And I fill in the description with "Hello World!" 
+	Then I should see description updated with "Hello World!" 

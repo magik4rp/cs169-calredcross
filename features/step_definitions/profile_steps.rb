@@ -1,61 +1,92 @@
-
+#User one = User.new(:name => "Huda")
 
 Given /the following member exists/ do |members_table|
-    pending
+    @hashes = []
+    members_table.hashes.each do |member|
+    # each returned element will be a hash whose key is the table header.
+    # Add members to the database.
+   # User.create(member)
+    @hashes.append(User.create(member))
+    #Members.create(members_table)
+  end
+end 
+
+And /^I click the edit button$/ do 
+  a = 0 
 end 
 
 When(/^I hover over the email$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I click on “Edit” button$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I fill in the name with (“.*”)$/) do |value|
+  if value.length != 0 
+    member_one = @hashes[0]
+    one = member_one.name
+    member_one.name = value  
+  else 
+    flash[:message] = "Error: No name"
+  end 
 end
 
-When(/^I fill in email with “huda@berkeley\.edu”$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+
+Then(/^I fill in the name with "([^"]*)"$/) do |arg1|
+  if arg1.length == 0
+      @stringOne = "Error: No Name"
+  end 
 end
 
-When(/^I click “Save”$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I will get the message of "([^"]*)"$/) do |arg1|
+  @stringOne == "Error: No Name"
 end
 
-Then(/^I see new email updated in my profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
+  if @hashes[0].name == arg1 
+    true 
+  end 
+ # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I hover over the year$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
+  
+  if arg1.length != 0 
+    member_one = @hashes[0]
+    one = member_one.description
+    member_one.name = arg1 
+  else 
+    flash[:message] = "Error: No name"
+  end 
 end
 
-When(/^I fill in year with “Junior”$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see description updated with "([^"]*)"$/) do |arg1|
+  if @hashes[0].description == arg1 
+    true 
+  end 
 end
 
-Then(/^I see new year updated in my profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+
+Then(/^I fill in semester hours with (\d+)$/) do |arg1|
+  member_one = @hashes[0]
+  one = member_one.sem_hours
+  member_one.sem_hours = arg1 
 end
 
-When(/^hover to the major$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see semester hours updated with "([^"]*)"$/) do |arg1|
+  if @hashes[0].sem_hours == arg1 
+    true
+  end 
 end
 
-When(/^I fill in major with “Psychology”$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I fill in total hours with (\d+)$/) do |arg1|
+    member_one = @hashes[0]
+    one = member_one.total_hours
+    member_one.total_hours = arg1 
 end
 
-Then(/^I see new major updated in my profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see total hours updated with "([^"]*)"$/) do |arg1|
+  if @hashes[0].total_hours == arg1 
+    true
+  end 
 end
 
-When(/^I hover over the years in club$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When(/^I fill in years in club with (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I see new years in club updated in my profile page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
+ 

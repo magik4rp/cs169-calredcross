@@ -11,11 +11,14 @@ module NavigationHelpers
   # step definition in web_steps.rb
   #
   def path_to(page_name)
-    case page_name
-
+    case page_name 
     when /^the login page$/ then '/users/sign_up'
-    
+    when /^the gallery page$/ then '/users/sign_up'
+    when /^the membership page$/ then '/users/sign_in'
+      
     when /^the successful sign up page$/ then '/news'
+      
+    when /^the profile page$/ then '/profile'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
