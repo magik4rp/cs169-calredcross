@@ -16,8 +16,7 @@ Scenario: user updates name
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button 
     And I fill in the name with “Huda Iftekhar”
@@ -30,8 +29,7 @@ Scenario: user updates name
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button  
 	And I fill in the name with ""
@@ -43,8 +41,7 @@ Scenario: user updates description
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button 
 	And I fill in the description with "Hello World!" 

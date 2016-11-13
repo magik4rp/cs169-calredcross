@@ -15,8 +15,7 @@ Scenario: user updates semester hours
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
   And I am on the profile page 
   And I click the edit button 
   And I fill in semester hours with 40
@@ -28,8 +27,7 @@ Scenario: user updates total hours
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
   And I am on the profile page 
   And I click the edit button 
 	And I fill in total hours with 50  
