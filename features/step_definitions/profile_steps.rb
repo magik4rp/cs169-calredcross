@@ -21,15 +21,16 @@ end
 
 Then(/^I fill in the name with (“.*”)$/) do |value|
   if value.length != 0 
-    member_one = @hashes[0]
-    member_one.editName(value) 
+    member_one = @hashes[0] 
+    member_one.update(:name =>value)
+    #member_one.editName(value) 
     if (member_one.name == value)
       true
     else 
       false 
     end 
   else 
-    member_one.editName(value)
+    member_one.editName(:name => value )
     expect(page.body).to eq("Error: No Name Entered")
   end 
 end
@@ -66,14 +67,16 @@ Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
-    member_one = @hashes[0]
-    member_one.editDescription(arg1) 
+  if arg1.length != 0 
+    member_one = @hashes[0] 
+    member_one.update(:description =>arg1)
+    #member_one.editName(value) 
     if (member_one.description == arg1)
       true
     else 
       false 
     end 
-  
+  end
 end
 
 Then(/^I should see description updated with "([^"]*)"$/) do |arg1|

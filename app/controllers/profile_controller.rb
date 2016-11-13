@@ -12,16 +12,16 @@ class ProfileController < ApplicationController
     end
   end
 
-  def update 
+  def update
     @user = current_user 
     
-    if params["name"]
-      print("~~~~~" + params["name"].to_s)
-      @user.editName(params["name"])
+    if params[:name]
+      print("~~~~~" + params[:name].to_s)
+      @user.editName(params[:name])
     end
-    if params["details"]
-      print("~~~~~" + params["details"].to_s)
-      @user.editDescription(params["details"])
+    if params[:description]
+      print("~~~~~" + params[:description].to_s)
+      @user.editDescription(params[:description])
     end
     if params[:user][:avatar]
       print("~~~~~" + params[:user][:avatar].to_s)
