@@ -23,7 +23,6 @@ class User < ApplicationRecord
   def editName(new_name)
     if (new_name.length != 0)
       self.update_attribute(:name, new_name)
-      print "Haiiii"
     else 
       flash[:message] = "Error: No Name Entered"
     end 

@@ -2,14 +2,17 @@
 
 Given /the following member exists/ do |members_table|
     @hashes = []
-    members_table.hashes.each do |member|
-    # each returned element will be a hash whose key is the table header.
-    # Add members to the database.
-   # User.create(member)
-    @hashes.append(User.new)
-    
-    #Members.create(members_table)
-  end
+    one = User.new 
+    one.name = "Huda"
+    one.email = "jdoe@berkeley.edu"
+    one.major = "CS"
+    one.status = "active"
+    one.is_officer = 0 
+    one.sem_hours = 5
+    one.total_hours = 10
+    @hashes.append(one)
+   
+  
 end 
 
 And /^I click the edit button$/ do 
