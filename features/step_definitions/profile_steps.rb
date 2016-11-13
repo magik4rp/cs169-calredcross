@@ -15,14 +15,12 @@ And /^I click the edit button$/ do
   a= 0 
 end 
 
-When(/^I hover over the email$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
+ 
 
 Then(/^I fill in the name with (“.*”)$/) do |value|
   if value.length != 0 
     member_one = @hashes[0] 
-    member_one.update(:name =>value)
+    member_one.editName(:name =>value)
     #member_one.editName(value) 
     if (member_one.name == value)
       true
@@ -69,7 +67,7 @@ end
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
   if arg1.length != 0 
     member_one = @hashes[0] 
-    member_one.update(:description =>arg1)
+    member_one.editDescription(arg1)
     #member_one.editName(value) 
     if (member_one.description == arg1)
       true
@@ -87,21 +85,19 @@ end
 
 
 Then(/^I fill in semester hours with (\d+)$/) do |arg1|
-  member_one = @hashes[0]
-  one = member_one.sem_hours
-  member_one.sem_hours = arg1 
+  @hashes[0].updateSemHours(@hashes[0].email , arg1)
 end
 
 Then(/^I should see semester hours updated with "([^"]*)"$/) do |arg1|
   if @hashes[0].sem_hours == arg1 
     true
+  else 
+    false 
   end 
 end
 
 Then(/^I fill in total hours with (\d+)$/) do |arg1|
-    member_one = @hashes[0]
-    one = member_one.total_hours
-    member_one.total_hours = arg1 
+    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
 end
 
 Then(/^I should see total hours updated with "([^"]*)"$/) do |arg1|

@@ -54,17 +54,19 @@ class User < ApplicationRecord
       member.update_attribute(:status, stat)
     end
   end
+
   
   # Need modification for the level according to the new sem_hours and total_hours
   def updateSemHours(id, new_sem_hours)
-    member = User.find(id)
+    member = User.where(:email => id)
     if self.is_officer == 1
       member.update_attribute(:sem_hours, new_sem_hours)
     end
   end
   
   def updateTotalHours(id, new_total_hours)
-    member = User.find(id)
+    
+    member = User.where(:email => id)
     if self.is_officer == 1
       member.update_attribute(:total_hours, new_total_hours)
     end
