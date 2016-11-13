@@ -20,6 +20,11 @@ class User < ApplicationRecord
       self.total_hours ||= 0
   end
 
+  # Get the list of all members
+  def self.getMembers
+    User.all()
+  end
+  
   # Actions can be done by any member
   def isOfficer
     if self.is_officer == 1

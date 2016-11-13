@@ -1,0 +1,26 @@
+!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <div class="members-header">
+        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
+    </div>
+    <div id="members-container">
+        <h2>Our Members</h2>
+        
+        <div class="members-list">
+            <% @members.each do |member| %>
+                <div class="member-row">
+                    <%= image_tag(member.avatar.url(:thumb), :class => "profile-image") %>
+                    <p><%= member.name %></p>
+                    <p><%= member.status %></p>
+                    <img id="email-symbol" src="/images/email.png"><p><%= member.email %></p>
+                    <p><%= member.total_hours %> Hours</p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>
