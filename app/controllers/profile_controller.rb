@@ -12,7 +12,7 @@ class ProfileController < ApplicationController
     end
   end
 
-  def update 
+  def update
     @user = current_user 
     
     if params["name"]
