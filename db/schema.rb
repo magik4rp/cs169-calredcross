@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102063315) do
+ActiveRecord::Schema.define(version: 20161113191130) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -50,9 +50,6 @@ ActiveRecord::Schema.define(version: 20161102063315) do
     t.datetime "updated_at",                          null: false
     t.string   "major"
     t.string   "name"
-    t.integer  "is_officer",             default: 0
-    t.integer  "sem_hours",              default: 0
-    t.integer  "total_hours",            default: 0
     t.string   "status"
     t.string   "level"
     t.text     "description"
@@ -61,6 +58,9 @@ ActiveRecord::Schema.define(version: 20161102063315) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "event_id"
+    t.integer  "is_officer",             default: 0
+    t.integer  "sem_hours",              default: 0
+    t.integer  "total_hours",            default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
