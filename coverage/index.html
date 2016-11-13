@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-13T20:21:48+00:00">2016-11-13T20:21:48+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-13T20:47:06+00:00">2016-11-13T20:47:06+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">76.6%</span></span>
+    (<span class="covered_percent"><span class="red">76.69%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>265</b> relevant lines. 
-    <span class="green"><b>203</b> lines covered</span> and
+    <b>266</b> relevant lines. 
+    <span class="green"><b>204</b> lines covered</span> and
     <span class="red"><b>62</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -162,10 +162,10 @@
       
       <tr>
         <td class="strong"><a href="#75c66c5b13d61df0a8dc2ee8d1ed3fe3b3b2fb23" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">57.14 %</td>
-        <td>74</td>
-        <td>35</td>
-        <td>20</td>
+        <td class="red strong">58.33 %</td>
+        <td>75</td>
+        <td>36</td>
+        <td>21</td>
         <td>15</td>
         <td>0.6</td>
       </tr>
@@ -1129,10 +1129,10 @@
         <div class="source_table" id="75c66c5b13d61df0a8dc2ee8d1ed3fe3b3b2fb23">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">57.14 %</span> covered</h4>
+    <h4><span class="red">58.33 %</span> covered</h4>
     <div>
-      <b>35</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>36</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>15</b> lines missed.</span>
     </div>
   </div>
@@ -1290,295 +1290,301 @@
           <code class="ruby">      self.update_attribute(:name, new_name)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      print &quot;Haiiii&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">    else </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">      flash[:message] = &quot;Error: No Name Entered&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def editDescription(new_description)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    self.update_attribute(:description, new_description)</code>
+          <code class="ruby">  def editDescription(new_description)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    self.update_attribute(:description, new_description)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">  def editAvatar(new_avatar)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
           <code class="ruby">    File.open(&quot;new_avatar&quot;, &#39;wb&#39;) do |f|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
           <code class="ruby">      f.write new_avatar</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">      self.update_attribute(:avatar, f)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
           <code class="ruby">  # Actions only happen iff the current user is an officer</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">  def updateRanking(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
-          
-          
-          <code class="ruby">    member = User.find(id)</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">    if self.is_officer == 1</code>
+          <code class="ruby">    member = User.find(id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">      member.update_attribute(:is_officer, 1)</code>
+          <code class="ruby">    if self.is_officer == 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      member.update_attribute(:is_officer, 1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">  def updateStatus(id, stat)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
+        <li class="missed" data-hits="0" data-linenumber="53">
           
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">    if self.is_officer == 1 </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
           <code class="ruby">      member.update_attribute(:status, stat)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">  # Need modification for the level according to the new sem_hours and total_hours</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="60">
           
-          <code class="ruby">  def updateSemHours(id, new_sem_hours)</code>
+          
+          <code class="ruby">  # Need modification for the level according to the new sem_hours and total_hours</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    member = User.where(:email =&gt; id)</code>
+          <code class="ruby">  def updateSemHours(id, new_sem_hours)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
+          <code class="ruby">    member = User.where(:email =&gt; id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
           <code class="ruby">    if self.is_officer == 1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="63">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">      member.update_attribute(:sem_hours, new_sem_hours)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
           <code class="ruby">  def updateTotalHours(id, new_total_hours)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
           <code class="ruby">    member = User.where(:email =&gt; id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">    if self.is_officer == 1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
           <code class="ruby">      member.update_attribute(:total_hours, new_total_hours)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">end</code>
@@ -4683,97 +4689,97 @@
         <li class="covered" data-hits="17" data-linenumber="9">
           <span class="hits">17</span>
           
-          <code class="ruby">    @hashes.append(User.create(member))</code>
+          <code class="ruby">    @hashes.append(User.new)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    #Members.create(members_table)</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    #Members.create(members_table)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">end </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
+          <code class="ruby">end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">And /^I click the edit button$/ do </code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="15">
+        <li class="covered" data-hits="5" data-linenumber="16">
           <span class="hits">5</span>
           
           <code class="ruby">  a= 0 </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby"> </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"> </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="20">
           
-          <code class="ruby">Then(/^I fill in the name with (“.*”)$/) do |value|</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">  if value.length != 0 </code>
+          <code class="ruby">Then(/^I fill in the name with (“.*”)$/) do |value|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">    member_one = @hashes[0] </code>
+          <code class="ruby">  if value.length != 0 </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">    member_one.editName(:name =&gt;value)</code>
+          <code class="ruby">    member_one = @hashes[0] </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #member_one.editName(value) </code>
+          <code class="ruby">    member_one.editName(value)  </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
@@ -4782,8 +4788,8 @@
           <code class="ruby">    if (member_one.name == value)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
           <code class="ruby">      true</code>
         </li>
@@ -4791,11 +4797,11 @@
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">    else </code>
+          <code class="ruby">    else  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
           
           <code class="ruby">      false </code>
         </li>
@@ -4815,7 +4821,7 @@
         <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">    member_one.editName(:name =&gt; value )</code>
+          <code class="ruby">    member_one.editName(value )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="32">
@@ -5667,7 +5673,7 @@
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">  Members.all</code>
+          <code class="ruby">  Users.all</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -5895,7 +5901,7 @@
         <li class="missed" data-hits="0" data-linenumber="53">
           
           
-          <code class="ruby">  @members = Members.all</code>
+          <code class="ruby">  @members = Users.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="54">

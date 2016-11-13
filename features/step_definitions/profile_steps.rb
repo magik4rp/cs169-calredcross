@@ -6,7 +6,8 @@ Given /the following member exists/ do |members_table|
     # each returned element will be a hash whose key is the table header.
     # Add members to the database.
    # User.create(member)
-    @hashes.append(User.create(member))
+    @hashes.append(User.new)
+    
     #Members.create(members_table)
   end
 end 
@@ -20,15 +21,14 @@ end
 Then(/^I fill in the name with (“.*”)$/) do |value|
   if value.length != 0 
     member_one = @hashes[0] 
-    member_one.editName(:name =>value)
-    #member_one.editName(value) 
+    member_one.editName(value)  
     if (member_one.name == value)
       true
-    else 
+    else  
       false 
     end 
   else 
-    member_one.editName(:name => value )
+    member_one.editName(value )
     expect(page.body).to eq("Error: No Name Entered")
   end 
 end
