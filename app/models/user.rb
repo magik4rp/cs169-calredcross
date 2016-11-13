@@ -60,15 +60,14 @@ class User < ApplicationRecord
   def updateSemHours(id, new_sem_hours)
     member = User.where(:email => id)
     if self.is_officer == 1
-      member.update_attribute(:sem_hours, new_sem_hours)
+      member.update_all(:sem_hours => new_sem_hours)
     end
   end
   
   def updateTotalHours(id, new_total_hours)
-    
     member = User.where(:email => id)
     if self.is_officer == 1
-      member.update_attribute(:total_hours, new_total_hours)
+      member.update_all(:total_hours => new_total_hours)
     end
   end
 end
