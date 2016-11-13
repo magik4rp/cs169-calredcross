@@ -12,7 +12,7 @@ Given /the following member exists/ do |members_table|
 end 
 
 And /^I click the edit button$/ do 
-  a = 0 
+  a= 0 
 end 
 
 When(/^I hover over the email$/) do
@@ -22,10 +22,15 @@ end
 Then(/^I fill in the name with (“.*”)$/) do |value|
   if value.length != 0 
     member_one = @hashes[0]
-    one = member_one.name
-    member_one.name = value  
+    member_one.editName(value) 
+    if (member_one.name == value)
+      true
+    else 
+      false 
+    end 
   else 
-    flash[:message] = "Error: No name"
+    member_one.editName(value)
+    expect(page.body).to eq("Error: No Name Entered")
   end 
 end
 
@@ -61,14 +66,14 @@ Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
-  
-  if arg1.length != 0 
     member_one = @hashes[0]
-    one = member_one.description
-    member_one.name = arg1 
-  else 
-    flash[:message] = "Error: No name"
-  end 
+    member_one.editDescription(arg1) 
+    if (member_one.description == arg1)
+      true
+    else 
+      false 
+    end 
+  
 end
 
 Then(/^I should see description updated with "([^"]*)"$/) do |arg1|
