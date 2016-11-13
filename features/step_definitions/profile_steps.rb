@@ -29,19 +29,19 @@ And /^I click the edit button$/ do
 end 
 
  
+When(/^I fill in the name with ' '$/) do
+  member_one = @hashes[0]
+  member_one.editName('')
+  expect(member_one.name == "Error: Put a name longer than one letter").to be(true)
+  
+end
 
 Then(/^I fill in the name with (“.*”)$/) do |value|
-  if value.length != 0 
     member_one = @hashes[0] 
     member_one.editName(value)  
     if (member_one.name == value)
       true  
     end 
-  else 
-    member_one = @hashes[0]
-    member_one.editName(value )
-    expect(page.body).to eq("Error: No Name Entered")
-  end 
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|

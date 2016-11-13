@@ -22,7 +22,7 @@ Scenario: user updates name
     And I fill in the name with “Huda Iftekhar”
 	Then I should see name updated with "Huda Iftekhar"
 	
- #Sad path: invalid email (empty string)
+ #Sad path: invalid name (empty string)
 Scenario: user updates name  
 	When I go to the login page 
 	And  I fill in name with "Curry"
@@ -32,7 +32,7 @@ Scenario: user updates name
 	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button  
-	And I fill in the name with ""
+	And I fill in the name with ' '
 	Then I will get the message of "Error: No name"   
 
 Scenario: user updates description  

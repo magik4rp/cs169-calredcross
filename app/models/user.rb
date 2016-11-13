@@ -24,7 +24,7 @@ class User < ApplicationRecord
     if (new_name.length != 0)
       self.update_attribute(:name, new_name)
     else 
-      flash[:message] = "Error: No Name Entered"
+      self.update_attribute(:name, "Error: Put a name longer than one letter")
     end 
   end
   
