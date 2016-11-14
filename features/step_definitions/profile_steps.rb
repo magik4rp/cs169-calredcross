@@ -47,7 +47,10 @@ end
 When(/^I fill in the ranking to officer$/) do
   member_one = @hashes[0]
   member_one.updateRanking(1)
+  member_one.updateStatus(1, "active")
 end
+
+
 
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
@@ -64,10 +67,7 @@ When /^(?:|I )go to (.+)$/ do |page_name|
 end
 
  
-
-Then(/^I will get the message of "([^"]*)"$/) do |arg1|
-  @stringOne == "Error: No Name"
-end
+ 
 
 Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
   index_two = arg1.length 
@@ -134,9 +134,7 @@ When(/^as an officer, I fill in total hours with (\d+)$/) do |arg1|
 end
 
 Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].total_hours.to_s == arg1 
-    true 
-  end 
+  @hashes[0].total_hours.to_s == arg1 
 end
 
 When(/^I like the photo "([^"]*)"$/) do |arg1|

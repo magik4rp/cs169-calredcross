@@ -16,7 +16,7 @@ module NavigationHelpers
     #when /^the gallery page$/ then '/users/sign_up'
    # when /^the membership page$/ then '/users/sign_in'
       
-    when /^the successful sign up page$/ then '/news'
+#    when /^the successful sign up page$/ then '/news'
       
     when /^the profile page$/ then '/profile'
 
