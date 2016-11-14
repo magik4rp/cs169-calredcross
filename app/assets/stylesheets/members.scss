@@ -29,3 +29,45 @@ body {
     padding: 10px;
     overflow: scroll;
 }
+
+.members-list {
+    position: relative;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+.member-row {
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+}
+
+.member-avatar {
+    display: inline-block;
+    position: relative;
+}
+
+.member-info {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.member-status {
+    margin-left: 190px;
+    display: inline-block;
+    position: relative;
+}
+.member-contribution {
+    margin-left: 200px;
+    display: inline-block;
+    position: relative;
+}
+
+#member-name {
+    font-size: 20px;
+    display: inline-block;
+}
