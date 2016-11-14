@@ -24,7 +24,8 @@ Scenario: user updates semester hours # not an actual #, sad path
     When I go to the membership page 
     And I fill in the semester hours for member "Phoebe" with "a"
     Then I should see message "Not an actual number, try again."
-    
+
+ 
 Scenario: user updates status  
 	When I go to the membership page 
 	And I click the status for member "Phoebe"

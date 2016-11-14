@@ -49,11 +49,11 @@ Then /I should be (".*")/ do
   pending 
 end 
   
-Then /I see all of members/ do
-  @members = Users.all
-  num_rows = page.all("table#members tbody tr").count
-  expect(num_rows).to eq(@members.size)
-end
+#Then /I see all of members/ do
+#  @members = Users.all
+#  num_rows = page.all("table#members tbody tr").count
+#  expect(num_rows).to eq(@members.size)
+#end
 
 When(/^I fill in the avatar with “one\.jpg”$/) do
   val_one = @hashes[0]  
@@ -63,10 +63,10 @@ end
 
 
 
-Given /^I am (".*") officer (".*")/ do
-  a = 0
+#Given /^I am (".*") officer (".*")/ do
+#  a = 0
   #pending
-end
+#end
 
 Given(/^I am the officer$/) do
   pending # Write code here that turns the phrase above into concrete actions
