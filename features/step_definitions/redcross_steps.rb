@@ -55,6 +55,12 @@ Then /I see all of members/ do
   expect(num_rows).to eq(@members.size)
 end
 
+When(/^I fill in the avatar with “one\.jpg”$/) do
+  val_one = @hashes[0]  
+  val_one.editAvatar("one.jpg")
+end
+
+
 
 
 Given /^I am (".*") officer (".*")/ do

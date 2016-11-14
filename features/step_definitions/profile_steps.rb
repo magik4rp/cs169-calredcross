@@ -4,7 +4,7 @@ Given /the following member exists/ do |members_table|
     #@hashes = []
     one = User.new 
     one.name = "Huda"
-    one.email = "jdoe@berkeley.edu"
+    one.email = "sampleofficer@gmail.com"
     one.major = "CS"
     one.status = "active"
     one.is_officer = 0 
@@ -44,6 +44,12 @@ Then(/^I fill in the name with (“.*”)$/) do |value|
     end 
 end
 
+When(/^I fill in the ranking to officer$/) do
+  member_one = @hashes[0]
+  member_one.updateRanking(1)
+end
+
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -57,22 +63,18 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-
-Then(/^I fill in the name with "([^"]*)"$/) do |arg1|
-  if arg1.length == 0
-      @stringOne = "Error: No Name"
-  end 
-end
+ 
 
 Then(/^I will get the message of "([^"]*)"$/) do |arg1|
   @stringOne == "Error: No Name"
 end
 
 Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].name == arg1 
+  index_two = arg1.length 
+  s2 = (@hashes[0].name)[1..index_two]
+  if s2 == arg1 
     true 
-  end 
- # Write code here that turns the phrase above into concrete actions
+  end  
 end
 
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
@@ -95,12 +97,12 @@ end
 
 Then(/^I fill in semester hours with (\d+)$/) do |arg1| 
   @hashes[0].is_officer = 0 
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
+  @hashes[0].updateSemHours(1 , arg1)
 end
 
 Then(/^as an officer, I fill in semester hours with (\d+)$/) do |arg1|
   @hashes[0].is_officer = 1
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
+  @hashes[0].updateSemHours(1 , arg1)
 end
 
 Then(/^as not an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
@@ -109,27 +111,26 @@ Then(/^as not an officer, I should see semester hours updated with "([^"]*)"$/) 
   end 
 end
 
-Then(/^as an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].sem_hours.to_s == arg1 
-    true
-  end 
+Then(/^as an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1| 
+    @hashes[0].sem_hours.to_s == arg1 
 end
 
 Then(/^I fill in total hours with (\d+)$/) do |arg1|
     @hashes[0].is_officer = 0 
-    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
+    # need to check if I'm an officer or not 
+    bool_val = @hashes[0].isOfficer
+    @hashes[0].updateTotalHours(1, arg1)
 end
 
 Then(/^I should see total hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].total_hours.to_s == arg1 
-    true 
-  end 
+  @hashes[0].total_hours.to_s == arg1 
 end
 
 
 When(/^as an officer, I fill in total hours with (\d+)$/) do |arg1|
-    @hashes[0].is_officer = 1 
-    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
+    @hashes[0].is_officer = 1  
+    bool_val = @hashes[0].isOfficer
+    @hashes[0].updateTotalHours(1, arg1)
 end
 
 Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|

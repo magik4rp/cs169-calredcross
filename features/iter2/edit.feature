@@ -9,6 +9,28 @@ Background: member in database
 	|name			| email							| major		| status	| is_officer	| sem_hours	| total_hours	|
 	|Huda			| jdoe@berkeley.edu	| CS			| active	| 0						| 5					| 10					|
 
+Scenario: user updates avatar 
+  	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up" 
+    And I am on the profile page 
+    And I click the edit button 
+    And I fill in the avatar with “one.jpg” 
+
+Scenario: user updates ranking 
+  	When I go to the login page 
+	And  I fill in name with "Curry"
+	And  I fill in email with "curryofficer@gmail.com"
+	And I fill in major with "EECS"
+	And  I fill in password with "sc30forthewin" 
+	And  I press "Sign up" 
+    And I am on the profile page 
+    And I click the edit button 
+    And I fill in the ranking to officer 
+
 Scenario: user updates name
     
 	When I go to the login page 
@@ -32,8 +54,7 @@ Scenario: user updates name
 	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button  
-	And I fill in the name with ' '
-	Then I will get the message of "Error: No name"   
+	And I fill in the name with ' '  
 
 Scenario: user updates description  
   	When I go to the login page 
