@@ -1,0 +1,73 @@
+// Place all the styles related to the Members controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.members-header {
+    background-color: #ED1B2E;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+body {
+    font: Regular !important;
+    background-color: #D7D7D8;
+    font-family: Regular, sans-serif !important;
+    margin: 0px !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+#members-container {
+    position: relative;
+    background-color: #F4F4F3;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.members-list {
+    position: relative;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+.member-row {
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+}
+
+.member-avatar {
+    display: inline-block;
+    position: relative;
+}
+
+.member-info {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.member-status {
+    margin-left: 190px;
+    display: inline-block;
+    position: relative;
+}
+.member-contribution {
+    margin-left: 200px;
+    display: inline-block;
+    position: relative;
+}
+
+#member-name {
+    font-size: 20px;
+    display: inline-block;
+}

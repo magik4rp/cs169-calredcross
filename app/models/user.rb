@@ -20,6 +20,11 @@ class User < ApplicationRecord
       self.total_hours ||= 0
   end
 
+  # Get the list of all members
+  def self.getMembers
+    User.all()
+  end
+  
   # Actions can be done by any member
   def isOfficer
     if self.is_officer == 1
@@ -30,7 +35,11 @@ class User < ApplicationRecord
   end
   
   def editName(new_name)
-    self.update_attribute(:name, new_name)
+    if (new_name.length != 0)
+      self.update_attribute(:name, new_name)
+    else 
+      self.update_attribute(:name, "Error: Put a name longer than one letter")
+    end 
   end
   
   def editDescription(new_description)
@@ -59,19 +68,20 @@ class User < ApplicationRecord
       member.update_attribute(:status, stat)
     end
   end
+
   
   # Need modification for the level according to the new sem_hours and total_hours
   def updateSemHours(id, new_sem_hours)
-    member = User.find(id)
+    member = User.where(:email => id)
     if self.is_officer == 1
-      member.update_attribute(:sem_hours, new_sem_hours)
+      member.update_all(:sem_hours => new_sem_hours)
     end
   end
   
   def updateTotalHours(id, new_total_hours)
-    member = User.find(id)
+    member = User.where(:email => id)
     if self.is_officer == 1
-      member.update_attribute(:total_hours, new_total_hours)
+      member.update_all(:total_hours => new_total_hours)
     end
   end
 end

@@ -16,25 +16,23 @@ Scenario: user updates name
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button 
     And I fill in the name with “Huda Iftekhar”
 	Then I should see name updated with "Huda Iftekhar"
 	
- #Sad path: invalid email (empty string)
+ #Sad path: invalid name (empty string)
 Scenario: user updates name  
 	When I go to the login page 
 	And  I fill in name with "Curry"
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button  
-	And I fill in the name with ""
+	And I fill in the name with ' '
 	Then I will get the message of "Error: No name"   
 
 Scenario: user updates description  
@@ -43,8 +41,7 @@ Scenario: user updates description
 	And  I fill in email with "curryofficer@gmail.com"
 	And I fill in major with "EECS"
 	And  I fill in password with "sc30forthewin" 
-	And  I press "Sign up"
-	Then I go to the successful sign up page
+	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button 
 	And I fill in the description with "Hello World!" 
