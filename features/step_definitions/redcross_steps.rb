@@ -12,7 +12,7 @@ end
 
 Then /^I see all members/ do
   # Make sure that all the members in the members table are visible.
-  Members.all
+  Users.all
 end
 
 And /I am on the (".*") page/ do 
@@ -50,10 +50,16 @@ Then /I should be (".*")/ do
 end 
   
 Then /I see all of members/ do
-  @members = Members.all
+  @members = Users.all
   num_rows = page.all("table#members tbody tr").count
   expect(num_rows).to eq(@members.size)
 end
+
+When(/^I fill in the avatar with “one\.jpg”$/) do
+  val_one = @hashes[0]  
+  val_one.editAvatar("one.jpg")
+end
+
 
 
 
