@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :galleries
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   resources :news
