@@ -28,6 +28,72 @@ And /^I click the edit button$/ do
   a= 0 
 end 
 
+
+
+Then(/^I create the event with name "([^"]*)", DateTime\.new\((\d+),(\d+),(\d+)\), location "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5|
+  @event = Event.new 
+  @event.name = arg1 
+  @event.date = DateTime.new(arg2.to_i,arg3.to_i,arg4.to_i)
+  @event.location = arg5
+  
+end
+
+
+Then(/^I edit the description "([^"]*)"$/) do |arg1|
+  @event.editDescription(arg1)
+end
+
+Then(/^I should see the description as "([^"]*)"$/) do |arg1|
+  if @event.description == arg1
+    true
+  end 
+end
+
+Then(/^I edit the name "([^"]*)"$/) do |arg1|
+  @event.editName(arg1)  
+end
+
+Then(/^I should see the name as "([^"]*)"$/) do |arg1|
+  if (@event.name == arg1)
+    true
+  end 
+end
+
+Then(/^I edit the date DateTime\.new\((\d+),(\d+),(\d+)\)$/) do |arg1, arg2, arg3|
+  event_two = DateTime.new(arg1.to_i, arg2.to_i, arg3.to_i)
+  @event.editDate(event_two)
+  # Write code here that turns the phrase above into concrete actions
+end
+
+
+
+Then(/^I edit the location "([^"]*)"$/) do |arg1|
+  @event.editLocation(arg1)
+end
+
+Then(/^I should see the location as "([^"]*)"$/) do |arg1|
+  if @event.location == arg1
+    true 
+  end  
+end
+
+ 
+
+Then(/^I should see the date as DateTime\.new\((\d+),(\d+),(\d+)\)$/) do |arg1, arg2, arg3|
+  num_one = @event.date.year 
+  num_two = @event.date.month 
+  num_three = @event.date.day 
+
+  num_a = arg1.to_i
+  num_b = arg2.to_i 
+  num_c = arg3.to_i 
+
+  if (num_one == num_a && num_two == num_b && num_three && num_c)
+    true 
+  end 
+  
+end
+
  
 When(/^I fill in the name with ' '$/) do
   member_one = @hashes[0]
