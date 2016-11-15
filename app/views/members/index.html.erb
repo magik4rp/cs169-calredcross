@@ -30,7 +30,7 @@
             </div>
             
             <% @members.each do |member| %>
-                <div class="member-row" id= <%=member.id %>>
+                <div class="<%= @is_officer ? 'member-row' : 'member-row-nonofficer' %>" id= <%=member.id %>>
                     <div class="member-avatar">
                         <%= image_tag(member.avatar.url(:thumb), :class => "profile-image") %>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="member-contribution">
                         <div id="member-hours"><%= member.total_hours %></div>
                         <div id="hours">Hours</div>
-                        <% if current_user and current_user.is_officer == 1 %>
+                        <% if current_user and @is_officer %>
                             <% if member.status == "t"  %>
                                 <div class="delete-member hide"  id= <%=member.id %>>
                                     <div class="delete-member-help">Delete this member</div>

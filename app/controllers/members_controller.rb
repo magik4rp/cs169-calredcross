@@ -2,6 +2,10 @@ class MembersController < ApplicationController
   
   def index
     @members = User.getMembers
+    @is_officer = false 
+    if current_user.is_officer == 1
+      @is_officer = true
+    end
   end
   def update 
     status = params["status"]

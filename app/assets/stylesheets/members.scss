@@ -35,6 +35,17 @@ body {
     padding: 25px;
     margin-bottom: 40px;
 }
+.member-row-nonofficer {
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    padding: 10px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
 .member-row {
     position: relative;
     display: block;
