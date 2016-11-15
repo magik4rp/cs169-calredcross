@@ -29,7 +29,11 @@
             <div class="personal-info">
                 <div id="name-section">
                     <div id="profile-name"><%= current_user.name %></div>
-                    <div id="status-badge">Active</div>
+                    <% if current_user.status == "t" %>
+                        <div id="status-badge" class="active">Active</div>
+                    <% else %>
+                        <div id="status-badge" class="inactive">Inactive</div>
+                    <% end %>
                 </div>
                 <img id="email-symbol" src="/images/email.png"><p id="profile-email"><%= current_user.email %></p>
                 <div id="about-me">
@@ -107,7 +111,6 @@
                         async : false,
                         context : document.body,
                         success : function(response) {
-                            alert("Done");
                         }
                       });
                 }

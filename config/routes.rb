@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
+  post 'members/update', :to => 'members#update'
   resources :news
   resources :posts
  # devise_for :users

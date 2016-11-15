@@ -1,6 +1,7 @@
 !DOCTYPE html>
 <html>
 <head>
+    <%= javascript_include_tag('member-management.js') %>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             </div>
             
             <% @members.each do |member| %>
-                <div class="member-row">
+                <div class="member-row" id= <%=member.id %>>
                     <div class="member-avatar">
                         <%= image_tag(member.avatar.url(:thumb), :class => "profile-image") %>
                     </div>
@@ -24,26 +25,37 @@
                         <div id="member-name"><%= member.name %></div>
                         <div id="member-email"><img id="email-symbol" src="/images/email.png"><%= member.email %></div>
                     </div>
-                    <% if member.status %>
-                        <div class="member-status active">
+                    <% if member.status == "t" %>
+                        <div class="member-status active" id= <%=member.id %>>
                            Active
                         </div>
                     <% else %> 
-                        <div class="member-status inactive">
+                        <div class="member-status inactive" id= <%=member.id %>>
                            Inactive
                         </div>
                     <% end %>
                     <div class="member-contribution">
                         <div id="member-hours"><%= member.total_hours %></div>
                         <div id="hours">Hours</div>
+                        <% if member.status == "t"  %>
+                            <div class="delete-member hide"  id= <%=member.id %>>
+                                <div class="delete-member-help">Delete this member</div>
+                                x
+                            </div>
+                        <% else %> 
+                            <div class="delete-member show"  id= <%=member.id %>>
+                                <div class="delete-member-help">Delete this member</div>
+                                x
+                            </div>
+                        <% end %>
                     </div>
-                    <% if member.status %>
-                        <div class="toggle-active-button active">
+                    <% if member.status == "t" %>
+                        <div class="toggle-active-button active" id= <%=member.id %>>
                         <div class="toggle-inner-text">Mark Inactive</div>
                         </div>
                     <% else %> 
-                        <div class="toggle-active-button inactive">
-                         <div class="toggle-inner-text">Mark Active</div>
+                        <div class="toggle-active-button inactive" id= <%=member.id %>>
+                         <div class="toggle-inner-text" id= <%=member.id %> >Mark Active</div>
                         </div>
                     <% end %>
                     
@@ -51,5 +63,48 @@
             <% end %>
         </div>
     </div>
+    <script>
+        $('.toggle-active-button').click(function() {
+            $(this).toggleClass('active');
+            $(this).toggleClass('inactive')
+            var id = $(this).attr("id")
+            $( "#" + id + ".member-status").toggleClass("active");
+            $( "#" + id + ".member-status").toggleClass("inactive");
+            $( "#" + id + ".delete-member").toggleClass("hide");
+            $( "#" + id + ".delete-member").toggleClass("show");
+            console.log(id);
+            if ($(this).hasClass('active')) {
+                $(this).children("div").text("Mark Inactive");
+                 $( "#" + id + ".member-status").text("Active");
+                 $.ajax({
+                        type : 'post',
+                        url : "/members/update",
+                        data : {"status": true, "member": id
+                        },    
+                        dataType : 'json',
+                        async : false,
+                        context : document.body,
+                        success : function(response) {
+                        }
+                      });
+                 
+            } else {
+                $(this).children("div").text("Mark Active");
+                $( "#" + id + ".member-status").text("Inactive");
+                $.ajax({
+                        type : 'post',
+                        url : "/members/update",
+                        data : {"status": false, "member": id
+                        },    
+                        dataType : 'json',
+                        async : false,
+                        context : document.body,
+                        success : function(response) {
+                        }
+                      });
+                
+            }
+        })
+    </script>
 </body>
 </html>

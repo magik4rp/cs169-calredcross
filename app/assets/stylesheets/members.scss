@@ -185,3 +185,33 @@ body {
     position: relative;
     display: inline-block;
 }
+.delete-member {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: black;
+    cursor: pointer;
+}
+.delete-member:hover .delete-member-help {
+    opacity: 0.6;
+}
+.delete-member-help {
+    background-color: black;
+    opacity: 0;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    left: -105px;
+    font-size: 9px;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
