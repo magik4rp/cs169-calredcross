@@ -1,31 +1,44 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
 
-<h1>Galleries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.name %></td>
-        <td><%= gallery.description %></td>
-        <td><%= gallery.image %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Gallery', new_gallery_path %>
+<body>
+    <div class="profile-header">
+        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="gallery-box">
+            <h2>Photos</h2>
+            <!--<button><%= link_to "Add Photos", new_gallery_path %></button>-->
+            
+                <%= form_for current_user, :url => {:action => 'update'}, :html => { :multipart => true } do |form| %>
+                  <%= form.file_field :image %>
+                  <%= form.submit "upload" %>
+                <% end %>
+                <label for="photo_bttn" id="upload-photo">+ Add Photos</label>
+            
+        </div>
+        <div class="photos-display">
+            <% @galleries.each do |gallery| %>
+                <div class="photo"><%= gallery.image %></div>
+              <!--<td><%= link_to 'Show', gallery %></td>-->
+              <!--<td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>-->
+              <!--<td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+          <% end %>
+        </div>
+    </div>
+    
+  
+  <!--<%= link_to 'New Gallery', new_gallery_path %>-->
+    
+    <!--<script>-->
+    <!--    $('#photo_bttn').click(function(e) {-->
+    <!--                var img = URL.createObjectURL(e.target.files[0]);-->
+    <!--                $(".profile-image").attr("src", img);-->
+    <!--                $(".edit_user").submit();-->
+    <!--            });-->
+    <!--</script>-->
+</body>
+</html>
