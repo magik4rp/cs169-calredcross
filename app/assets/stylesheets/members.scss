@@ -163,16 +163,25 @@ body {
     width: 250px;
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
+    display: inline-block;
 }
 #search-members {
     position: relative;
     float: right;
     display: inline-block;
     margin-top: 20px;
+    background-color: white;
+    padding-right: 10px;
 }
 #members-header {
     width: 250px;
     margin-right: 0px !important;
+    position: relative;
+    display: inline-block;
+}
+
+#search-symbol {
     position: relative;
     display: inline-block;
 }
