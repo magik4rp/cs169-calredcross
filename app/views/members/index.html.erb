@@ -49,15 +49,18 @@
                             </div>
                         <% end %>
                     </div>
-                    <% if member.status == "t" %>
-                        <div class="toggle-active-button active" id= <%=member.id %>>
-                        <div class="toggle-inner-text">Mark Inactive</div>
-                        </div>
-                    <% else %> 
-                        <div class="toggle-active-button inactive" id= <%=member.id %>>
-                         <div class="toggle-inner-text" id= <%=member.id %> >Mark Active</div>
-                        </div>
+                    <% if current_user and current_user.is_officer == 1 %>
+                        <% if member.status == "t" %>
+                            <div class="toggle-active-button active" id= <%=member.id %>>
+                            <div class="toggle-inner-text">Mark Inactive</div>
+                            </div>
+                        <% else %> 
+                            <div class="toggle-active-button inactive" id= <%=member.id %>>
+                             <div class="toggle-inner-text" id= <%=member.id %> >Mark Active</div>
+                            </div>
+                        <% end %>
                     <% end %>
+                    
                     
                 </div>
             <% end %>
