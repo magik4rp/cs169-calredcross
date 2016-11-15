@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
     profile_index_path #your path
   end
 
-  
+  def user_sign_in
+    print('~~~~~~~' + params[:controller].to_s)
+    if !current_user
+      redirect_to('/users/sign_in')
+    end
+  end
   
 end

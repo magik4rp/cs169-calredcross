@@ -18,6 +18,7 @@ class User < ApplicationRecord
       self.description  ||= "Here's a short description about yourself. You should update this because you know you better than we know you :) "           #will set the default value only if it's nil
       self.sem_hours ||= 0 #let's you set a default association
       self.total_hours ||= 0
+      self.status ||= true
   end
 
   # Get the list of all members

@@ -9,22 +9,43 @@
     </div>
     <div id="members-container">
         <div class="members-list">
-            <h2>Our Members</h2>
+            <h2 id="members-header">Our Members</h2>
+            <div id="search-members">
+                <input placeholder="Search by member here..." id="search-members-input" type="text">
+            </div>
+            
             <% @members.each do |member| %>
                 <div class="member-row">
                     <div class="member-avatar">
                         <%= image_tag(member.avatar.url(:thumb), :class => "profile-image") %>
                     </div>
                     <div class="member-info">
-                        <p id="member-name"><%= member.name %></p>
-                        <p><img id="email-symbol" src="/images/email.png"><%= member.email %></p>
+                        <div id="member-name"><%= member.name %></div>
+                        <div id="member-email"><img id="email-symbol" src="/images/email.png"><%= member.email %></div>
                     </div>
-                    <div class="member-status">
-                        <p><%= member.status %></p>
-                    </div>
+                    <% if member.status %>
+                        <div class="member-status active">
+                           Active
+                        </div>
+                    <% else %> 
+                        <div class="member-status inactive">
+                           Inactive
+                        </div>
+                    <% end %>
                     <div class="member-contribution">
-                        <p><%= member.total_hours %> Hours</p>
+                        <div id="member-hours"><%= member.total_hours %></div>
+                        <div id="hours">Hours</div>
                     </div>
+                    <% if member.status %>
+                        <div class="toggle-active-button active">
+                        <div class="toggle-inner-text">Mark Inactive</div>
+                        </div>
+                    <% else %> 
+                        <div class="toggle-active-button inactive">
+                         <div class="toggle-inner-text">Mark Active</div>
+                        </div>
+                    <% end %>
+                    
                 </div>
             <% end %>
         </div>
