@@ -12,4 +12,8 @@ class MembersController < ApplicationController
       current_user.updateStatus(user, true)
     end
   end
+  def delete
+    member = params["member"]
+    current_user.deleteMember(member)
+  end
 end

@@ -85,4 +85,13 @@ class User < ApplicationRecord
       member.update_all(:total_hours => new_total_hours)
     end
   end
+  
+  def deleteMember(id)
+    member = User.find(id)
+    if self.is_officer == 1 && id != self.id.to_s
+      member.destroy
+    else
+      print("DID NOT DELETE")
+    end
+  end
 end
