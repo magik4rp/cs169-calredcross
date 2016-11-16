@@ -11,13 +11,7 @@
     <div class="gallery-container">
         <div class="gallery-box">
             <h2>Photos</h2>
-            <!--<button><%= link_to "Add Photos", new_gallery_path %></button>-->
-            
-                <%= form_for current_user, :url => {:action => 'update'}, :html => { :multipart => true } do |form| %>
-                  <%= form.file_field :image %>
-                  <%= form.submit "upload" %>
-                <% end %>
-                <label for="photo_bttn" id="upload-photo">+ Add Photos</label>
+            <button><%= link_to "Add Photos", new_gallery_path %></button>
             
         </div>
         <div class="photos-display">
