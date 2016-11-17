@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :galleries
+  post 'galleries/update', :to => 'galleries#update'
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   resources :news

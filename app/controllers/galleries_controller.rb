@@ -5,6 +5,9 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @galleries = Gallery.all
+    @galleries.each do |gallery| 
+      print("~~~~~~~~~~~~" + gallery.image.file.to_s)
+    end
   end
 
   # GET /galleries/1

@@ -1,31 +1,61 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
 
-<h1>Galleries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.name %></td>
-        <td><%= gallery.description %></td>
-        <td><%= gallery.image %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Gallery', new_gallery_path %>
+<body>
+    <div class="profile-header">
+        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
+    </div>
+    <div id="add-photo-container">
+        <div class="screen"></div>
+        <div id="add-photo-lightbox">
+            <div id="close-photo-lightbox">x</div>
+            <div id="add-photo-lightbox-content">
+                <div id="add-photo-title">Add photos from your computer.</div>
+                <label id="add-photos-label" for="add-photos">+ Select Photos</label>
+                <input type="file" id="add-photos" name="add-photos" multiple>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div id="gallery">
+            <h2 id="photo-title">Photos</h2>
+            <div id="add-photos-button">+ Add Photos</div>
+            <div class="photos-display">
+                <% @galleries.each do |gallery| %>
+                    <div class="photo"><img src=<%= gallery.image %>></div>
+                  <!--<td><%= link_to 'Show', gallery %></td>-->
+                  <!--<td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>-->
+                  <!--<td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+              <% end %>
+            </div>
+        </div>
+    </div>
+    
+  
+  <!--<%= link_to 'New Gallery', new_gallery_path %>-->
+    
+    <script>
+        var closeLightbox = function() {
+            $("#add-photo-container").slideUp( "medium", function() {
+                $(this).hide(); 
+              });
+        }
+        $("input[name=add-photos]").change(function() {
+            var images = [];
+            for (var i = 0; i < $(this).get(0).files.length; ++i) {
+                images.push($(this).get(0).files[i]);
+            }
+            console.log(images);
+            closeLightbox();
+        });
+        $("#close-photo-lightbox").click(function() {
+            closeLightbox();   
+        });
+        $("#add-photos-button").click(function() {
+            $("#add-photo-container").show();
+        })
+    </script>
+</body>
+</html>
