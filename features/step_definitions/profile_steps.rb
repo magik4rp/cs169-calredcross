@@ -174,6 +174,7 @@ Then(/^I fill in total hours with (\d+)$/) do |arg1|
     @hashes[0].is_officer = 0 
     # need to check if I'm an officer or not 
     bool_val = @hashes[0].isOfficer
+    hours_one = @hashes[0].getMemberTotalHours(1)
     @hashes[0].updateTotalHours(1, arg1)
 end
 
