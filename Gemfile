@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 
 #gem 'cucumber-rails'
 
+gem 'coveralls', require: false
 gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.3.6'

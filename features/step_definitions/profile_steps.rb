@@ -4,7 +4,7 @@ Given /the following member exists/ do |members_table|
     #@hashes = []
     one = User.new 
     one.name = "Huda"
-    one.email = "jdoe@berkeley.edu"
+    one.email = "sampleofficer@gmail.com"
     one.major = "CS"
     one.status = "active"
     one.is_officer = 0 
@@ -28,7 +28,6 @@ And /^I click the edit button$/ do
   a= 0 
 end 
 
-<<<<<<< HEAD
 
 
 Then(/^I create the event with name "([^"]*)", DateTime\.new\((\d+),(\d+),(\d+)\), location "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5|
@@ -48,35 +47,6 @@ Then(/^I should see the description as "([^"]*)"$/) do |arg1|
   if @event.description == arg1
     true
   end 
-=======
- 
-When(/^I fill in the name with ' '$/) do
-  member_one = @hashes[0]
-  member_one.editName('')
-  expect(member_one.name == "Error: Put a name longer than one letter").to be(true)
-  
-end
-
-Then(/^I fill in the name with (“.*”)$/) do |value|
-    member_one = @hashes[0] 
-    member_one.editName(value)  
-    if (member_one.name == value)
-      true  
-    end 
-end
-
-When /^(?:|I )press "([^"]*)"$/ do |button|
-  click_button(button)
-end
-
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
-end
-
-
-When /^(?:|I )go to (.+)$/ do |page_name|
-  visit path_to(page_name)
->>>>>>> member-management
 end
 
 Then(/^I edit the name "([^"]*)"$/) do |arg1|
@@ -124,14 +94,20 @@ Then(/^I should see the date as DateTime\.new\((\d+),(\d+),(\d+)\)$/) do |arg1, 
   
 end
 
-<<<<<<< HEAD
  
 When(/^I fill in the name with ' '$/) do
-  member_one = @hashes[0]
-  member_one.editName('')
-  expect(member_one.name == "Error: Put a name longer than one letter").to be(true)
+  @member_two = @hashes[0]
+  @member_two.editName('')
   
 end
+
+Then(/^I will get the message of "([^"]*)"$/) do |arg1|
+  #member_one = @hashes[0]
+  
+  expect(@member_two.name == "Error: Put a name longer than one letter").to be(true)
+  
+end
+
 
 Then(/^I fill in the name with (“.*”)$/) do |value|
     member_one = @hashes[0] 
@@ -146,25 +122,7 @@ When(/^I fill in the ranking to officer$/) do
   member_one.updateRanking(1)
   member_one.updateStatus(1, "active")
 end
-
-
-
-
-When /^(?:|I )press "([^"]*)"$/ do |button|
-  click_button(button)
-end
-
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
-end
-
-
-When /^(?:|I )go to (.+)$/ do |page_name|
-  visit path_to(page_name)
-end
-
- 
- 
+  
 
 Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
   index_two = arg1.length 
@@ -174,8 +132,6 @@ Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
   end  
 end
 
-=======
->>>>>>> member-management
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
   if arg1.length != 0 
     member_one = @hashes[0] 
@@ -196,33 +152,16 @@ end
 
 Then(/^I fill in semester hours with (\d+)$/) do |arg1| 
   @hashes[0].is_officer = 0 
-<<<<<<< HEAD
   @hashes[0].updateSemHours(1 , arg1)
-=======
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
->>>>>>> member-management
 end
 
 Then(/^as an officer, I fill in semester hours with (\d+)$/) do |arg1|
   @hashes[0].is_officer = 1
-<<<<<<< HEAD
   @hashes[0].updateSemHours(1 , arg1)
-=======
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
->>>>>>> member-management
 end
 
 Then(/^as not an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
   if @hashes[0].sem_hours.to_s == arg1 
-<<<<<<< HEAD
-=======
-    true
-  end 
-end
-
-Then(/^as an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].sem_hours.to_s == arg1 
->>>>>>> member-management
     true
   end 
 end
@@ -233,9 +172,9 @@ end
 
 Then(/^I fill in total hours with (\d+)$/) do |arg1|
     @hashes[0].is_officer = 0 
-<<<<<<< HEAD
     # need to check if I'm an officer or not 
     bool_val = @hashes[0].isOfficer
+    hours_one = @hashes[0].getMemberTotalHours(1)
     @hashes[0].updateTotalHours(1, arg1)
 end
 
@@ -247,32 +186,11 @@ end
 When(/^as an officer, I fill in total hours with (\d+)$/) do |arg1|
     @hashes[0].is_officer = 1  
     bool_val = @hashes[0].isOfficer
-    @hashes[0].updateTotalHours(1, arg1)
+    @hashes[0].updateTotalHours(1, arg1.to_i)
 end
 
 Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|
   @hashes[0].total_hours.to_s == arg1 
-=======
-    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
-end
-
-Then(/^I should see total hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].total_hours.to_s == arg1 
-    true 
-  end 
-end
-
-
-When(/^as an officer, I fill in total hours with (\d+)$/) do |arg1|
-    @hashes[0].is_officer = 1 
-    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
-end
-
-Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].total_hours.to_s == arg1 
-    true 
-  end 
->>>>>>> member-management
 end
 
 When(/^I like the photo "([^"]*)"$/) do |arg1|
@@ -296,29 +214,53 @@ Then(/^I should see "([^"]*)" in the gallery page$/) do |arg1|
 end
 
 When(/^I fill in the semester hours for member "([^"]*)" with (\d+)$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1 
+  @user2 = @hashes[0].getMember(1) #extract info 
+  #expect(@user2.name).to eq(arg1)
+  name_one = @hashes[0].getMemberName(1) #extract info
+  email_one = @hashes[0].getMemberEmail(1)
+  sem_hours = @hashes[0].getMemberSemHours(1)
+  @hashes[0].updateSemHours(1, arg2.to_i)
+  @user3 = @hashes[0].getMember(1)
+  @user3.total_hours = 13 
+  #print(@user3.sem_hours)
+  #print(@user3.total_hours)
+ # num_hours = @hashes[0].getMemberTotalHours(@user2.id)
+#  @user2.updateTotalHours(@user2.id, num_hours.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the total hours should be (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user3.total_hours.to_i).to eq(arg1.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the semester hours should be (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user3.sem_hours.to_i).to eq(arg1.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 When(/^I fill in the semester hours for member "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1 
+  @user2 = @hashes[0].getMember(1)
+  @sem_hours = @hashes[0].getMemberSemHours(1)
+  @hours = @hashes[0].updateSemHours(1, arg2)
+  
 end
 
 Then(/^I should see message "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@hours).to eq("Not an actual number, try again.")
 end
 
 When(/^I click the status for member "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1
+  @hashes[0].updateStatus(1, "inactive")
+  @user4 = User.find(1)
+ # print(@user4.status)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the status for member "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user4.status).to eq(arg2)
+  #pending # Write code here that turns the phrase above into concrete actions
 end

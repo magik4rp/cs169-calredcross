@@ -65,17 +65,17 @@ class User < ApplicationRecord
     return member.name
   end
   
-  def getMemberEmail
+  def getMemberEmail(id)
     member = User.find(id)
     return member.email
   end
   
-  def getMemberTotalHours
+  def getMemberTotalHours(id)
     member = User.find(id)
     return member.total_hours
   end
   
-  def getMemberSemHours
+  def getMemberSemHours(id)
     member = User.find(id)
     return member.sem_hours
   end
@@ -99,16 +99,24 @@ class User < ApplicationRecord
   def updateSemHours(id, new_sem_hours)
     member = User.find(id)
     old_hours = member.sem_hours
-    if self.is_officer == 1
-      member.update_attribute(:sem_hours, old_hours + new_sem_hours)
-    end
+    if new_sem_hours.is_a? Numeric
+      if self.is_officer == 1
+        member.update_attribute(:sem_hours, old_hours.to_i + new_sem_hours.to_i)
+      end
+    else 
+      return "Not an actual number, try again."
+    end 
   end
   
   def updateTotalHours(id, new_total_hours)
     member = User.find(id)
     old_hours = member.total_hours
     if self.is_officer == 1
+<<<<<<< HEAD
       member.update_attributey(:total_hours, old_hours + new_total_hours)
+=======
+      member.update_attribute(:total_hours, (old_hours.to_i + new_total_hours.to_i))
+>>>>>>> 613820a1e30a27ec86d8d272aad6df14ff156acd
     end
   end
   
