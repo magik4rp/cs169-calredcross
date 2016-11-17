@@ -129,6 +129,12 @@ body {
     position: relative;
 }
 
+#member-details-name {
+    margin: 10px;
+    font-size: 25px;
+    position: relative;
+}
+
 #member-email {
     position: relative;
 }
@@ -203,6 +209,13 @@ body {
     color: black;
     cursor: pointer;
 }
+.delete-bttn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: black;
+    cursor: pointer;
+}
 .delete-member:hover .delete-member-help {
     opacity: 0.6;
 }
@@ -235,6 +248,14 @@ body {
     z-index: 10;
     display: none;
 }
+#member-details-lightbox-container {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
 .screen {
     background-color: black;
     opacity: 0.6;
@@ -252,6 +273,21 @@ body {
     top: 50%;
     transform: translateY(-50%);
     padding: 15px;
+}
+#member-details-lightbox {
+    background-color: white;
+    height: 400px;
+    width: 360px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+}
+.member-details {
+    text-align: center;
+    margin-top: 30px;
 }
 #delete-member-title {
     text-align: center;
@@ -309,4 +345,23 @@ body {
 .no-button:hover {
     background-color: #E2231A;
     color: white;
+}
+.add-hours-form {
+    margin-top: 30px;
+}
+.add-hours {
+    padding: 20px;
+    margin: auto;
+    width: 250px;
+    border: 1px solid black;
+}
+.add-hours-bttn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 12px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

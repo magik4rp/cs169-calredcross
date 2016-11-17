@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   post 'members/update', :to => 'members#update'
+  post 'members/update_hours', :to => 'members#update_hours'
   post 'members/delete', :to => 'members#delete'
+  get 'members/show', :to => 'members#show'
   resources :news
   resources :posts
  # devise_for :users
