@@ -47,6 +47,7 @@ body {
     -webkit-transition: 0.5s;
 }
 .member-row {
+    cursor: pointer;
     position: relative;
     display: block;
     background-color: #FFFFFF;
@@ -130,8 +131,9 @@ body {
 }
 
 #member-details-name {
-    margin: 10px;
-    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 22px;
     position: relative;
 }
 
@@ -277,7 +279,7 @@ body {
 #member-details-lightbox {
     background-color: white;
     height: 400px;
-    width: 360px;
+    width: 340px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -287,7 +289,9 @@ body {
 }
 .member-details {
     text-align: center;
-    margin-top: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 #delete-member-title {
     text-align: center;
@@ -364,4 +368,51 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+#member-details-email {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+}
+#member-email-symbol {
+    height: 10px;
+    position: relative;
+    display: inline-block;
+}
+.member-details-image {
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 5px;
+}
+#member-details-line {
+    border-bottom: solid black 2px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+#member-details-total-hours {
+    font-family: Bold;
+    font-size: 16px;
+}
+#member-details-sem-hours {
+    font-family: Bold;
+    font-size: 16px;
+}
+.member-hours {
+    display: inline-block;
+    position: relative;
+}
+// .total {
+//     float: left;
+// }
+
+.sem {
+    margin-left: 20px;
+}
+.add-hours {
+    margin-right: 0px !important;
+    display: inline-block;
 }

@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   
   def index
+    current_user.update_attribute(:is_officer, 1)
     @members = User.getMembers
     @is_officer = false 
     if current_user and current_user.is_officer == 1
