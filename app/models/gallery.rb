@@ -2,6 +2,7 @@ class Gallery < ApplicationRecord
     mount_uploader :image, ImageUploader
     validates_processing_of :image
     validate :image_size_validation
+    belongs_to :users
     
     private
       def image_size_validation

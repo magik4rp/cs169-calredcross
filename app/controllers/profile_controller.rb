@@ -11,6 +11,8 @@ class ProfileController < ApplicationController
       @level = "bronze_medal.png"
     end
   end
+  
+  #hi
 
   def update
     @user = current_user 
