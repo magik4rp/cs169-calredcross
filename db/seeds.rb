@@ -22,7 +22,7 @@ User.create!([{
   level: "gold",
   description: "The first dummy officer account",
   event_id: 1
-},])
+}])
 
 p "Created #{User.count} users"
 

@@ -15,9 +15,7 @@ Then /^I see all members/ do
   Users.all
 end
 
-And /I am on the (".*") page/ do 
-  pending 
-end 
+
 
 And /I fill in name with (".*")/ do |value|
   fill_in "user_name", :with => value

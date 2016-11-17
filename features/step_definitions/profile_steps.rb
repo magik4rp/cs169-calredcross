@@ -122,12 +122,7 @@ When(/^I fill in the ranking to officer$/) do
   member_one.updateRanking(1)
   member_one.updateStatus(1, "active")
 end
- 
-
- 
-
- 
- 
+  
 
 Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
   index_two = arg1.length 
@@ -218,7 +213,11 @@ Then(/^I should see "([^"]*)" in the gallery page$/) do |arg1|
 end
 
 When(/^I fill in the semester hours for member "([^"]*)" with (\d+)$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1 
+  @user2 = @hashes[0].getMember(1)
+ # num_hours = @hashes[0].getMemberTotalHours(@user2.id)
+#  @user2.updateTotalHours(@user2.id, num_hours.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the total hours should be (\d+)$/) do |arg1|
