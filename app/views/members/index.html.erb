@@ -26,7 +26,7 @@
                 <%= image_tag("/images/thumb/missing_ava.png", :class => "member-details-image") %>
             </div>
             <div id="member-details-name">John Doe</div>
-            <div id="memberdetails-email"><img id="email-symbol" src="/images/email.png">jdoe@gmail.com</div>
+            <div id="member-details-email"><img id="email-symbol" src="/images/email.png">jdoe@gmail.com</div>
             <div class="member-hours">
                 <div id="member-details-total-hours">0</div>
                 <div class="member-hours-text">Total hours</div>
@@ -147,6 +147,8 @@
                             console.log(data);
                             $("#member-details-name").text(data.name);
                             $("#member-details-email").text(data.email);
+                            $("#member-details-total-hours").text(data.total_hours);
+                            $("#member-details-sem-hours").text(data.sem_hours);
                         }
                       });
             
