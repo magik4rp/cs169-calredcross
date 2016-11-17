@@ -63,6 +63,8 @@
             $("#add-photo-container").show();
         });
         $(".save-photo").click(function() {
+            var image = $(this).next().attr("src");
+            console.log(image);
             $(this).text("✓");
         });
     </script>
