@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
+  config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
 
   # GET /galleries
   # GET /galleries.json

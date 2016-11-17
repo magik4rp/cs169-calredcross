@@ -3,6 +3,7 @@ class Gallery < ApplicationRecord
     validates_processing_of :image
     validate :image_size_validation
     belongs_to :users
+    config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
     
     private
       def image_size_validation
