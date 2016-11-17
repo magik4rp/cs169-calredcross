@@ -15,6 +15,9 @@ class GalleriesController < ApplicationController
   
   def addPhoto
     photo = params["image"]
+    params.keys.each do |key|
+      print("~~~~~~" + key.to_s)
+    end
     File.open("photo", 'wb') do |f|
       f.write photo
       @gallery = Gallery.new(photo)
