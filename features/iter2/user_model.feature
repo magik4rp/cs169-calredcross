@@ -46,7 +46,7 @@ Scenario: user updates total hours # sad path because not an officer
   And I click the edit button 
 	And I fill in total hours with 50  
 	Then I should see total hours updated with "10" 
- 
+	
 Scenario: user updates total hours # happy path because an officer
   When I go to the login page 
 	And  I fill in name with "Curry"

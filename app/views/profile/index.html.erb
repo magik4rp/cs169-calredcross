@@ -13,6 +13,10 @@
             <div id="edit-container">
                 <img src="images/white_edit.png" id="top-edit">
             </div>
+            <div id="edit-help">
+                Click here to toggle edit your profile. Editable text will turn red, uneditable text will turn black.
+                <div id="edit-help-carrot"></div>
+            </div>
             <div class="avatar">
                 <%= image_tag(current_user.avatar.url(:thumb), :class => "profile-image") %>
                 <%= form_for current_user, :url => {:action => 'update'}, :html => { :multipart => true } do |form| %>
@@ -25,7 +29,11 @@
             <div class="personal-info">
                 <div id="name-section">
                     <div id="profile-name"><%= current_user.name %></div>
-                    <div id="status-badge">Active</div>
+                    <% if current_user.status == "t" %>
+                        <div id="status-badge" class="active">Active</div>
+                    <% else %>
+                        <div id="status-badge" class="inactive">Inactive</div>
+                    <% end %>
                 </div>
                 <img id="email-symbol" src="/images/email.png"><p id="profile-email"><%= current_user.email %></p>
                 <div id="about-me">
@@ -35,17 +43,15 @@
     
             <div class="contribution">
                 <div class="hours">
-                    <!--<%= current_user.sem_hours %> -->
-                    <div class="num-hours">5</div>
+                    <div class="num-hours"><%= current_user.sem_hours %></div>
                     <p class="hours-text">Semester hours</p>
                 </div>
                 <div class="hours">
-                    <%= image_tag(@level, :class => "tagged-photo") %>
+                    <%= image_tag(@level) %>
                     <p class="hours-text">Level</p>
                 </div>
                 <div class="hours">
-                    <!--<%= current_user.total_hours %>-->
-                    <div class="num-hours">10</div>
+                    <div class="num-hours"><%= current_user.total_hours %></div>
                     <p class="hours-text">Total hours</p>
                 </div>
             </div>
@@ -54,26 +60,33 @@
         <div class="bottom-section">
             <div class="event">
                 <h2>Events</h2>
-                <div id="event-timeline">
-                    <% @events.last(6).each do |event| %>
-                       <div class="event-object">
-                           <% if event.date.today? %>
-                               <div class="event-today">
-                                    <%= event.date.strftime("%b %d") %>
+                <% if !@events.empty? %>
+                    <div id="event-timeline">
+                        <% @events.last(6).each do |event| %>
+                           <div class="event-object">
+                               <% if event.date.today? %>
+                                   <div class="event-today">
+                                        <%= event.date.strftime("%b %d") %>
+                                    </div>
+                                <% else %>
+                                    <div class="event-date">
+                                        <b><%= event.date.strftime("%b %d") %></b>
+                                    </div>
+                                <% end %>
+                                <div class= "event-dot">
                                 </div>
-                            <% else %>
-                                <div class="event-date">
-                                    <b><%= event.date.strftime("%b %d") %></b>
+                                <div class= "event-name">
+                                    <%= event.name %>
                                 </div>
-                            <% end %>
-                            <div class= "event-dot">
                             </div>
-                            <div class= "event-name">
-                                <%= event.name %>
-                            </div>
-                        </div>
-                    <%end %>
-                </div>
+                        <%end %>
+                    </div>
+                <% end %>
+                <% if @events.empty? %>
+                    <div id="no-events">
+                        No events to see here.
+                    </div>
+                <% end %>
             </div>
             
             <div class="tagged-pics">
@@ -98,7 +111,6 @@
                         async : false,
                         context : document.body,
                         success : function(response) {
-                            alert("Done");
                         }
                       });
                 }

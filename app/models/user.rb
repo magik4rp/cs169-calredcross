@@ -6,11 +6,26 @@ class User < ApplicationRecord
   # Set validation
   validates :name, :email, :major, presence: true
   
-  
+  # Set default values for description.
+  after_initialize :init
+ 
   # Set default avatar to be /public/images/missing_ava.png
   has_attached_file :avatar, :styles => { :medium => "225x225>", :thumb => "100x100#" }, :default_url => "/images/:style/missing_ava.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  # Initialize default values.
+  def init
+      self.description  ||= "Here's a short description about yourself. You should update this because you know you better than we know you :) "           #will set the default value only if it's nil
+      self.sem_hours ||= 0 #let's you set a default association
+      self.total_hours ||= 0
+      self.status ||= true
+  end
+
+  # Get the list of all members
+  def self.getMembers
+    User.all()
+  end
+  
   # Actions can be done by any member
   def isOfficer
     if self.is_officer == 1
@@ -41,6 +56,30 @@ class User < ApplicationRecord
   end
   
   # Actions only happen iff the current user is an officer
+  def getMember(id)
+    member = User.find(id)
+    return member
+  end
+  def getMemberName(id)
+    member = User.find(id)
+    return member.name
+  end
+  
+  def getMemberEmail
+    member = User.find(id)
+    return member.email
+  end
+  
+  def getMemberTotalHours
+    member = User.find(id)
+    return member.total_hours
+  end
+  
+  def getMemberSemHours
+    member = User.find(id)
+    return member.sem_hours
+  end
+  
   def updateRanking(id)
     member = User.find(id)
     if self.is_officer == 1
@@ -58,17 +97,27 @@ class User < ApplicationRecord
   
   # Need modification for the level according to the new sem_hours and total_hours
   def updateSemHours(id, new_sem_hours)
-    
-    member = User.find(id) 
-    if self.is_officer == 1 
-      member.update_attribute(:sem_hours, new_sem_hours)
+    member = User.find(id)
+    old_hours = member.sem_hours
+    if self.is_officer == 1
+      member.update_attribute(:sem_hours, old_hours + new_sem_hours)
     end
   end
   
   def updateTotalHours(id, new_total_hours)
     member = User.find(id)
+    old_hours = member.total_hours
     if self.is_officer == 1
-      member.update_attribute(:total_hours, new_total_hours)
+      member.update_attribute(:total_hours, old_hours + new_total_hours)
+    end
+  end
+  
+  def deleteMember(id)
+    member = User.find(id)
+    if self.is_officer == 1 && id != self.id.to_s
+      member.destroy
+    else
+      print("DID NOT DELETE")
     end
   end
   

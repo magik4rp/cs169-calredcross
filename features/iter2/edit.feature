@@ -54,7 +54,8 @@ Scenario: user updates name
 	And  I press "Sign up" 
     And I am on the profile page 
     And I click the edit button  
-	And I fill in the name with ' '  
+	And I fill in the name with ' '
+	Then I will get the message of "Error: No name"   
 
 Scenario: user updates description  
   	When I go to the login page 

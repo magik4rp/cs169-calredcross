@@ -5,6 +5,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+  overflow: scroll !important;
 }
 
 p, ol, ul, td {
@@ -22,13 +23,15 @@ pre {
 
 a {
   color: #000;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
 
   &:visited {
     color: #666;
   }
 
   &:hover {
-    color: #fff;
+    color: red;
     background-color: #000;
   }
 }

@@ -49,15 +49,10 @@ Then /I should be (".*")/ do
   pending 
 end 
   
-#Then /I see all of members/ do
-#  @members = Users.all
-#  num_rows = page.all("table#members tbody tr").count
-#  expect(num_rows).to eq(@members.size)
-#end
-
-When(/^I fill in the avatar with “one\.jpg”$/) do
-  val_one = @hashes[0]  
-  val_one.editAvatar("one.jpg")
+Then /I see all of members/ do
+  @members = Users.all
+  num_rows = page.all("table#members tbody tr").count
+  expect(num_rows).to eq(@members.size)
 end
 
 
