@@ -112,11 +112,7 @@ class User < ApplicationRecord
     member = User.find(id)
     old_hours = member.total_hours
     if self.is_officer == 1
-<<<<<<< HEAD
-      member.update_attributey(:total_hours, old_hours + new_total_hours)
-=======
       member.update_attribute(:total_hours, (old_hours.to_i + new_total_hours.to_i))
->>>>>>> 613820a1e30a27ec86d8d272aad6df14ff156acd
     end
   end
   
