@@ -50,12 +50,7 @@ ActiveRecord::Schema.define(version: 20161113191130) do
     t.datetime "updated_at",                                null: false
     t.string   "major"
     t.string   "name"
-
-    t.integer  "is_officer",             default: 0
-    t.integer  "sem_hours",              default: 0
-    t.integer  "total_hours",            default: 0
     t.string   "status",                 default: "Active"
-
     t.string   "level"
     t.text     "description"
     t.string   "avatar_file_name"
