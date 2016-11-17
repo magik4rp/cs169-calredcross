@@ -20,15 +20,21 @@
     </div>
     <div class="gallery-container">
         <div id="gallery">
-            <h2 id="photo-title">Photos</h2>
-            <div id="add-photos-button">+ Add Photos</div>
+            <div class="photos-title">
+                <h2 id="photo-title">Photos</h2>
+                <div id="add-photos-button">+ Add Photos</div> 
+            </div>
             <div class="photos-display">
-                <% @galleries.each do |gallery| %>
-                    <div class="photo"><img src=<%= gallery.image %>></div>
+                <div class="photo-container">
+                    <div class="save-photo">+</div>
+                    <img class="photo" src="images/example.jpg">
+                </div>
+              <!--  <% @galleries.each do |gallery| %>-->
+              <!--      <div class="photo"><img src=<%= gallery.image %>></div>-->
                   <!--<td><%= link_to 'Show', gallery %></td>-->
                   <!--<td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>-->
                   <!--<td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-              <% end %>
+              <!--<% end %>-->
             </div>
         </div>
     </div>
@@ -55,7 +61,10 @@
         });
         $("#add-photos-button").click(function() {
             $("#add-photo-container").show();
-        })
+        });
+        $(".save-photo").click(function() {
+            $(this).text("✓");
+        });
     </script>
 </body>
 </html>
