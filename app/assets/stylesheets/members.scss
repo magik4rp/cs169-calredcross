@@ -47,6 +47,7 @@ body {
     -webkit-transition: 0.5s;
 }
 .member-row {
+    cursor: pointer;
     position: relative;
     display: block;
     background-color: #FFFFFF;
@@ -126,6 +127,13 @@ body {
 
 .member-name {
     font-size: 20px;
+    position: relative;
+}
+
+#member-details-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 22px;
     position: relative;
 }
 
@@ -270,14 +278,20 @@ body {
 }
 #member-details-lightbox {
     background-color: white;
-    height: 300px;
-    width: 400px;
+    height: 400px;
+    width: 340px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     top: 50%;
     transform: translateY(-50%);
     padding: 15px;
+}
+.member-details {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 #delete-member-title {
     text-align: center;
@@ -336,16 +350,16 @@ body {
     background-color: #E2231A;
     color: white;
 }
-
+.add-hours-form {
+    margin-top: 30px;
+}
 .add-hours {
     padding: 20px;
-    margin-left: 20px;
-    margin-bottom: 10px;
+    margin: auto;
     width: 250px;
     border: 1px solid black;
 }
 .add-hours-bttn {
-    margin-left: 0px;
     background-color: black;
     border: none;
     color: white;
@@ -354,4 +368,51 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+#member-details-email {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+}
+#member-email-symbol {
+    height: 10px;
+    position: relative;
+    display: inline-block;
+}
+.member-details-image {
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 5px;
+}
+#member-details-line {
+    border-bottom: solid black 2px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+#member-details-total-hours {
+    font-family: Bold;
+    font-size: 16px;
+}
+#member-details-sem-hours {
+    font-family: Bold;
+    font-size: 16px;
+}
+.member-hours {
+    display: inline-block;
+    position: relative;
+}
+// .total {
+//     float: left;
+// }
+
+.sem {
+    margin-left: 20px;
+}
+.add-hours {
+    margin-right: 0px !important;
+    display: inline-block;
 }
