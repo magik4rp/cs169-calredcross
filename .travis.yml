@@ -21,7 +21,8 @@ script:
 #  - bin/rails db:migrate RAILS_ENV=test
 #  - bundle exec rspec 
 #   - bundle exec cucumber
-  - bundle exec rake
+   - bundle exec rake :test_with_coveralls
+#  - bundle exec rake
     
 after_script:
   - bundle exec rake send_to_codeclimate 
