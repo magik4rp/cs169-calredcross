@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name 
     when /^the login page$/ then '/users/sign_up'
     #when /^the gallery page$/ then '/users/sign_up'
-   # when /^the membership page$/ then '/users/sign_in'
+    when /^the membership page$/ then '/members'
       
 #    when /^the successful sign up page$/ then '/news'
       

@@ -26,9 +26,7 @@ end
 
 And /^I click the edit button$/ do 
   a= 0 
-end 
-
-<<<<<<< HEAD
+end  
 
 
 Then(/^I create the event with name "([^"]*)", DateTime\.new\((\d+),(\d+),(\d+)\), location "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5|
@@ -47,8 +45,7 @@ end
 Then(/^I should see the description as "([^"]*)"$/) do |arg1|
   if @event.description == arg1
     true
-  end 
-=======
+  end  
  
 When(/^I fill in the name with ' '$/) do
   member_one = @hashes[0]
@@ -75,8 +72,7 @@ end
 
 
 When /^(?:|I )go to (.+)$/ do |page_name|
-  visit path_to(page_name)
->>>>>>> member-management
+  visit path_to(page_name) 
 end
 
 Then(/^I edit the name "([^"]*)"$/) do |arg1|
@@ -91,8 +87,7 @@ end
 
 Then(/^I edit the date DateTime\.new\((\d+),(\d+),(\d+)\)$/) do |arg1, arg2, arg3|
   event_two = DateTime.new(arg1.to_i, arg2.to_i, arg3.to_i)
-  @event.editDate(event_two)
-  # Write code here that turns the phrase above into concrete actions
+  @event.editDate(event_two) 
 end
 
 
@@ -123,8 +118,7 @@ Then(/^I should see the date as DateTime\.new\((\d+),(\d+),(\d+)\)$/) do |arg1, 
   end 
   
 end
-
-<<<<<<< HEAD
+ 
  
 When(/^I fill in the name with ' '$/) do
   member_one = @hashes[0]
@@ -173,9 +167,7 @@ Then(/^I should see name updated with "([^"]*)"$/) do |arg1|
     true 
   end  
 end
-
-=======
->>>>>>> member-management
+ 
 Then(/^I fill in the description with "([^"]*)"$/) do |arg1|
   if arg1.length != 0 
     member_one = @hashes[0] 
@@ -195,34 +187,25 @@ end
 
 
 Then(/^I fill in semester hours with (\d+)$/) do |arg1| 
-  @hashes[0].is_officer = 0 
-<<<<<<< HEAD
-  @hashes[0].updateSemHours(1 , arg1)
-=======
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
->>>>>>> member-management
+  @hashes[0].is_officer = 0  
+  @hashes[0].updateSemHours(1 , arg1) 
+  @hashes[0].updateSemHours(@hashes[0].email , arg1) 
 end
 
 Then(/^as an officer, I fill in semester hours with (\d+)$/) do |arg1|
-  @hashes[0].is_officer = 1
-<<<<<<< HEAD
-  @hashes[0].updateSemHours(1 , arg1)
-=======
-  @hashes[0].updateSemHours(@hashes[0].email , arg1)
->>>>>>> member-management
+  @hashes[0].is_officer = 1 
+  @hashes[0].updateSemHours(1 , arg1) 
+  @hashes[0].updateSemHours(@hashes[0].email , arg1) 
 end
 
 Then(/^as not an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
   if @hashes[0].sem_hours.to_s == arg1 
-<<<<<<< HEAD
-=======
     true
   end 
 end
 
 Then(/^as an officer, I should see semester hours updated with "([^"]*)"$/) do |arg1|
-  if @hashes[0].sem_hours.to_s == arg1 
->>>>>>> member-management
+  if @hashes[0].sem_hours.to_s == arg1  
     true
   end 
 end
@@ -233,7 +216,6 @@ end
 
 Then(/^I fill in total hours with (\d+)$/) do |arg1|
     @hashes[0].is_officer = 0 
-<<<<<<< HEAD
     # need to check if I'm an officer or not 
     bool_val = @hashes[0].isOfficer
     @hashes[0].updateTotalHours(1, arg1)
@@ -251,9 +233,8 @@ When(/^as an officer, I fill in total hours with (\d+)$/) do |arg1|
 end
 
 Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|
-  @hashes[0].total_hours.to_s == arg1 
-=======
-    @hashes[0].updateTotalHours(@hashes[0].email, arg1)
+  @hashes[0].total_hours.to_s == arg1  
+  @hashes[0].updateTotalHours(@hashes[0].email, arg1)
 end
 
 Then(/^I should see total hours updated with "([^"]*)"$/) do |arg1|
@@ -271,8 +252,7 @@ end
 Then(/^as an officer, I should see total hours updated with "([^"]*)"$/) do |arg1|
   if @hashes[0].total_hours.to_s == arg1 
     true 
-  end 
->>>>>>> member-management
+  end  
 end
 
 When(/^I like the photo "([^"]*)"$/) do |arg1|
@@ -321,4 +301,6 @@ end
 
 Then(/^the status for member "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
-end
+end 
+
+end 
