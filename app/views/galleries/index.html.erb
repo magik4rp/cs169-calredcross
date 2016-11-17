@@ -50,7 +50,7 @@
             for (var i = 0; i < $(this).get(0).files.length; ++i) {
                 images.push($(this).get(0).files[i]);
                 var image = $(this).get(0).files[i];
-                console.log(image);
+                console.log("Image: " + image);
                 $.ajax({
                         type : 'post',
                         url : "/galleries/add-photo",
@@ -59,9 +59,10 @@
                         async : false,
                         context : $(this),
                         success : function(response) {
-                            $(".photos-display").append(
-                                "<div class='photo-container'> <div class='save-photo'>+</div> <img class='photo' id=<%= gallery.id %> src=<%= gallery.image %>><div class='photo-date'> <%= gallery.created_at%> </div></div>"
-                                );
+                            // var gallery = response;
+                            // console.log("Gallery: " + gallery);
+                            
+                            
                         },
                         contentType: false,
                         processData: false

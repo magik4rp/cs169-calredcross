@@ -15,6 +15,14 @@ class GalleriesController < ApplicationController
   
   def addPhoto
     photo = params["image"]
+    File.open("photo", 'wb') do |f|
+      f.write photo
+      @gallery = Gallery.new(photo)
+      @gallery.save
+    end
+    # @gallery = Gallery.new(photo)
+    # @gallery.save
+    render json: @gallery
     # print(params.keys)
     # File.open('somewhere') do |f|
     #   u.avatar = f
@@ -22,6 +30,7 @@ class GalleriesController < ApplicationController
     # print("~~~~~~~~~~" + photo.to_s)
     # current_user.galleries << Gallery.find(photo_id)
   end
+  
   # GET /galleries/1
   # GET /galleries/1.json
   def show
