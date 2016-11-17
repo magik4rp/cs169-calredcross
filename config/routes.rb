@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :galleries
   post 'galleries/update', :to => 'galleries#update'
   post 'galleries/add-favorite', :to => 'galleries#addFavorite'
+  post 'galleries/add-photo', :to => 'galleries#addPhoto'
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   resources :news

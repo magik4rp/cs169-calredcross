@@ -5,15 +5,22 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @galleries = Gallery.all
-    @galleries.each do |gallery| 
-      print("~~~~~~~~~~~~" + gallery.image.file.to_s)
-    end
   end
 
   def addFavorite
     photo_id = params["image"]
     print(photo_id)
     current_user.galleries << Gallery.find(photo_id)
+  end
+  
+  def addPhoto
+    photo = params["image"]
+    # print(params.keys)
+    # File.open('somewhere') do |f|
+    #   u.avatar = f
+    # end
+    # print("~~~~~~~~~~" + photo.to_s)
+    # current_user.galleries << Gallery.find(photo_id)
   end
   # GET /galleries/1
   # GET /galleries/1.json
