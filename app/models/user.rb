@@ -100,7 +100,7 @@ class User < ApplicationRecord
     member = User.find(id)
     old_hours = member.sem_hours
     if self.is_officer == 1
-      member.update_attribute(:sem_hours, old_hours + new_sem_hours)
+      member.update_attribute(:sem_hours, old_hours.to_i + new_sem_hours.to_i)
     end
   end
   
@@ -108,7 +108,7 @@ class User < ApplicationRecord
     member = User.find(id)
     old_hours = member.total_hours
     if self.is_officer == 1
-      member.update_attribute(:total_hours, old_hours + new_total_hours)
+      member.update_attribute(:total_hours, (old_hours.to_i + new_total_hours.to_i))
     end
   end
   

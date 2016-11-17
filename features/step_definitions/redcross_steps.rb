@@ -23,6 +23,11 @@ And /I fill in name with (".*")/ do |value|
   fill_in "user_name", :with => value
 end 
 
+When(/^I fill in the avatar with “one\.jpg”$/) do
+  val_one = @hashes[0]  
+  val_one.editAvatar("one.jpg")
+end
+
 And /I fill in major with (".*")/ do |value|
   fill_in "user_major", :with => value 
 end 
