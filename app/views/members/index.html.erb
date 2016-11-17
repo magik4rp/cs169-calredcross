@@ -15,9 +15,35 @@
                     <div class="lightbox-button yes-button">Yes</div>
                 </div>
             </div>
+        </div>
+    </div>
+    
+    <div id="member-details-lightbox-container">
+        <div class="screen"></div>
+        <div id="member-details-lightbox">
+            <div class="delete-bttn">x</div>
+            <div id="member-details-avatar">
+                <%= image_tag("/images/thumb/missing_ava.png", :class => "member-details-image") %>
+            </div>
+            <div id="member-details-name">John Doe</div>
+            <div id="memberdetails-email"><img id="email-symbol" src="/images/email.png">jdoe@gmail.com</div>
+            <div class="member-hours">
+                <div id="member-details-total-hours">0</div>
+                <div class="member-hours-text">Total hours</div>
+            </div>
+            <div class="member-hours">
+                <div id="member-details-sem-hours">0</div>
+                <div class="member-hours-text">Semester hours</div>
+            </div>
+            <div class="add-hours-form">
+                <input type="text" name="name" placeholder="Add Hours..." class="add-hours">
+                <button class="add-hours-bttn">+</button>
+            </div>
             
         </div>
     </div>
+    
+    
     <div class="members-header">
         <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
     </div>
@@ -31,7 +57,7 @@
             
             <% @members.each do |member| %>
                 <div class="<%= @is_officer ? 'member-row' : 'member-row-nonofficer' %>" id= <%=member.id %>>
-                    <div class="member-avatar">
+                    <div class="member-avatar" id=<%= member.id %>>
                         <%= image_tag(member.avatar.url(:thumb), :class => "profile-image") %>
                     </div>
                     <div class="member-info">
@@ -82,11 +108,62 @@
         </div>
     </div>
     <script>
+        $('.add-hours-bttn').click(function() {
+            console.log("Add Hours");
+            var id = $(this).attr("id");
+            if ($(".add-hours").val()) {
+                var hours = $(".add-hours").val();
+                console.log("Hours: " + hours);
+                
+                $.ajax({
+                        type : 'post',
+                        url : "/members/update_hours",
+                        data : {"member": id, "added_hours": hours
+                        },    
+                        dataType : 'json',
+                        async : false,
+                        context : document.body,
+                        success : function(response) {
+                        }
+                      });
+                $(".add-hours").val('');
+            };
+            
+            $("#member-details-lightbox-container").hide();
+        });
+        $('.member-avatar').click(function() {
+            console.log("Member clicked");
+            var id = $(this).attr("id");
+            var result;
+            $.ajax({
+                        type : 'get',
+                        url : "/members/show",
+                        data : {"member": id
+                        },    
+                        dataType : 'json',
+                        async : false,
+                        context : document.body,
+                        success : function(data) {
+                            console.log(data);
+                            $("#member-details-name").text(data.name);
+                            $("#member-details-email").text(data.email);
+                        }
+                      });
+            
+            var img = $(".profile-image").attr("src");
+            $(".member-details-image").attr("src", img);
+            $("#member-details-lightbox-container").show();
+            $(".add-hours-bttn").attr("id", id);
+        });
+        $('.delete-bttn').click(function() {
+            $("#member-details-lightbox-container").hide();
+        });
         $('.delete-member').click(function() {
             console.log("Deleted member");
             var id = $(this).attr("id");
             var nameID = ".member-name#" + id
             var name = $(nameID).innerHTML;
+            console.log(name);
             $("#delete-member-name").text(name);
             $("#lightbox-container").show();
             $(".lightbox-button").attr("id", id);

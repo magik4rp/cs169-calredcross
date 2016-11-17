@@ -203,6 +203,13 @@ body {
     color: black;
     cursor: pointer;
 }
+.delete-bttn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: black;
+    cursor: pointer;
+}
 .delete-member:hover .delete-member-help {
     opacity: 0.6;
 }
@@ -235,6 +242,14 @@ body {
     z-index: 10;
     display: none;
 }
+#member-details-lightbox-container {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
 .screen {
     background-color: black;
     opacity: 0.6;
@@ -243,6 +258,17 @@ body {
     position: fixed;
 }
 #delete-member-lightbox {
+    background-color: white;
+    height: 300px;
+    width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+}
+#member-details-lightbox {
     background-color: white;
     height: 300px;
     width: 400px;
@@ -309,4 +335,23 @@ body {
 .no-button:hover {
     background-color: #E2231A;
     color: white;
+}
+
+.add-hours {
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 250px;
+    border: 1px solid black;
+}
+.add-hours-bttn {
+    margin-left: 0px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 12px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
