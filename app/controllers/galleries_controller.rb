@@ -10,6 +10,11 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def addFavorite
+    photo_id = params["image"]
+    print(photo_id)
+    current_user.galleries << Gallery.find(photo_id)
+  end
   # GET /galleries/1
   # GET /galleries/1.json
   def show
@@ -74,4 +79,5 @@ class GalleriesController < ApplicationController
     def gallery_params
       params.require(:gallery).permit(:name, :description, :image)
     end
+    
 end

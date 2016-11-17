@@ -25,16 +25,13 @@
                 <div id="add-photos-button">+ Add Photos</div> 
             </div>
             <div class="photos-display">
-                <div class="photo-container">
-                    <div class="save-photo">+</div>
-                    <img class="photo" src="images/example.jpg">
-                </div>
-              <!--  <% @galleries.each do |gallery| %>-->
-              <!--      <div class="photo"><img src=<%= gallery.image %>></div>-->
-                  <!--<td><%= link_to 'Show', gallery %></td>-->
-                  <!--<td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>-->
-                  <!--<td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-              <!--<% end %>-->
+                <% @galleries.each do |gallery| %>
+                    <div class="photo-container">
+                        <div class="save-photo">+</div>
+                        <img class="photo" id=<%= gallery.id %> src=<%= gallery.image %>>
+                        <div class="photo-date"> <%= gallery.created_at%> </div>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
@@ -63,9 +60,19 @@
             $("#add-photo-container").show();
         });
         $(".save-photo").click(function() {
-            var image = $(this).next().attr("src");
-            console.log(image);
-            $(this).text("✓");
+            var id = $(this).next().attr("id");
+            console.log(id);
+            $.ajax({
+                        type : 'post',
+                        url : "/galleries/add-favorite",
+                        data : {"image": id},    
+                        dataType : 'json',
+                        async : false,
+                        context : $(this),
+                        success : function(response) {
+                             $(this).text("✓");
+                        }
+                      });
         });
     </script>
 </body>

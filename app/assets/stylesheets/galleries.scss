@@ -118,6 +118,9 @@
 .photo-container:hover .save-photo {
     opacity: 1;
 }
+.photo-container:hover .photo-date {
+    height: 50px;
+}
 .photo {
     position: relative;
     width: 100%;
@@ -138,4 +141,17 @@
     cursor: pointer;
     line-height: 35px;
     text-align: center;
+}
+.photo-date {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    opacity: 0.6;
+    height: 0px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
 }
