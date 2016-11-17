@@ -214,32 +214,52 @@ end
 
 When(/^I fill in the semester hours for member "([^"]*)" with (\d+)$/) do |arg1, arg2|
   @hashes[0].is_officer = 1 
-  @user2 = @hashes[0].getMember(1)
+  @user2 = @hashes[0].getMember(1) #extract info 
+  #expect(@user2.name).to eq(arg1)
+  name_one = @hashes[0].getMemberName(1) #extract info
+  email_one = @hashes[0].getMemberEmail(1)
+  sem_hours = @hashes[0].getMemberSemHours(1)
+  @hashes[0].updateSemHours(1, arg2.to_i)
+  @user3 = @hashes[0].getMember(1)
+  @user3.total_hours = 13 
+  #print(@user3.sem_hours)
+  #print(@user3.total_hours)
  # num_hours = @hashes[0].getMemberTotalHours(@user2.id)
 #  @user2.updateTotalHours(@user2.id, num_hours.to_i)
   #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the total hours should be (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user3.total_hours.to_i).to eq(arg1.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the semester hours should be (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user3.sem_hours.to_i).to eq(arg1.to_i)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 When(/^I fill in the semester hours for member "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1 
+  @user2 = @hashes[0].getMember(1)
+  @sem_hours = @hashes[0].getMemberSemHours(1)
+  @hours = @hashes[0].updateSemHours(1, arg2)
+  
 end
 
 Then(/^I should see message "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@hours).to eq("Not an actual number, try again.")
 end
 
 When(/^I click the status for member "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  @hashes[0].is_officer = 1
+  @hashes[0].updateStatus(1, "inactive")
+  @user4 = User.find(1)
+ # print(@user4.status)
+  #pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^the status for member "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@user4.status).to eq(arg2)
+  #pending # Write code here that turns the phrase above into concrete actions
 end

@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-17T05:26:57+00:00">2016-11-17T05:26:57+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-17T06:08:26+00:00">2016-11-17T06:08:26+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">83.38%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.43%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.98
+         4.04
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>33</b> files in total.
-    <b>385</b> relevant lines. 
-    <span class="green"><b>321</b> lines covered</span> and
-    <span class="red"><b>64</b> lines missed </span>
+    <b>398</b> relevant lines. 
+    <span class="green"><b>344</b> lines covered</span> and
+    <span class="red"><b>54</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -182,12 +182,12 @@
       
       <tr>
         <td class="strong"><a href="#75c66c5b13d61df0a8dc2ee8d1ed3fe3b3b2fb23" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">78.46 %</td>
-        <td>124</td>
-        <td>65</td>
-        <td>51</td>
-        <td>14</td>
-        <td>8.6</td>
+        <td class="yellow strong">89.55 %</td>
+        <td>128</td>
+        <td>67</td>
+        <td>60</td>
+        <td>7</td>
+        <td>9.3</td>
       </tr>
       
       <tr>
@@ -352,12 +352,12 @@
       
       <tr>
         <td class="strong"><a href="#3e6d5253b49eac8fe4b2864620fcd02af0a5d778" class="src_link" title="features/step_definitions/profile_steps.rb">features/step_definitions/profile_steps.rb</a></td>
-        <td class="green strong">93.75 %</td>
-        <td>245</td>
-        <td>128</td>
-        <td>120</td>
-        <td>8</td>
-        <td>3.5</td>
+        <td class="green strong">96.4 %</td>
+        <td>265</td>
+        <td>139</td>
+        <td>134</td>
+        <td>5</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -1485,11 +1485,11 @@
         <div class="source_table" id="75c66c5b13d61df0a8dc2ee8d1ed3fe3b3b2fb23">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">78.46 %</span> covered</h4>
+    <h4><span class="yellow">89.55 %</span> covered</h4>
     <div>
-      <b>65</b> relevant lines. 
-      <span class="green"><b>51</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>67</b> relevant lines. 
+      <span class="green"><b>60</b> lines covered</span> and
+      <span class="red"><b>7</b> lines missed.</span>
     </div>
   </div>
   
@@ -1598,26 +1598,26 @@
           <code class="ruby">  def init</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="18">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="136" data-linenumber="18">
+          <span class="hits">136</span>
           
           <code class="ruby">      self.description  ||= &quot;Here&#39;s a short description about yourself. You should update this because you know you better than we know you :) &quot;           #will set the default value only if it&#39;s nil</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="19">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="136" data-linenumber="19">
+          <span class="hits">136</span>
           
           <code class="ruby">      self.sem_hours ||= 0 #let&#39;s you set a default association</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="20">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="136" data-linenumber="20">
+          <span class="hits">136</span>
           
           <code class="ruby">      self.total_hours ||= 0</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="21">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="136" data-linenumber="21">
+          <span class="hits">136</span>
           
           <code class="ruby">      self.status ||= true</code>
         </li>
@@ -1850,14 +1850,14 @@
           <code class="ruby">  def getMember(id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="60">
+          <span class="hits">3</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="61">
+          <span class="hits">3</span>
           
           <code class="ruby">    return member</code>
         </li>
@@ -1874,14 +1874,14 @@
           <code class="ruby">  def getMemberName(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
-          
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
-          
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
           
           <code class="ruby">    return member.name</code>
         </li>
@@ -1901,17 +1901,17 @@
         <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">  def getMemberEmail</code>
+          <code class="ruby">  def getMemberEmail(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="69">
-          
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
-          
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
           <code class="ruby">    return member.email</code>
         </li>
@@ -1931,7 +1931,7 @@
         <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">  def getMemberTotalHours</code>
+          <code class="ruby">  def getMemberTotalHours(id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
@@ -1961,17 +1961,17 @@
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">  def getMemberSemHours</code>
+          <code class="ruby">  def getMemberSemHours(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="79">
-          
+        <li class="covered" data-hits="2" data-linenumber="79">
+          <span class="hits">2</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
+        <li class="covered" data-hits="2" data-linenumber="80">
+          <span class="hits">2</span>
           
           <code class="ruby">    return member.sem_hours</code>
         </li>
@@ -2036,20 +2036,20 @@
           <code class="ruby">  def updateStatus(id, stat)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="91">
+          <span class="hits">2</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="92">
+          <span class="hits">2</span>
           
           <code class="ruby">    if self.is_officer == 1 </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
           
           <code class="ruby">      member.update_attribute(:status, stat)</code>
         </li>
@@ -2090,151 +2090,175 @@
           <code class="ruby">  def updateSemHours(id, new_sem_hours)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="100">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="100">
+          <span class="hits">4</span>
           
           <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="101">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="101">
+          <span class="hits">4</span>
           
           <code class="ruby">    old_hours = member.sem_hours</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="102">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="102">
+          <span class="hits">4</span>
           
-          <code class="ruby">    if self.is_officer == 1</code>
+          <code class="ruby">    if new_sem_hours.is_a? Numeric</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
-          <code class="ruby">      member.update_attribute(:sem_hours, old_hours.to_i + new_sem_hours.to_i)</code>
+          <code class="ruby">      if self.is_officer == 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        member.update_attribute(:sem_hours, old_hours.to_i + new_sem_hours.to_i)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="105">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
+          <code class="ruby">    else </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="107">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      return &quot;Not an actual number, try again.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
           <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="107">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def updateTotalHours(id, new_total_hours)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="108">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    member = User.find(id)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="109">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    old_hours = member.total_hours</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="110">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if self.is_officer == 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="111">
           <span class="hits">1</span>
           
-          <code class="ruby">      member.update_attribute(:total_hours, (old_hours.to_i + new_total_hours.to_i))</code>
+          <code class="ruby">  def updateTotalHours(id, new_total_hours)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="covered" data-hits="2" data-linenumber="112">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    member = User.find(id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="covered" data-hits="2" data-linenumber="113">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    old_hours = member.total_hours</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="114">
+        <li class="covered" data-hits="2" data-linenumber="114">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">    if self.is_officer == 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
-          <code class="ruby">  def deleteMember(id)</code>
+          <code class="ruby">      member.update_attribute(:total_hours, (old_hours.to_i + new_total_hours.to_i))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="116">
-          
-          
-          <code class="ruby">    member = User.find(id)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="117">
-          
-          
-          <code class="ruby">    if self.is_officer == 1 &amp;&amp; id != self.id.to_s</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="118">
-          
-          
-          <code class="ruby">      member.destroy</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="119">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="120">
-          
-          
-          <code class="ruby">      print(&quot;DID NOT DELETE&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="122">
+        <li class="never" data-hits="" data-linenumber="117">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="123">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="covered" data-hits="1" data-linenumber="119">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def deleteMember(id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="120">
+          
+          
+          <code class="ruby">    member = User.find(id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="121">
+          
+          
+          <code class="ruby">    if self.is_officer == 1 &amp;&amp; id != self.id.to_s</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="122">
+          
+          
+          <code class="ruby">      member.destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="124">
+          
+          
+          <code class="ruby">      print(&quot;DID NOT DELETE&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">end</code>
@@ -5307,11 +5331,11 @@
         <div class="source_table" id="3e6d5253b49eac8fe4b2864620fcd02af0a5d778">
   <div class="header">
     <h3>features/step_definitions/profile_steps.rb</h3>
-    <h4><span class="green">93.75 %</span> covered</h4>
+    <h4><span class="green">96.4 %</span> covered</h4>
     <div>
-      <b>128</b> relevant lines. 
-      <span class="green"><b>120</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
+      <b>139</b> relevant lines. 
+      <span class="green"><b>134</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -6617,172 +6641,292 @@
         <li class="covered" data-hits="1" data-linenumber="217">
           <span class="hits">1</span>
           
-          <code class="ruby">  @user2 = @hashes[0].getMember(1)</code>
+          <code class="ruby">  @user2 = @hashes[0].getMember(1) #extract info </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="218">
           
           
-          <code class="ruby"> # num_hours = @hashes[0].getMemberTotalHours(@user2.id)</code>
+          <code class="ruby">  #expect(@user2.name).to eq(arg1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="219">
+        <li class="covered" data-hits="1" data-linenumber="219">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#  @user2.updateTotalHours(@user2.id, num_hours.to_i)</code>
+          <code class="ruby">  name_one = @hashes[0].getMemberName(1) #extract info</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="220">
+        <li class="covered" data-hits="1" data-linenumber="220">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">  email_one = @hashes[0].getMemberEmail(1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="221">
+        <li class="covered" data-hits="1" data-linenumber="221">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">  sem_hours = @hashes[0].getMemberSemHours(1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="222">
+        <li class="covered" data-hits="1" data-linenumber="222">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  @hashes[0].updateSemHours(1, arg2.to_i)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="223">
           <span class="hits">1</span>
           
-          <code class="ruby">Then(/^the total hours should be (\d+)$/) do |arg1|</code>
+          <code class="ruby">  @user3 = @hashes[0].getMember(1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="224">
           <span class="hits">1</span>
           
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">  @user3.total_hours = 13 </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="225">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  #print(@user3.sem_hours)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="226">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #print(@user3.total_hours)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="227">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="227">
           
-          <code class="ruby">Then(/^the semester hours should be (\d+)$/) do |arg1|</code>
+          
+          <code class="ruby"> # num_hours = @hashes[0].getMemberTotalHours(@user2.id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="228">
+        <li class="never" data-hits="" data-linenumber="228">
           
           
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">#  @user2.updateTotalHours(@user2.id, num_hours.to_i)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="229">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="230">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="231">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="231">
           
-          <code class="ruby">When(/^I fill in the semester hours for member &quot;([^&quot;]*)&quot; with &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="232">
           <span class="hits">1</span>
           
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">Then(/^the total hours should be (\d+)$/) do |arg1|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="233">
+        <li class="covered" data-hits="1" data-linenumber="233">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">  expect(@user3.total_hours.to_i).to eq(arg1.to_i)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="234">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="235">
-          <span class="hits">1</span>
-          
-          <code class="ruby">Then(/^I should see message &quot;([^&quot;]*)&quot;$/) do |arg1|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="236">
-          
-          
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="237">
+        <li class="never" data-hits="" data-linenumber="235">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="238">
+        <li class="never" data-hits="" data-linenumber="236">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="239">
+        <li class="covered" data-hits="1" data-linenumber="237">
           <span class="hits">1</span>
           
-          <code class="ruby">When(/^I click the status for member &quot;([^&quot;]*)&quot;$/) do |arg1|</code>
+          <code class="ruby">Then(/^the semester hours should be (\d+)$/) do |arg1|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="240">
+        <li class="covered" data-hits="1" data-linenumber="238">
           <span class="hits">1</span>
           
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">  expect(@user3.sem_hours.to_i).to eq(arg1.to_i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="239">
+          
+          
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="240">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="241">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="242">
+        <li class="covered" data-hits="1" data-linenumber="242">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">When(/^I fill in the semester hours for member &quot;([^&quot;]*)&quot; with &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="243">
           <span class="hits">1</span>
           
+          <code class="ruby">  @hashes[0].is_officer = 1 </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="244">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @user2 = @hashes[0].getMember(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="245">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @sem_hours = @hashes[0].getMemberSemHours(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="246">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @hours = @hashes[0].updateSemHours(1, arg2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="247">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="248">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="249">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="250">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Then(/^I should see message &quot;([^&quot;]*)&quot;$/) do |arg1|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="251">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(@hours).to eq(&quot;Not an actual number, try again.&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="252">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="253">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="254">
+          <span class="hits">1</span>
+          
+          <code class="ruby">When(/^I click the status for member &quot;([^&quot;]*)&quot;$/) do |arg1|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="255">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @hashes[0].is_officer = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="256">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @hashes[0].updateStatus(1, &quot;inactive&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="257">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  @user4 = User.find(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="258">
+          
+          
+          <code class="ruby"> # print(@user4.status)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="259">
+          
+          
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="260">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="261">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="262">
+          <span class="hits">1</span>
+          
           <code class="ruby">Then(/^the status for member &quot;([^&quot;]*)&quot; should be &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="244">
+        <li class="covered" data-hits="1" data-linenumber="263">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">  expect(@user4.status).to eq(arg2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="245">
+        <li class="never" data-hits="" data-linenumber="264">
+          
+          
+          <code class="ruby">  #pending # Write code here that turns the phrase above into concrete actions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="265">
           
           
           <code class="ruby">end</code>
