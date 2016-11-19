@@ -6,6 +6,7 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @galleries = Gallery.all
+    @gallery = Gallery.new
   end
 
   def addFavorite
@@ -56,16 +57,17 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
-
-    respond_to do |format|
-      if @gallery.save
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
-        format.json { render :show, status: :created, location: @gallery }
-      else
-        format.html { render :new }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
-    end
+    @gallery.save
+    redirect_to galleries_path
+    # respond_to do |format|
+    #   if @gallery.save
+    #     format.html { redirect_to galleries_path, notice: 'Gallery was successfully created.' }
+    #     # format.json { render :show, status: :created, location: @gallery }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @gallery.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /galleries/1
