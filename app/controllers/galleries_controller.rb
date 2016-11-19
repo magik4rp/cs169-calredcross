@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-  config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
+  # config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
 
   # GET /galleries
   # GET /galleries.json
@@ -16,17 +16,20 @@ class GalleriesController < ApplicationController
   
   def addPhoto
     photo = params["image"]
-    params.keys.each do |key|
-      print("~~~~~~" + key.to_s)
-    end
-    File.open("photo", 'wb') do |f|
-      f.write photo
-      @gallery = Gallery.new(photo)
-      @gallery.save
-    end
+    @gallery = Gallery.new()
+    @galery.image = photo
+    @galery.save
+    # params.keys.each do |key|
+    #   print("~~~~~~" + key.to_s)
+    # end
+    # File.open("photo", 'wb') do |f|
+    #   f.write photo
+    #   @gallery = Gallery.new(photo)
+    #   @gallery.save
+    # end
     # @gallery = Gallery.new(photo)
     # @gallery.save
-    render json: @gallery
+    # render json: @gallery
     # print(params.keys)
     # File.open('somewhere') do |f|
     #   u.avatar = f
