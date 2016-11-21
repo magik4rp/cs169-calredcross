@@ -17,7 +17,7 @@ body {
 }
 .menu-header {
     background-color: #ED1B2E;
-    padding: 10px;
+    padding: 5px;
     position: fixed;
     width: 100%;
     top: 0px;
@@ -46,12 +46,12 @@ body {
 }
 .logo {
     display: inline-block;
+    margin-left: 10px;
 }
 .menu {
     display: inline-block;
     margin-left: 1000px;
     position: relative;
-    // vertical-align: top;
 }
 .menu li {
     vertical-align: middle;
@@ -59,10 +59,12 @@ body {
     margin-left: 15px;
     color: white;
 }
+
 .home_link {
     color: white!important;
 }
 
 .home_link:hover {
-    color: red!important;
+    // background-color:white!important;
+    color: black!important;
 }

@@ -47,9 +47,8 @@
     </div>
     
     
-    <div class="members-header">
-        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
-    </div>
+    
+    <%= render 'navbar' %>
     <div id="members-container">
         <div class="members-list">
             <h2 id="members-header">Our Members</h2>
@@ -134,6 +133,7 @@
             };
             
             $("#member-details-lightbox-container").hide();
+            location.reload();
         });
         $('.member-avatar').click(function() {
             console.log("Member clicked");
@@ -192,6 +192,7 @@
                         success : function(response) {
                         }
                       });
+            location.reload();
         })
         
         $('.toggle-active-button').click(function() {
