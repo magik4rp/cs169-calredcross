@@ -20,7 +20,7 @@
 <div id="lightbox-container">
         <div class="screen"></div>
         <div id="login-lightbox">
-            <%= form_for(:user, :url => session_path(:user)) do |f| %>
+            <%= form_for(:user, :url => session_path(:user), :html => {id: 'login-form'}) do |f| %>
                 <div class="field">
                     <%= f.label :email %>
                     <%= f.email_field :email, autofocus: true %>
@@ -40,8 +40,49 @@
                 <div class="actions">
                     <%= f.submit "Log in", :class => "submit" %>
                 </div>
-                <%= link_to "Sign up", new_registration_path(:user) %><br />
+                <a id="signup-bttn">Sign Up</a><br />
                 <%= link_to "Forgot your password?", new_password_path(:user) %>
+            <% end %>
+            
+            <%= form_for(:user, :url => registration_path(:user), :html => {id: 'signup-form'}) do |f| %>
+              <%= devise_error_messages! %>
+            
+              <div class = "name field"> 
+                <%= f.label :name %> 
+                <%= f.text_field :name, autofocus: true %> 
+                <img class="login-symbol" src="/images/name.png">
+              </div>
+            
+              <div class = "major field"> 
+                <%= f.label :major %>  
+                <%= f.text_field :major, autofocus: true %> 
+                <img class="login-symbol" src="/images/major.png">
+              </div>
+              
+              <div class="email field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true %>
+                <img class="login-symbol" src="/images/email.png">
+              </div>
+            
+              <div class="field">
+                <%= f.label :password %>
+                <!--<% if @minimum_password_length %>-->
+                <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+                <!--<% end %>-->
+                <%= f.password_field :password, autocomplete: "off" %>
+                <img class="login-symbol" src="/images/password.png">
+              </div>
+            
+              <div class="field">
+                <%= f.label :password_confirmation %>
+            
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div> 
+            
+              <div class="actions">
+                <%= f.submit "Sign up", :class => "submit"%>
+              </div>
             <% end %>
         </div>
     </div>
@@ -50,5 +91,10 @@
     $('#login_bttn').click(function() {
         console.log("Login clicked");
         $('#lightbox-container').show();
+    });
+    $('#signup-bttn').click(function() {
+       console.log("Sign Up Clicked");
+       $('#login-form').hide();
+       $('#signup-form').show();
     });
 </script>

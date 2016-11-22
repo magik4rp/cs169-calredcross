@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :major, :email, :password, :avatar) }
   end
     
-  
+  # Redirect path after sucessful sign in
   def after_sign_in_path_for(users)
     profile_index_path #your path
   end
