@@ -34,12 +34,12 @@ body {
 }
 .round-image-50 {
     background-color: white;
-    border: 1px solid #d9d9d9;
+    // border: 1px solid #d9d9d9;
     border-radius: 25px;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     overflow: hidden;
     text-align: center;
     img { width: 100% }
@@ -62,9 +62,23 @@ body {
 
 .home_link {
     color: white!important;
+    font-weight: bold!important;
+    font-size: 15px!important;
 }
 
 .home_link:hover {
     // background-color:white!important;
     color: black!important;
+}
+
+#login-lightbox {
+    background-color: white;
+    height: 300px;
+    width: 600px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
 }
