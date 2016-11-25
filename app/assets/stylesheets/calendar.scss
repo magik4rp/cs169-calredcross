@@ -1,3 +1,100 @@
-// Place all the styles related to the Calendar controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#calendar {
+	position: relative !important;
+    height: 100% !important;
+    margin-top: 50px;
+    background-color: white;
+    padding: 20px;
+}
+.calendar-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin-top: 32px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+ html, body {
+	font-family: Regular !important;
+	background-color: #D7D7D8 !important;
+}
+
+button, .fc-state-default {
+	background-image: none !important;
+	background-color: #ED1B2E !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+	border-color: none !important;
+	border: none !important;
+}
+.fc-icon {
+	color: white !important;
+}
+.fc-prev-button {
+	margin-right: 2px !important;
+}
+.fc-other-month {
+	opacity: 0.4 !important;
+}
+.fc-today {
+	background: none !important;
+}
+.fc-day-number.fc-today {
+	background-color: #ED1B2E !important;
+	border-radius: 50% !important;
+	width: 25px !important;
+	height: 25px !important;
+	text-align: center !important;
+	line-height: 25px !important;
+	position: relative !important;
+    float: left !important;
+    margin: 0px !important;
+    color: white !important;
+}
+.fc-day-number {
+	position: relative;
+	font-family: Regular !important;
+	font-size: 16px !important;
+	margin-top: 2px !important;
+	margin-right: 2px !important;
+}
+thead, tbody, .fc-widget-content, .fc-head-container, .fc, .fc-day-header, .fc-row, .fc-day, .fc-head{
+	border: none !important;
+	border-color: white !important;
+	border-width: 0px !important;
+	border-style: none !important;
+}
+.fc-day-header {
+	text-transform: uppercase;
+	font-family: Bold;
+	font-size: 16px;
+	padding-bottom: 20px !important;
+	text-align: left !important;
+}
+.fc-toolbar {
+	margin-bottom: 20px;
+}
+.fc-today-button {
+	text-transform: capitalize;
+	color: white !important ;
+   }
+.fc-event {
+	background-color: #004B79 !important;
+	border: none !important;
+	padding: 2px !important;
+}
+.fc-event:hover {
+	background-color: white!important;
+	border: solid 1px #004B79  !important;
+	padding: 2px !important;
+	color: #004B79 !important;
+}
+a.fc-event:visited .fc-content{
+	color: white !important;
+	text-decoration: underline !important;
+}
+.fc-content {
+	color: white !important;
+}
+a.fc-event:hover .fc-content {
+	color: #004B79 !important;
+}
