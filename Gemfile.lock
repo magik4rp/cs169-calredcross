@@ -346,6 +346,7 @@ DEPENDENCIES
   launchy
   listen (~> 3.0.5)
   mini_magick (~> 4.3)
+  momentjs-rails (~> 2.15, >= 2.15.1)
   oauth2
   paperclip (~> 4.1)
   pg
