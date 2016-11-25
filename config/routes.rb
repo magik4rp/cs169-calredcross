@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :posts
  # devise_for :users
   root to: "home#index"
+  resources :calendar, only: [:index]
   resources :profile, only: [:index, :update]
   resources :members, only: [:index]
   devise_for :users, :controllers => { :registrations => "registrations" }

@@ -9,7 +9,7 @@ gem 'coveralls', require: false
 gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'fullcalendar-rails', '~> 2.8'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
