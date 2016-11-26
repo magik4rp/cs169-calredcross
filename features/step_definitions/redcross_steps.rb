@@ -58,7 +58,57 @@ Then /I see all of members/ do
   expect(num_rows).to eq(@members.size)
 end
 
+Given(/^there is an event called "([^"]*)" on personal Google Calendar with date "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
 
+Then(/^I should see the event called "([^"]*)" on official Google Calendar with date "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I RSVP to event called "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^on my profile page I should see "([^"]*)" with date "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click Edit button for announcements$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should change text to say "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click Edit button for officer of month$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I should upload photo "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I upload text "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see photo as "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^text as "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I am a member$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should not see any edit buttons$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
 
 
 #Given /^I am (".*") officer (".*")/ do
