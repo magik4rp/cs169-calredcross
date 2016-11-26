@@ -2,7 +2,7 @@ Feature: create events
  
   As an officer
   So that I can monitor the calendar page 
-  I want to create events so the club can know and attend the club's events and meetings. 
+  I want to create events for info of meetings and events. 
 
 
 Background: member in database
