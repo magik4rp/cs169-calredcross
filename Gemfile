@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'google_drive'
 
 # ruby '2.3.0' 
 

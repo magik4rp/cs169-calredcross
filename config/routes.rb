@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'authen_accept/accept'
+
   resources :galleries
   post 'galleries/update', :to => 'galleries#update'
   post 'galleries/add-favorite', :to => 'galleries#addFavorite'
