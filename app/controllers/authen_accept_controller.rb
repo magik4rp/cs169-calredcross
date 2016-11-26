@@ -1,4 +1,3 @@
-
 require 'google/api_client/client_secrets' 
 #require 'googleauth'
 #require 'google/apis/calendar_v2'
@@ -10,6 +9,14 @@ require 'fileutils'
 
 class AuthenAcceptController < ApplicationController
   
+  COMMON_YEAR_DAYS_IN_MONTH = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+  def days_in_month(month, year = Time.now.year)
+     return 29 if month == 2 && Date.gregorian_leap?(year)
+     COMMON_YEAR_DAYS_IN_MONTH[month]
+  end
+
+
   def accept
     
     @user = current_user
@@ -33,38 +40,103 @@ class AuthenAcceptController < ApplicationController
       print "This is the refresh token"
       print @user.refresh_token
       @user.update_attribute(:refresh_token, auth_client.refresh_token)
-    end 
-    
-    signet = Signet::OAuth2::Client.new(
-      client_id: "737968238189-n40p0c73pfbpr9ncmd67a4v84f7msuud.apps.googleusercontent.com",
-      client_secret: "opY7uxs0lTAMjYzrm4e19NK4",
-      token_credential_uri: "https://www.googleapis.com/oauth2/v3/token",
-      refresh_token: @user.refresh_token
-    )
-    signet.refresh!
+ end 
+              
+      signet = Signet::OAuth2::Client.new(
+        client_id: "737968238189-n40p0c73pfbpr9ncmd67a4v84f7msuud.apps.googleusercontent.com",
+        client_secret: "opY7uxs0lTAMjYzrm4e19NK4",
+        token_credential_uri: "https://www.googleapis.com/oauth2/v3/token",
+        refresh_token: @user.refresh_token
+      )
+      signet.refresh!
       
       # Use access token with picasa gem
       signet.access_token
           
-    api_client = Google::APIClient.new
-    cal = api_client.discovered_api('calendar', 'v3')
-          
-       
-    puts "Getting list of events..."
-    list = api_client.execute(:api_method => cal.events.list, 
-    	:authorization => signet,
-    	:parameters => {
-    		'maxResults' => 20, 
-    		'q' => 'Meeting', 
-    		'calendarId' => 'primary'})
+      api_client = Google::APIClient.new
+      cal = api_client.discovered_api('calendar', 'v3')
+      
+      
+      curr_year = Time.now.strftime("%Y") 
+      curr_month = Time.now.strftime("%m") 
+    	
+     
+      list = api_client.execute(:api_method => cal.events.list, 
+       	:authorization => signet,
+       	:parameters => {
+       	  'alwaysIncludeEmail' => true, 
+    		'calendarId' => 'primary' })
+    		 
+    	
     
     puts "Fetched #{list.data.items.count} events..."
     
+    # filter based on email and current month 
+    
+    # title, email, location
+     
+      hash_one = []
+    
       i = 0
       while (i < list.data.items.count) do 
-        print list.data.items[i].description
+        # title, location, email, time, day  
+        title = list.data.items[i].summary 
+
+        
+        if list.data.items[i].creator.nil? 
+          email = ""
+          location = ""
+        else  
+          email = list.data.items[i].creator.email  
+         # print email
+          location = list.data.items[i].location
+        end  
+        
+        if list.data.items[i].start.nil? 
+          start_year = ""
+          start_month = ""
+          start_day = ""
+          start_hour = ""
+          start_minutes = ""
+          start_am_or_pm = ""
+        else  
+          start_year = list.data.items[i].start.dateTime.strftime("%Y")  
+          start_month = list.data.items[i].start.dateTime.strftime("%m")  
+          start_day = list.data.items[i].start.dateTime.strftime("%d") 
+          start_hour = list.data.items[i].start.dateTime.strftime("%I") 
+          start_minutes = list.data.items[i].start.dateTime.strftime("%M") 
+          start_am_or_pm = list.data.items[i].start.dateTime.strftime("%p") 
+          #break 
+        end 
+        
+        if list.data.items[i].end.nil? 
+          end_year = ""
+          end_month = ""
+          end_day = ""
+          end_hour = ""
+          end_minutes = ""
+          end_am_or_pm = ""
+        else 
+          end_year = list.data.items[i]["end"]["dateTime"].strftime("%Y")  
+          end_month = list.data.items[i]["end"]["dateTime"].strftime("%m")  
+          end_day = list.data.items[i]["end"]["dateTime"].strftime("%d") 
+          end_hour = list.data.items[i]["end"]["dateTime"].strftime("%I") 
+          end_minutes = list.data.items[i]["end"]["dateTime"].strftime("%M") 
+          end_am_or_pm = list.data.items[i]["end"]["dateTime"].strftime("%p")
+        end 
+        
+        # and start_year == curr_year and start_month == curr_month
+        if email == "americanredcrossatcal@gmail.com" and start_year == curr_year and start_month == curr_month
+          new_array = {"email" => email, "location" => location, "start_year" => start_year, "start_month" => start_month, "start_day" => start_day, "start_hour" =>  start_hour, "start_minutes" => start_minutes, "start_am_or_pm" => start_am_or_pm, "end_year" => end_year, "end_month" => end_month, "end_day" => end_day, "end_hour" => end_hour, "end_minutes" => end_minutes, "end_am_or_pm" => end_am_or_pm} 
+          hash_one << new_array
+        end 
+         
         i += 1
       end 
+       
+      print "HASH"
+      print hash_one
+      print "HASH"
 
   end
 end

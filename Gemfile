@@ -4,6 +4,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'google_drive'
 
+gem 'google-api-client', '0.7.1'
 # ruby '2.3.0' 
 
 #gem 'cucumber-rails'
