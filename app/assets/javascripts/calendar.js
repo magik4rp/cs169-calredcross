@@ -15,6 +15,10 @@ $(document).ready(function() {
 	    	$("#event-start").text(event.start.format("dddd, MMMM Do YYYY, h:mm a"));
 	    	$("#event-title").text(event.title);
 	    	$("#event-end").text(event.end.format("dddd, MMMM Do YYYY, h:mm a"));
+	    	$("#add-event").click(function() {
+	    		window.open(event.url);
+	    		return false;
+	    	});
 	    	
 	    },
 	    height: 550,

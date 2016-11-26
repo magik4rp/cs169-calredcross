@@ -25,6 +25,10 @@ button, .fc-state-default {
 	box-shadow: none !important;
 	border-color: none !important;
 	border: none !important;
+	outline: none !important;
+}
+button:focus {
+	outline: none !important;
 }
 .fc-icon {
 	color: white !important;
@@ -165,4 +169,22 @@ a.fc-event:hover .fc-content {
 	transform: translateY(-50%);
 	margin-left: auto;
 	margin-right: auto;
+}
+a.nav-element {
+	color: white !important;
+    position: relative;
+    float: right;
+    width: 75px;
+    line-height: calc(30px);
+    height: 30px;
+    text-align: center;
+}
+a.nav-element.active-link {
+	border-bottom: solid 4px white;
+}
+a.nav-element:hover + .nav-element{
+	border-bottom: none;
+}
+a.nav-element:hover{
+	border-bottom: solid 4px white;
 }
