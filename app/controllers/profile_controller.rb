@@ -12,7 +12,8 @@ class ProfileController < ApplicationController
     else
       @level = "bronze_medal.png"
     end
-    if @user.refresh_token.nil? 
+    
+     if @user.refresh_token.nil? 
       # need to authorize faaaam 
       client_secrets = Google::APIClient::ClientSecrets.load
       auth_client = client_secrets.to_authorization
@@ -25,6 +26,9 @@ class ProfileController < ApplicationController
     else
       redirect_to '/authen_accept/accept'
     end 
+    
+    
+   
   end
   
   #hi

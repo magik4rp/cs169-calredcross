@@ -63,9 +63,10 @@ class AuthenAcceptController < ApplicationController
      
       list = api_client.execute(:api_method => cal.events.list, 
        	:authorization => signet,
-       	:parameters => {
-       	  'alwaysIncludeEmail' => true, 
-    		'calendarId' => 'primary' })
+       	:parameters => { 
+    		'calendarId' => 'primary', 
+       	  'singleEvents' => true 
+       	})
     		 
     	
     
@@ -81,6 +82,8 @@ class AuthenAcceptController < ApplicationController
       while (i < list.data.items.count) do 
         # title, location, email, time, day  
         title = list.data.items[i].summary 
+        print "title"
+        print title
 
         
         if list.data.items[i].creator.nil? 
@@ -99,43 +102,52 @@ class AuthenAcceptController < ApplicationController
           start_hour = ""
           start_minutes = ""
           start_am_or_pm = ""
-        else  
+        else   
+          print "whoops 2"
           start_year = list.data.items[i].start.dateTime.strftime("%Y")  
           start_month = list.data.items[i].start.dateTime.strftime("%m")  
           start_day = list.data.items[i].start.dateTime.strftime("%d") 
           start_hour = list.data.items[i].start.dateTime.strftime("%I") 
           start_minutes = list.data.items[i].start.dateTime.strftime("%M") 
           start_am_or_pm = list.data.items[i].start.dateTime.strftime("%p") 
+          print start_year
+          print start_month
           #break 
         end 
         
-        if list.data.items[i].end.nil? 
+        if list.data.items[i]["end"].nil? 
           end_year = ""
           end_month = ""
           end_day = ""
           end_hour = ""
           end_minutes = ""
           end_am_or_pm = ""
-        else 
+        else  
+          
+          print "whoops"
           end_year = list.data.items[i]["end"]["dateTime"].strftime("%Y")  
           end_month = list.data.items[i]["end"]["dateTime"].strftime("%m")  
           end_day = list.data.items[i]["end"]["dateTime"].strftime("%d") 
           end_hour = list.data.items[i]["end"]["dateTime"].strftime("%I") 
           end_minutes = list.data.items[i]["end"]["dateTime"].strftime("%M") 
           end_am_or_pm = list.data.items[i]["end"]["dateTime"].strftime("%p")
+          print end_year 
+          print "      "
+          print end_month 
         end 
         
         # and start_year == curr_year and start_month == curr_month
-        if email == "americanredcrossatcal@gmail.com" and start_year == curr_year and start_month == curr_month
+        if title.include? "[CRC]" and start_year == curr_year and start_month == curr_month
           new_array = {"email" => email, "location" => location, "start_year" => start_year, "start_month" => start_month, "start_day" => start_day, "start_hour" =>  start_hour, "start_minutes" => start_minutes, "start_am_or_pm" => start_am_or_pm, "end_year" => end_year, "end_month" => end_month, "end_day" => end_day, "end_hour" => end_hour, "end_minutes" => end_minutes, "end_am_or_pm" => end_am_or_pm} 
-          hash_one << new_array
+          print "hi"
+          hash_one << new_array 
         end 
          
         i += 1
       end 
        
       print "HASH"
-      print hash_one
+      print hash_one.length
       print "HASH"
 
   end
