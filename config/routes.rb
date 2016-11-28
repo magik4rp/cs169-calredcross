@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'authen_accept/accept'
+
+  resources :galleries
+  post 'galleries/update', :to => 'galleries#update'
+  post 'galleries/add-favorite', :to => 'galleries#addFavorite'
+  post 'galleries/add-photo', :to => 'galleries#addPhoto'
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   post 'members/update', :to => 'members#update'
@@ -9,6 +15,7 @@ Rails.application.routes.draw do
   resources :posts
  # devise_for :users
   root to: "home#index"
+  resources :calendar, only: [:index]
   resources :profile, only: [:index, :update]
   resources :members, only: [:index]
   devise_for :users, :controllers => { :registrations => "registrations" }

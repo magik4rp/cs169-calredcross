@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119171142) do
+ActiveRecord::Schema.define(version: 20161125015723) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20161119171142) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "news", force: :cascade do |t|
@@ -61,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161119171142) do
     t.integer  "is_officer",             default: 0
     t.integer  "sem_hours",              default: 0
     t.integer  "total_hours",            default: 0
+    t.string   "refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
