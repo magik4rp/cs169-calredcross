@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 
 #gem 'cucumber-rails'
 
+gem 'flickraw'
+gem 'figaro'
+
 gem 'coveralls', require: false
 gem 'devise'
 gem 'paperclip', '~> 4.1'
