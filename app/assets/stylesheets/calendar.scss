@@ -6,16 +6,17 @@
     padding: 20px;
 }
 .calendar-container {
-	position: relative;
+	position: absolute;
+    top: 50px;
 	height: 100%;
 	width: 100%;
-	margin-top: 32px;
 	padding-left: 100px;
 	padding-right: 100px;
+	background-color: #D7D7D8 !important;
 }
  html, body {
 	font-family: Regular !important;
-	/*background-color: #D7D7D8 !important;*/
+	
 }
 
 button, .fc-state-default {
