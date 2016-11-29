@@ -27,9 +27,11 @@ class ProfileController < ApplicationController
           location = @events_list[i]["location"]
           description = @events_list[i]["description"]
           print "NAME ", name
-          print "DATE ", date 
+          print "DATE ", date     
           print "LOCATION ", location 
           print "DATE ", date
+          
+          #comment
           
           @event_one = Event.new
           @event_one.editName(name) 
