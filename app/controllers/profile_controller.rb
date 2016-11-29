@@ -19,6 +19,8 @@ class ProfileController < ApplicationController
         print "what's going on"
         
         @one = [] 
+        
+        @events = []
         @events_list = params[:hash_one]
         
         while i < @events_list.length 
@@ -41,22 +43,10 @@ class ProfileController < ApplicationController
           
           i = i+1
           
-        end 
+          @events << @event_one 
           
-        #@events = []
-        #@events_list = params[:hash_one]
-        #while i < (params[:hash_one].length)
-        #  name = @events_list[i]["name"]
-        #  date = @events_list[i]["date"]
-        #  location = @events_list[i]["location"]
-        #  description = @events_list[i]["description"]
-        #  @event_one = Event.new(:name => name, :date => date, :location => location, :description => description)
-        #  @events << @event_one
-        #end
-        
-      #  if i == 0
-      #    @events = Event.create("No Current Events", nil, nil, nil)
-      #  end 
+        end 
+         
         
       else 
       #@user.refresh_token = nil
