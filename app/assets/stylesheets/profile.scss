@@ -328,9 +328,9 @@ input[type="file"]:focus {
     text-align: center;
     top: calc(50% - 50px);
 }
-.active {
+#status-badge.active {
     background-color: #357B2C;
 }
-.inactive {
+#status-badge.inactive {
     background-color: #848384;
 }

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   # Set validation
   validates :name, :email, :major, presence: true
+  has_many :galleries
   
   # Set default values for description.
   after_initialize :init
