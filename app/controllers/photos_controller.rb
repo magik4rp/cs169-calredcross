@@ -1,9 +1,9 @@
+require 'flickraw'
 class PhotosController < ApplicationController
-    require 'flickraw'
     
     before_action :set_photo, only: [:show, :destroy]
     before_action :set_flickr, only: [:create, :destroy]
-    
+    skip_before_filter :verify_authenticity_token  
     def index
         @photos = Photo.all
     end
@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
     end
     
     def create
+        print("~~~~~~~~~~~~" + params.keys.to_s + "\n")
         photo_id = flickr.upload_photo params[:photo].tempfile.path, :title => "Title", :description => "Description"
         photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
         
