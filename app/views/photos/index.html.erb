@@ -35,7 +35,7 @@
                     <div class="photo-container">
                         <div class="save-photo">+</div>
                         <img class="photo" id=<%= photo.id %> src=<%= photo.photo_url %>>
-                        <div class="photo-date"> <%= gallery.created_at.strftime("%B %d, %Y")%> </div>
+                        <div class="photo-date"> <%= photo.created_at.strftime("%B %d, %Y")%> </div>
                     </div>
                 <% end %>
             </div>
