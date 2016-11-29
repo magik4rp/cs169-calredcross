@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   post 'members/update', :to => 'members#update'
   post 'members/update_hours', :to => 'members#update_hours'
   post 'members/delete', :to => 'members#delete'
+  post 'home/update', :to => 'home#update'
   get 'members/show', :to => 'members#show'
   resources :news
   resources :posts
  # devise_for :users
   root to: "home#index"
+  resources :home, only: [:index, :update]
   resources :profile, only: [:index, :update]
   resources :members, only: [:index]
   devise_for :users, :controllers => { :registrations => "registrations" }

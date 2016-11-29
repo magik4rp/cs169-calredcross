@@ -191,3 +191,80 @@ body {
     padding-left: 10px;
     vertical-align: middle;
 }
+
+.bulletin-description.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+
+.motm-name.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+.motm-comments.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+.motm-avatar {
+    display: table;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+}
+.motm-avatar img{
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#info_avatar {
+    height: 1px;
+    width: 1px;
+}
+.edit_info input[type="submit"] {
+    display: none;
+}
+.motm-avatar:hover #edit-motm-photo {
+    height: auto;
+    opacity: 0.6;
+}
+#edit-motm-photo {
+    margin: 0px !important;
+    position: absolute !important;
+    padding: 10px !important;
+    bottom: 0px !important;
+    text-align: center;
+    background-color: black;
+    opacity: 0;
+    color: white;
+    width: 200px !important;
+    height: 0px;
+    transition: 0.2s;
+    cursor: pointer;
+    display: block !important;
+}
+input[type="file"]:focus {
+    outline: none;
+}
+
+.bulletin-description {
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+.motm-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+
+.motm-comments {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}

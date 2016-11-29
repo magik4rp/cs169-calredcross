@@ -13,7 +13,7 @@
         <div class="home-left-section">
             <div class="bulletin-container">
                  <% if current_user and current_user.isOfficer %>
-                    <div id="edit-container">
+                    <div class="edit-bulletin" id="edit-container">
                         <img src="images/white_edit.png" id="top-edit">
                     </div>
                     <div id="edit-help">
@@ -23,9 +23,9 @@
                 <%end%>
                 <div class="section-header">
                     <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><p id="section-title">BULLETIN</p>
-                    <div class="bulletin-description">
-                        <%= @info.bulletin %>
-                    </div>
+                </div>
+                <div class="bulletin-description">
+                    <%= @info.bulletin %>
                 </div>
             </div>
             <div class="upcoming-events-container">
@@ -38,7 +38,7 @@
         <div class="home-right-section">
             <div class="member-of-month-container">
                 <% if current_user and current_user.isOfficer %>
-                    <div id="edit-container">
+                    <div class="edit-motm" id="edit-container">
                         <img src="images/white_edit.png" id="top-edit">
                     </div>
                     <div id="edit-help">
@@ -48,13 +48,21 @@
                 <%end%>
                 <div class="section-header">
                     <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><p id="section-title">MEMBER OF THE MONTH</p>
-                    <div class="motm-avatar"></div>
-                    <div class="motm-name">
-                        <p><%=@info.name %>, month</p>
-                    </div>
-                    <div class="motm-comments">
-                        <%= @info.comments %>
-                    </div>
+                </div>
+                <div class="motm-avatar">
+                    <%= image_tag(@info.avatar.url(:medium), :class => "motm-image") %>
+                    <%= form_for @info, :url => {:action => :update}, :html => { :multipart => true } do |form| %>
+                        <%= form.file_field :avatar %>
+                        <%= form.submit "upload" %>
+                    <% end %>
+                    <label for="info_avatar" id="edit-motm-photo">Edit Photo</label>
+                </div>
+                
+                <div class="motm-name">
+                    <p><%=@info.name %></p>
+                </div>
+                <div class="motm-comments">
+                    <%= @info.comments %>
                 </div>
             </div>
         </div>
@@ -77,5 +85,55 @@
         fade: true,
         cssEase: 'linear'
     });
+    
+    $(".edit-bulletin").click(function() {
+        console.log("EDIT bulletin");
+        $(this).toggleClass("home-active");
+        if (!$(this).hasClass("home-active")) {
+            $.ajax({
+                type : 'post',
+                url : "/home/update",
+                data : {"bulletin": $(".bulletin-description").text()},    
+                dataType : 'json',
+                async : false,
+                context : document.body,
+                success : function(response) {
+                }
+            });
+        }
+        var $div=$('.bulletin-description'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+    });
+    $(".edit-motm").click(function() {
+        console.log("EDIT Member Of The Month");
+        $(this).toggleClass("home-active");
+        if (!$(this).hasClass("home-active")) {
+            $.ajax({
+                type : 'post',
+                url : "/home/update",
+                data : {"motm_name": $(".motm-name").text(),
+                        "motm_comments": $(".motm-comments").text()
+                },    
+                dataType : 'json',
+                async : false,
+                context : document.body,
+                success : function(response) {
+                }
+            });
+        }
+        var $div=$('.motm-name'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+        
+        var $div=$('.motm-comments'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+    });
+    $('#info_avatar').change(function(e) {
+                    var img = URL.createObjectURL(e.target.files[0]);
+                    $(".motm-image").attr("src", img);
+                    $(".edit_info").submit();
+                });
 </script>
 

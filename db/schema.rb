@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129041257) do
+ActiveRecord::Schema.define(version: 20161129070400) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(version: 20161129041257) do
   end
 
   create_table "infos", force: :cascade do |t|
-    t.string   "bulletin",   default: "This is a bulletin"
-    t.string   "name",       default: "Name Here"
-    t.string   "comments",   default: "Here's where you'd write a cute blurb about the member of the month. Click on me to edit"
-    t.datetime "created_at",                                                                                                      null: false
-    t.datetime "updated_at",                                                                                                      null: false
+    t.string   "bulletin",            default: "This is a bulletin"
+    t.string   "name",                default: "Name Here"
+    t.string   "comments",            default: "Here's where you'd write a cute blurb about the member of the month. Click on me to edit"
+    t.datetime "created_at",                                                                                                               null: false
+    t.datetime "updated_at",                                                                                                               null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "news", force: :cascade do |t|
