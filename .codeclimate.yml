@@ -64,19 +64,9 @@ engines:
     enabled: true
   duplication:
     enabled: true 
-    exclude_fingerprints:
-    
-    - 1d4b54530e18936c3fab3213ff0c70bf
-    - bb92478b027156d9d3a7254f2893f3d9
-    - a49c44f2fd534af35ca01135eceb1b58
-    - c4a80b2dbe4d5f3fb962a77e5ac6e72c
-    - a95a4c3cbd61f3a9690b2bc75745bec7
-    - 7cc383f5ad512e8e6cefbff2376336ea
-    - a493a604b888117652c1c9303270ddfa
-    - 5e98926627c19c41b3b10b1e8a460d58
-    - c01430e3fbec59e5366235480b042ee7
-    - eb612f80d1d219b43f1675169c676c20
-    
+    checks:
+      Similar code:
+        enabled: false 
     config:
       languages:
       - ruby
