@@ -12,9 +12,9 @@
 <tbody>
 <% @photos.each do |photo| %>
 <tr>
-<td><img src=”<%= photo.photo_url %>” style=”width: 150px;height: 100px;”></td>
-<td><%= link_to ‘Show’, photo %></td>
-<td><%= link_to ‘Destroy’, photo, method: :delete, data: { confirm: ‘Are you sure?’ } %></td>
+<td><img src="<%= photo.photo_url %>" style="width: 150px;height: 100px;"></td>
+<td><%= link_to 'Show', photo %></td>
+<td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
 <% end %>
 </tbody>
