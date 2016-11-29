@@ -383,11 +383,11 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl
+  figaro
+  flickraw
   fullcalendar-rails (~> 2.8)
   google-api-client (= 0.8.2)
   google_drive
-  figaro
-  flickraw
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails
@@ -417,4 +417,3 @@ DEPENDENCIES
 
 BUNDLED WITH
    1.13.5
-
