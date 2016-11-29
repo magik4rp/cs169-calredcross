@@ -1,6 +1,53 @@
 <%= render 'navbar' %>
 
 <div class="home-container">
+    <div class="carousel-container">
+        <div id="owl-demo" class="home-carousel">
+            <% @images.each do |image| %>
+                <div class="item"><%= image_tag(image) %></div>
+            <%end %>
+        </div>
+    </div>
     
+    <div class="home-bottom-section">
+        <div class="home-left-section">
+            <div class="bulletin-container">
+                <div class="section-header">
+                    <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><p id="section-title">BULLETIN</p>
+                </div>
+            </div>
+            <div class="upcoming-events-container">
+                <div class="section-header">
+                    <img class="symbol" id="events-symbol" src="/images/events_icon.png"><p id="section-title">UPCOMING EVENTS</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="home-right-section">
+            <div class="member-of-month-container">
+                <div class="section-header">
+                    <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><p id="section-title">MEMBER OF THE MONTH</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="home-footer-container">
+        <div class="home-footer">
+            <img class="copyright-symbol" src="images/copyright-symbol.png"><p>2016 Cal Red Cross Association</p>
+        </div>
+    </div>
 </div>
+
+<script>
+    $(".home-carousel").slick({
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+</script>
 

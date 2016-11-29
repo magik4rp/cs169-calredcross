@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   # For the sake of testing Heroku
   def index
-    # redirect_to user_session_path
+    @images = ["CRC1.jpg", "CRC2.jpg", "CRC3.jpg"]
   end
 end
