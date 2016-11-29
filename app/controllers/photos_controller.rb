@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-    require ‘flickraw’
+    require 'flickraw'
     
     before_action :set_photo, only: [:show, :destroy]
     before_action :set_flickr, only: [:create, :destroy]
@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
     end
     
     def create
-        photo_id = flickr.upload_photo params[:photo].tempfile.path, :title => “Title”, :description => “Description”
+        photo_id = flickr.upload_photo params[:photo].tempfile.path, :title => "Title", :description => "Description"
         photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
         
         @photo = Photo.new(photo_id: photo_id, photo_url: photo_url)
