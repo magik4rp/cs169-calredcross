@@ -145,10 +145,19 @@ class AuthenAcceptController < ApplicationController
          
         i += 1
       end 
+      
+      params[:hash_one] = hash_one
+      print "HAAASH ONE"
+      print params[:hash_one]
+      
+      if params[:hash_one] == nil
+        print "oops"
+      end 
+      redirect_to profile_index_path(:hash_one => hash_one)
        
-      print "HASH"
-      print hash_one.length
-      print "HASH"
+    #  print "HASH"
+    #  print hash_one.length
+    #  print "HASH"
 
   end
 end

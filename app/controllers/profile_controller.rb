@@ -12,26 +12,43 @@ class ProfileController < ApplicationController
     else
       @level = "bronze_medal.png"
     end
-    
-     if @user.refresh_token.nil? 
-      # need to authorize faaaam 
-      client_secrets = Google::APIClient::ClientSecrets.load
-      auth_client = client_secrets.to_authorization
-      auth_client.update!(
-      :scope => 'https://www.googleapis.com/auth/calendar',
-      :redirect_uri => 'http://hiftekhar-hiftekhar.c9users.io:8080/authen_accept/accept',
-      :access_type => 'offline'
-      )
-      redirect_to auth_client.authorization_uri.to_s
-    else
-      redirect_to '/authen_accept/accept'
-    end 
-    
+      
+      
+      if params[:hash_one] != nil 
+        print "hai"
+      else 
+      #@user.refresh_token = nil
+ 
+         if @user.refresh_token.nil?
+          # need to authorize faaaam 
+          client_secrets = Google::APIClient::ClientSecrets.load
+          auth_client = client_secrets.to_authorization
+          auth_client.update!(
+          :scope => 'https://www.googleapis.com/auth/calendar',
+          :redirect_uri => 'http://hiftekhar-hiftekhar.c9users.io:8080/authen_accept/accept',
+          :access_type => 'offline'
+          )
+          redirect_to auth_client.authorization_uri.to_s
+        else
+          redirect_to '/authen_accept/accept'
+        end  
+      end 
     
    
   end
   
   #hi
+  
+  def events_one 
+    print "Hi"
+    
+    if params[:hash_one].nil? 
+      print "haaaai"
+    else 
+      print "boba"
+    end  
+    
+  end 
 
   def update
     @user = current_user 
