@@ -17,5 +17,3 @@
 //= require fullcalendar/gcal
 //= require turbolinks
 //= require_tree .
-
-$('#calendar').fullCalendar({});

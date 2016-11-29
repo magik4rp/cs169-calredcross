@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'google_drive'
 
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
 # ruby '2.3.0' 
 
 #gem 'cucumber-rails'
@@ -13,7 +17,7 @@ gem 'momentjs-rails', '~> 2.15', '>= 2.15.1'
 gem 'fullcalendar-rails', '~> 2.8'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
-
+   
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use pg as the database for Active Record
