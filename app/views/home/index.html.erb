@@ -12,6 +12,15 @@
     <div class="home-bottom-section">
         <div class="home-left-section">
             <div class="bulletin-container">
+                 <% if current_user and current_user.isOfficer %>
+                    <div id="edit-container">
+                        <img src="images/white_edit.png" id="top-edit">
+                    </div>
+                    <div id="edit-help">
+                        Click here to toggle edit content. Editable text will turn red, uneditable text will turn black.
+                        <div id="edit-help-carrot"></div>
+                    </div>
+                <%end%>
                 <div class="section-header">
                     <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><p id="section-title">BULLETIN</p>
                 </div>
@@ -25,6 +34,15 @@
         
         <div class="home-right-section">
             <div class="member-of-month-container">
+                <% if current_user and current_user.isOfficer %>
+                    <div id="edit-container">
+                        <img src="images/white_edit.png" id="top-edit">
+                    </div>
+                    <div id="edit-help">
+                        Click here to toggle edit content. Editable text will turn red, uneditable text will turn black.
+                        <div id="edit-help-carrot"></div>
+                    </div>
+                <%end%>
                 <div class="section-header">
                     <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><p id="section-title">MEMBER OF THE MONTH</p>
                 </div>
