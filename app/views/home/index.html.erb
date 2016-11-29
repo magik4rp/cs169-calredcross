@@ -23,6 +23,9 @@
                 <%end%>
                 <div class="section-header">
                     <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><p id="section-title">BULLETIN</p>
+                    <div class="bulletin-description">
+                        <%= @info.bulletin %>
+                    </div>
                 </div>
             </div>
             <div class="upcoming-events-container">
@@ -45,6 +48,13 @@
                 <%end%>
                 <div class="section-header">
                     <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><p id="section-title">MEMBER OF THE MONTH</p>
+                    <div class="motm-avatar"></div>
+                    <div class="motm-name">
+                        <p><%=@info.name %>, month</p>
+                    </div>
+                    <div class="motm-comments">
+                        <%= @info.comments %>
+                    </div>
                 </div>
             </div>
         </div>
