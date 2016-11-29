@@ -63,7 +63,7 @@ engines:
   coffeelint:
     enabled: true
   duplication:
-    enabled: true 
+    enabled: false
     exclude_fingerprints: 
     
       - 4043acc03b830baeb6d2c31d8fb62833
@@ -106,6 +106,9 @@ engines:
     - 4208b399dc0e1f005fc19566e5e1cf27
   fixme:
     enabled: true
+    checks:
+      TODO:
+        enabled: false
   rubocop:
     enabled: true
     exclude_fingerprints:
