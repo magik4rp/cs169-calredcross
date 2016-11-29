@@ -65,9 +65,10 @@ engines:
   duplication:
     enabled: true 
     exclude_fingerprints: 
-    
+      
+      - 6cc7077be16ce8c49f47cc5d50951eb9
+      - f8b25ce211add15af055443693c0829a
       - 872942c101fe18468600d91bc746847c
-    
       - c90e6d19d248ff953420d01c95b1008a
       - c90e6d19d248ff953420d01c95b1008a
       - f826a8670c335bf127e32915478cfb6c
@@ -99,8 +100,12 @@ engines:
   rubocop:
     enabled: true
     exclude_fingerprints:
-    - af907b6c265e7882e0424d46807aff55
-    
+    - af907b6c265e7882e0424d46807aff55 
+    - a49b3e829b9dc713c2888b744f5b5c17
+    - 001b6a004530cb84489c6a2363134b24
+    - 0cfa23947b7c7b4d268d5444be305973
+    - 666da0faea5ff00e2810ae5536e8bc6e
+    - ee1ae17b9d9516bc9d159495eba9cdf1
     - 3edf8a199c82d20aeb586f83c4dde294
     - 889926470f1dfa7db1601df2dcaa15d5
     - 43dfe59cf4fd69038208ade5daa870ba
