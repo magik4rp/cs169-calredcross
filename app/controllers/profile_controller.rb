@@ -12,10 +12,50 @@ class ProfileController < ApplicationController
     else
       @level = "bronze_medal.png"
     end
-      
+
       
       if params[:hash_one] != nil 
-        print "hai"
+        i = 0 
+        print "what's going on"
+        
+        @one = [] 
+        @events_list = params[:hash_one]
+        
+        while i < @events_list.length 
+          name = @events_list[i]["name"]
+          date = @events_list[i]["date"]
+          location = @events_list[i]["location"]
+          description = @events_list[i]["description"]
+          print "NAME ", name
+          print "DATE ", date 
+          print "LOCATION ", location 
+          print "DATE ", date
+          
+          @event_one = Event.new
+          @event_one.editName(name) 
+          @event_one.editLocation( location)
+          @event_one.editDescription(description)
+          @event_one.editDate(date)
+          
+          i = i+1
+          
+        end 
+          
+        #@events = []
+        #@events_list = params[:hash_one]
+        #while i < (params[:hash_one].length)
+        #  name = @events_list[i]["name"]
+        #  date = @events_list[i]["date"]
+        #  location = @events_list[i]["location"]
+        #  description = @events_list[i]["description"]
+        #  @event_one = Event.new(:name => name, :date => date, :location => location, :description => description)
+        #  @events << @event_one
+        #end
+        
+      #  if i == 0
+      #    @events = Event.create("No Current Events", nil, nil, nil)
+      #  end 
+        
       else 
       #@user.refresh_token = nil
  

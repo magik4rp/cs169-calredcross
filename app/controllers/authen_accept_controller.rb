@@ -138,7 +138,7 @@ class AuthenAcceptController < ApplicationController
         
         # and start_year == curr_year and start_month == curr_month
         if title.include? "[CRC]" and start_year == curr_year and start_month == curr_month
-          new_array = {"email" => email, "location" => location, "start_year" => start_year, "start_month" => start_month, "start_day" => start_day, "start_hour" =>  start_hour, "start_minutes" => start_minutes, "start_am_or_pm" => start_am_or_pm, "end_year" => end_year, "end_month" => end_month, "end_day" => end_day, "end_hour" => end_hour, "end_minutes" => end_minutes, "end_am_or_pm" => end_am_or_pm} 
+          new_array = {"name" => title, "description" => list.data.items[i].description, "date" => list.data.items[i].start.dateTime, "location" => location} 
           print "hi"
           hash_one << new_array 
         end 
@@ -153,6 +153,8 @@ class AuthenAcceptController < ApplicationController
       if params[:hash_one] == nil
         print "oops"
       end 
+      
+      
       redirect_to profile_index_path(:hash_one => hash_one)
        
     #  print "HASH"
