@@ -9,6 +9,9 @@ gem 'google-api-client', '0.8.2', require: 'google/api_client'
 
 #gem 'cucumber-rails'
 
+gem 'flickraw'
+gem 'figaro'
+
 gem 'coveralls', require: false
 gem 'devise'
 gem 'paperclip', '~> 4.1'
