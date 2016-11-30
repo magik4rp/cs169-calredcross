@@ -65,6 +65,9 @@ engines:
     enabled: true
   duplication:
     enabled: true
+    checks:
+      Identical code:
+        enabled: false
     exclude_fingerprints:
     - a493a604b888117652c1c9303270ddfa
     - 5e98926627c19c41b3b10b1e8a460d58
