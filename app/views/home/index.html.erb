@@ -9,6 +9,9 @@
                     <div class='photo-text'>
                         <%= image.text %>
                     </div>
+                    <div class="edit-home-photo" id=<%= image.id %>>
+                        <img id= "edit-home-photo" src="images/black_edit.png">
+                    </div>
                     <%= image_tag(image.url, :class => "carousel-image") %>
                 </div>
             <%end %>
