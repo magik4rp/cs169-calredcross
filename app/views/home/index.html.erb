@@ -4,13 +4,26 @@
     <div class="carousel-container">
         <div id="owl-demo" class="home-carousel">
             <% @images.each do |image| %>
-                <div class="item crop-height">
+                <div class="item crop-height" id=<%= image.id %>>
                     <div class='photo-screen'></div>
                     <div class='photo-text'>
                         <%= image.text %>
                     </div>
-                    <div class="edit-home-photo" id=<%= image.id %>>
-                        <img id= "edit-home-photo" src="images/black_edit.png">
+                    <% if current_user and current_user.isOfficer %>
+                        <div class="edit-home-photo" id=<%= image.id %>>
+                            <img class= "edit-home-photo-button" src="images/black_edit.png">
+                        </div>
+                    <%end%>
+                    <div class="edit-home-photo-box">
+                        <input type="text" id=<%= image.id %> class="new-photo-url" placeholder="Add your photo url">
+                        <label for="new-photo-url">Url</label>
+                        <input type="text" id=<%= image.id %> class="new-photo-text" placeholder="Add some text to your photo">
+                        <label for="new-photo-url">Text</label>
+                        <div id="edit-photo-buttons">
+                            <div class="home-cancel">Cancel</div>
+                            <div class="home-save">Save</div>
+                        </div>
+                        
                     </div>
                     <%= image_tag(image.url, :class => "carousel-image") %>
                 </div>
@@ -88,6 +101,7 @@
 </div>
 
 <script>
+    var current_photo;
     $(".home-carousel").slick({
         arrows: true,
         dots: true,
@@ -146,5 +160,35 @@
                     $(".motm-image").attr("src", img);
                     $(".edit_info").submit();
                 });
+    $(".edit-home-photo").click(function() {
+        $(".edit-home-photo-box").toggle();
+        current_photo = $(this).attr("id");
+        console.log("Clicked " + current_photo);
+    });
+    $(".home-cancel").click(function() {
+        $(".edit-home-photo-box").toggle();
+    });
+    $(".home-save").click(function() {
+        $(".edit-home-photo-box").toggle();
+        var url = $("#" + current_photo + ".new-photo-url").val();
+        var text = $("#" + current_photo + ".new-photo-text").val();
+        console.log(url);
+        console.log(text);
+        $.ajax({
+            type : 'post',
+            url : "/home/update_gallery",
+            data : {"url": url,
+                    "text": text,
+                    "photo_id": current_photo
+            },    
+            dataType : 'json',
+            async : false,
+            context : document.body,
+            success : function(response) {
+                $("#" + current_photo + " .carousel-image").attr("src", url);
+                $("#" + current_photo + " .photo-text").text(text);
+            }
+        });
+    });
 </script>
 

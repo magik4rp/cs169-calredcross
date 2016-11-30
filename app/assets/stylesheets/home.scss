@@ -354,21 +354,68 @@ input[type="file"]:focus {
 }
 .edit-home-photo {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50px 50px 0;
-    border-color: transparent #ffffff transparent transparent;
-    opacity: 0.6;
+    right: 10px;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    background: white;    
+/*    opacity: 0.6;*/
     cursor: pointer;
+    border-radius: 2px;
 }
-#edit-home-photo{
+.edit-home-photo-button{
     width: 15px !important;
     position: relative !important;
-    right: -27px !important;
-    top: 10px !important;
     opacity: 0.7 !important;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.edit-home-photo-box {
+    position: absolute;
+    right: 35px;
+    top: 10px;
+/*    height: 250px;
+    width: 300px;*/
+    background: white;
+    padding: 15px;
+    display: none;
+}
+.home-cancel, .home-save {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    background: #ED1B2E;
+    height: 30px;
+    width: 100px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+/*    float: right;*/
+}
+.edit-home-photo-box input {
+    position: relative;
+    border-bottom: solid black 1px;
+    width: 100%;
+    display: block;
+}
+.edit-home-photo-box label {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: black;
+    text-align: left;
+    display: block;
+    margin-top: 0px !important;
+}
+#edit-photo-buttons {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 225px;
+    margin-left: auto;
+    margin-right: auto;
 }

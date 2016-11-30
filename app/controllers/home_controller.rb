@@ -34,4 +34,17 @@ class HomeController < ApplicationController
       @info.update_attribute(:avatar, params[:info][:avatar])
     end
   end
+
+  def update_gallery
+    id = params["photo_id"]
+    url = params["url"]
+    text = params["text"]
+    home_image = HomeImage.find(id)
+    if url != ""
+      home_image.update_attribute(:url, url)
+    end
+    if text != ""
+      home_image.update_attribute(:text, text)
+    end
+  end
 end

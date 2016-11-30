@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'authen_accept/accept'
 
   resources :galleries
+  post 'home/update_gallery', :to => 'home#update_gallery'
   post 'galleries/update', :to => 'galleries#update'
   post 'galleries/add-favorite', :to => 'galleries#addFavorite'
   post 'galleries/add-photo', :to => 'galleries#addPhoto'
