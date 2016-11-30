@@ -3,7 +3,8 @@
 	<head>
 		<%= javascript_include_tag('calendar.js') %>
 	</head>
-	<body>
+	<body class="calendar">
+
 		<div id="event-lightbox-container">
 			<div class="screen"></div>
 			<div id="event-lightbox">
@@ -19,12 +20,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="profile-header">
+		<%= render 'navbar' %>
+<!-- 		<div class="profile-header">
 	        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
 	        <a href="/members" class="nav-element">Members</a>
 	        <a href="/galleries" class="nav-element">Gallery</a>
 	        <a href="/calendar" class="nav-element active-link">Events</a>
-	    </div>
+	    </div> -->
 	    <div class="calendar-container">
 	    	<div id='calendar'></div>
 	    </div>

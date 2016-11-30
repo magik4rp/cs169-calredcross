@@ -14,7 +14,7 @@
             <!--<li><%= link_to 'Login', new_user_session_path, :method => :get, :class => 'home_link', :id => 'login_bttn' %></li>-->
             <li class="home_link" id="login_bttn">Login</li>
         <% end %>
-        <li class="home_link" id="signup_bttn">Sign Up</li>
+        <li class="home_link calendar-page" id="signup_bttn">Sign Up</li>
     </div>
 </div>
 
@@ -105,19 +105,23 @@
         $('#signup-form').show();
     });
 
-    $("#login_bttn").mouseenter(function() {
+    $(".menu").mouseenter(function() {
             console.log("HOVERING");
             $(".home-container").css("z-index", "-1")
+            $("#signup_bttn").show();
         }).mouseleave(function() {
             console.log("HOVERING OUT");
             $(".home-container").css("z-index", "1")
+            $("#signup_bttn").hide();
         });
     $("#signup_bttn").mouseenter(function() {
             console.log("HOVERING");
             $(".home-container").css("z-index", "-1")
+            $(this).show();
         }).mouseleave(function() {
             console.log("HOVERING OUT");
             $(".home-container").css("z-index", "1")
+            $(this).hide();
         });
 
     $('#signup-bttn').click(function() {

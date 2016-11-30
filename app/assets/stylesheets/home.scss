@@ -24,6 +24,14 @@ body, html {
     height: 50px;
     
 }
+#home-lightbox-container {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
 #lightbox-logo {
      width: 300px;
     position: relative;
