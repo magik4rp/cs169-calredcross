@@ -4,7 +4,13 @@
     <div class="carousel-container">
         <div id="owl-demo" class="home-carousel">
             <% @images.each do |image| %>
-                <div class="item"><%= image_tag(image) %></div>
+                <div class="item crop-height">
+                    <div class='photo-screen'></div>
+                    <div class='photo-text'>
+                        <%= image.text %>
+                    </div>
+                    <%= image_tag(image.url, :class => "carousel-image") %>
+                </div>
             <%end %>
         </div>
     </div>
@@ -22,7 +28,7 @@
                     </div>
                 <%end%>
                 <div class="section-header">
-                    <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><p id="section-title">BULLETIN</p>
+                    <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><div class="section-title">BULLETIN</div>
                 </div>
                 <div class="bulletin-description">
                     <%= @info.bulletin %>
@@ -30,7 +36,7 @@
             </div>
             <div class="upcoming-events-container">
                 <div class="section-header">
-                    <img class="symbol" id="events-symbol" src="/images/events_icon.png"><p id="section-title">UPCOMING EVENTS</p>
+                    <img class="symbol" id="events-symbol" src="/images/events_icon.png"><div class="section-title">UPCOMING EVENTS</div>
                 </div>
             </div>
         </div>
@@ -47,19 +53,21 @@
                     </div>
                 <%end%>
                 <div class="section-header">
-                    <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><p id="section-title">MEMBER OF THE MONTH</p>
+                    <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><div class="section-title">MEMBER OF THE MONTH</div>
                 </div>
                 <div class="motm-avatar">
                     <%= image_tag(@info.avatar.url(:medium), :class => "motm-image") %>
-                    <%= form_for @info, :url => {:action => :update}, :html => { :multipart => true } do |form| %>
-                        <%= form.file_field :avatar %>
-                        <%= form.submit "upload" %>
-                    <% end %>
-                    <label for="info_avatar" id="edit-motm-photo">Edit Photo</label>
+                    <% if current_user and current_user.isOfficer %>
+                        <%= form_for @info, :url => {:action => :update}, :html => { :multipart => true } do |form| %>
+                            <%= form.file_field :avatar %>
+                            <%= form.submit "upload" %>
+                        <% end %>
+                        <label for="info_avatar" id="edit-motm-photo">Edit Photo</label>
+                    <%end%>
                 </div>
                 
                 <div class="motm-name">
-                    <p><%=@info.name %></p>
+                    <%=@info.name %>
                 </div>
                 <div class="motm-comments">
                     <%= @info.comments %>

@@ -21,6 +21,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0px;
+    height: 50px;
     
 }
 .home-container {
@@ -46,17 +47,23 @@ body {
 .logo {
     display: inline-block;
     margin-left: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .menu {
     display: inline-block;
-    margin-left: 1000px;
+    /* margin-left: 1000px; */
     position: relative;
+    float: right;
+    padding-right: 20px;
 }
 .menu li {
     vertical-align: middle;
     display: inline-block;
     margin-left: 15px;
     color: white;
+    cursor: pointer;
 }
 
 .home_link {
@@ -89,7 +96,7 @@ body {
 #owl-demo .item img{
     display: block;
     width: 100%;
-    height: 400px;
+/*    height: 400px;*/
     margin-left: auto;
     margin-right: auto;
     margin: 0 auto;
@@ -100,12 +107,37 @@ body {
     position: relative;
     display: block;
     margin: auto;
-    height: 400px;
-    padding-left: 30px;
-    padding-right: 30px;
+    /*height: 400px;*/
+/*    padding-left: 30px;
+    padding-right: 30px;*/
 }
+.crop-height {
+  /* max-width: 1200px; /* native or declared width of img src (if known) */
+    max-height: 600px;
+    overflow: hidden; }
 
+img.carousel-image {
+  /* corrects small inline gap at bottom of containing div */
+  top: -100px;
+    display: block; 
+  width: 100%; /* corrects obscure Firefox bug */
+    max-width: 100%;
+    /* just in case, to force correct aspect ratio */
+    height: auto !important;
+  display: block; /* corrects small inline gap at bottom of containing div */
+  width: 100%; 
+  max-width: 100%;
+  /* just in case, to force correct aspect ratio */
+  height: auto !important;
+  /*width: auto\9; 
+  /* ie8+9 - use modernizr instead of this \9 hack */
+  /* lt ie8 */
+  -ms-interpolation-mode: bicubic;
+    /* optionally force a minimum size if img src size is known: */
+    /* min-height: 320px; /* max-height of .crop-height */
+    /* min-width: 480px; /* proportional to above */ }
 .home-bottom-section {
+    font-size: 16px;
     width: 95%;
     display: block;
     margin-left: auto;
@@ -156,10 +188,11 @@ body {
     
 }
 
-#section-title {
+.section-title {
     display: inline-block;
     padding-left: 10px;
     font-weight: bold;
+    font-family: Bold;
     font-size: large;
 }
 
@@ -167,6 +200,7 @@ body {
     margin: auto;
     display: table;
     padding: 30px;
+    padding-bottom: 15px;
 }
 .home-footer-container {
     display:block;
@@ -215,8 +249,8 @@ body {
     border-radius: 100px;
     height: 200px;
     width: 200px;
-    border-style: solid;
-    border-width: 3px;
+    border: solid black 4px;
+
 }
 
 #info_avatar {
@@ -267,4 +301,54 @@ input[type="file"]:focus {
     padding-right: 50px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* Frances */
+.slick-dots {
+    bottom: -20px !important; 
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    opacity: 0.4;
+    display: block;
+    width: 10px !important;
+    height: 10px !important;
+    padding: 5px;
+    background-color: white !important;
+    border-radius: 50% !important;
+    border: 0;
+    outline: none;
+    content: none !important;
+}
+.slick-dots li.slick-active button {
+    opacity: 1 !important;
+}
+.slick-dots li button:before {
+    content: none !important;
+}
+.photo-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.3;
+}
+.slick-prev {
+    left: 20px !important;
+    z-index: 10 !important;
+}
+.slick-next {
+    right: 20px !important;
+    z-index: 10 !important;
+}
+.photo-text {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
 }

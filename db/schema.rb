@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20161129070400) do
-
+ActiveRecord::Schema.define(version: 20161130071342) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +21,29 @@ ActiveRecord::Schema.define(version: 20161129070400) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
+
+  create_table "home_images", force: :cascade do |t|
+    t.string   "url"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "info_id"
+    t.index ["info_id"], name: "index_home_images_on_info_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "infos", force: :cascade do |t|
     t.string   "bulletin",            default: "This is a bulletin"
