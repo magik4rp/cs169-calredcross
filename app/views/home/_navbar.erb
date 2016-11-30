@@ -10,16 +10,18 @@
             <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'home_link' %></li>
             <li><%= link_to (image_tag(current_user.avatar.url(:thumb), class: 'round-image-50')), profile_index_path %></li>
         <% else %>
-            <li class="round-image-50"><%= image_tag("/images/thumb/missing_ava.png") %></li>
+<!--             <li class="round-image-50"><%= image_tag("/images/thumb/missing_ava.png") %></li> -->
             <!--<li><%= link_to 'Login', new_user_session_path, :method => :get, :class => 'home_link', :id => 'login_bttn' %></li>-->
-            <li class="home_link" id="login_bttn">Sign In</li>
+            <li class="home_link" id="login_bttn">Login</li>
         <% end %>
+        <li class="home_link" id="signup_bttn">Sign Up</li>
     </div>
 </div>
 
 <div id="lightbox-container">
         <div class="screen"></div>
         <div id="login-lightbox">
+            <img id="lightbox-logo" src="/images/ARC_Logo_Classic_Horiz_RGB.png">
             <%= form_for(:user, :url => session_path(:user), :html => {id: 'login-form'}) do |f| %>
                 <div class="field">
                     <%= f.label :email %>
@@ -32,16 +34,17 @@
                     <img class="login-symbol" src="/images/password.png">
                 </div>
                 <% if devise_mapping.rememberable? -%>
-                    <div class="field" id="remember-me">
+                    <div class="field" id="remember-me-home">
                         <%= f.check_box :remember_me %>
                         <%= f.label :remember_me, :id => "remember-me-label" %>
                     </div>
                 <% end -%>
+                <%= link_to "Forgot your password?", new_password_path(:user), :class => "forgot" %>
                 <div class="actions">
+                    <a id="signup-bttn">Sign Up</a>
                     <%= f.submit "Log in", :class => "submit" %>
                 </div>
-                <a id="signup-bttn">Sign Up</a><br />
-                <%= link_to "Forgot your password?", new_password_path(:user) %>
+                
             <% end %>
             
             <%= form_for(:user, :url => registration_path(:user), :html => {id: 'signup-form'}) do |f| %>
@@ -81,8 +84,10 @@
               </div> 
             
               <div class="actions">
+              <a id="signin-bttn">Sign In</a>
                 <%= f.submit "Sign up", :class => "submit"%>
               </div>
+              
             <% end %>
         </div>
     </div>
@@ -92,9 +97,42 @@
         console.log("Login clicked");
         $('#lightbox-container').show();
     });
+    $('#signup_bttn').click(function() {
+        console.log("Login clicked");
+        $('#lightbox-container').show();
+        $('#login-form').hide();
+        $("#login-lightbox").css("height", "475px")
+        $('#signup-form').show();
+    });
+
+    $("#login_bttn").mouseenter(function() {
+            console.log("HOVERING");
+            $(".home-container").css("z-index", "-1")
+        }).mouseleave(function() {
+            console.log("HOVERING OUT");
+            $(".home-container").css("z-index", "1")
+        });
+    $("#signup_bttn").mouseenter(function() {
+            console.log("HOVERING");
+            $(".home-container").css("z-index", "-1")
+        }).mouseleave(function() {
+            console.log("HOVERING OUT");
+            $(".home-container").css("z-index", "1")
+        });
+
     $('#signup-bttn').click(function() {
        console.log("Sign Up Clicked");
        $('#login-form').hide();
+       $("#login-lightbox").css("height", "475px")
        $('#signup-form').show();
+    });
+    $('#signin-bttn').click(function() {
+       console.log("Sign In Clicked");
+       $('#signup-form').hide();
+       $("#login-lightbox").css("height", "350px")
+       $('#login-form').show();
+    });
+    $(".screen").click(function() {
+        $("#lightbox-container").hide();
     });
 </script>
