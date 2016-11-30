@@ -27,8 +27,10 @@ class MembersController < ApplicationController
       if added_hours != 0
         current_user.updateSemHours(user, added_hours)
         current_user.updateTotalHours(user, added_hours)
+        redirect_to root_path
       end
     end
+    
   end
   def delete
     member = params["member"]

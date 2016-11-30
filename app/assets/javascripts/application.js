@@ -17,4 +17,7 @@
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require turbolinks
+//= require owl.carousel
+//= require jquery.slick
 //= require_tree .
+
