@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'authen_accept/accept'
   post 'photos/add-favorite', :to => 'photos#addFavorite'
 
-  resources :galleries
+  resources :galleries 
+  get '/o/oauth2/auth', :to => 'authen_accept#accept'
   post 'home/update_gallery', :to => 'home#update_gallery'
   post 'galleries/update', :to => 'galleries#update'
   post 'galleries/add-favorite', :to => 'galleries#addFavorite'

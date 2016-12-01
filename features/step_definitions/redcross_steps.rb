@@ -10,6 +10,45 @@ Given /the following members exist/ do |members_table|
   end
 end
 
+Given(/^I am logged in$/) do
+  '/home'
+end
+
+When(/^I press the "([^"]*)" button$/) do |arg1|
+  #pending # Write code here that turns the phrase above into concrete actions
+  
+  begin 
+  cookies[:token] = User.find(1)
+  if cookies[:token] == nil 
+    print "hi"
+  end 
+  click_button(arg1)
+  rescue 
+end 
+  
+  #begin 
+   
+  #  click_button(arg1)
+
+  #rescue 
+  #  print "set it up"
+  #end 
+    
+  
+  
+  #AuthenController.any_instance.should_receive(:space_available_mb).and_return(:hash_one)
+
+end
+
+Given /^I am signed in$/ do  
+  visit login_path
+  visit oauth_callback_path
+end  
+
+When /^Twitter authorizes me$/ do
+  visit oauth_callback_path
+end
+
 Then /^I see all members/ do
   # Make sure that all the members in the members table are visible.
   Users.all
@@ -33,10 +72,12 @@ end
 
 And /I fill in email with (".*")/ do |value|
   fill_in "user_email", :with => value
+  @email = value 
 end 
 
 And /I fill in password with (".*")/ do |value| 
   fill_in "user_password", :with => value 
+  @current_user = User.find_by_email(value)
 end 
 
 

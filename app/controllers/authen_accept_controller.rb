@@ -17,6 +17,12 @@ class AuthenAcceptController < ApplicationController
   end
 
 
+def current_user
+  return @current_user if defined?(@current_user)
+  @current_user = User.new
+end
+
+
   def accept
     
     @user = current_user

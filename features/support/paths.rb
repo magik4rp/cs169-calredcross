@@ -24,6 +24,7 @@ module NavigationHelpers
     when /^the gallery page$/ then '/members'
       
     when /^the profile page$/ then '/profile'
+ 
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
