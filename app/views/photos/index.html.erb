@@ -4,9 +4,7 @@
     <%= javascript_include_tag('new.js') %>
 </head>
 <body>
-    <div class="profile-header">
-        <a href="/"><img id="navbar-logo" src="/images/logo2.png"></a>
-    </div>
+    
     <div id="add-photo-container">
         <div class="screen"></div>
         <div id="add-photo-lightbox">
@@ -17,6 +15,7 @@
             </div>
         </div>
     </div>
+    <%= render 'navbar' %>
     <div class="gallery-container">
         <div id="gallery">
             <div class="photos-title">
