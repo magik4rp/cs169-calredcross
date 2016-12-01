@@ -9,17 +9,14 @@ class HomeController < ApplicationController
     else
       @info = Info.first
     end
-    @date = DateTime.now.to_s
-    @url = "https://www.googleapis.com/calendar/v3/calendars/americanredcrossatcal@gmail.com/events?key=AIzaSyAN3MLI-jD6mS6425sjj9QcBPWykxvsxZY&timeMin=2016-10-25T11:00:00-07:00"
-    require 'open-uri'
+    @date = Time.now.utc.strftime('%FT%TZ')
+    @url = "https://www.googleapis.com/calendar/v3/calendars/americanredcrossatcal@gmail.com/events?key=AIzaSyAN3MLI-jD6mS6425sjj9QcBPWykxvsxZY&timeMin=" + @date
     
-   
+    require 'open-uri'
     buffer = open(@url).read
     response = JSON.parse(buffer)
     
     @events = response["items"]
-    # @description = @calendar['summary']
-    
   end
   
   
