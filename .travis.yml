@@ -20,9 +20,7 @@ script:
 #  - bundle exec rake db:test:prepare 
 #  - bin/rails db:migrate RAILS_ENV=test
 #  - bundle exec rspec 
-#   - bundle exec cucumber
-   - bundle exec rake db:migrate
-   - bundle exec rake db:seed
+#   - bundle exec cucumber 
    - bundle exec rake 
 #  - bundle exec rake
     
