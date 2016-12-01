@@ -8,8 +8,9 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @gallery = Photo.all
+    @galleries = Photo.all
     @photos = Photo.all
+    @gallery = Gallery.new
   end
 
   def addFavorite
