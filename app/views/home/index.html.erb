@@ -53,6 +53,7 @@
             <div class="upcoming-events-container">
                 <div class="section-header">
                     <img class="symbol" id="events-symbol" src="/images/events_icon.png"><div class="section-title">UPCOMING EVENTS</div>
+                    <div id="upcoming-events"></div>
                 </div>
             </div>
         </div>
@@ -190,5 +191,18 @@
             }
         });
     });
+
+var request = gapi.client.calendar.events.list({
+      'calendarId': 'https://www.googleapis.com/calendar/v3/calendars/americanredcrossatcal@gmail.com/events?key=AIzaSyAN3MLI-jD6mS6425sjj9QcBPWykxvsxZY',
+      'timeMin': (new Date()).toISOString(),
+      'showDeleted': false,
+      'singleEvents': true,
+      'maxResults': 1,
+      'orderBy': 'startTime'
+    });
+    request.execute(function(resp) {});
+    console.log(request);
 </script>
+
+
 
