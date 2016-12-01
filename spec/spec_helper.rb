@@ -3,7 +3,7 @@ SimpleCov.start
 # require "codeclimate-test-reporter"
 # CodeClimate::TestReporter.start
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear_merged!
 
 require File.expand_path("../../config/environment", __FILE__)
 
