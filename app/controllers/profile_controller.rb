@@ -16,6 +16,7 @@ class ProfileController < ApplicationController
     end
     
       
+      
       @events = []
       
       if params[:hash_one] != nil 
