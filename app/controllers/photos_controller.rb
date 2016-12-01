@@ -1,9 +1,8 @@
-require 'flickraw'
 class PhotosController < ApplicationController
-    
+    require 'flickraw'
     before_action :set_photo, only: [:show, :destroy]
     before_action :set_flickr, only: [:create, :destroy]
-    skip_before_filter :verify_authenticity_token  
+    skip_before_filter :verify_authenticity_token
     def index
         @photos = Photo.all
     end
@@ -14,21 +13,34 @@ class PhotosController < ApplicationController
     def new
         @photo = Photo.new
     end
+
+    def addFavorite
+        photo_id = params["image"]
+        print(photo_id)
+        current_user.photos << Photo.find(photo_id)
+    end
     
     def create
-        print("~~~~~~~~~~~~" + params.keys.to_s + "\n")
-        photo_id = flickr.upload_photo params[:photo].tempfile.path, :title => "Title", :description => "Description"
-        photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
-        
-        @photo = Photo.new(photo_id: photo_id, photo_url: photo_url)
-    
+        no_errors = true
+        params[ :photos ].each{ |photo|
+            photo_id = flickr.upload_photo photo.tempfile.path, :title => 'Title', :description => 'Description'
+            photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
+            @photo = Photo.new(photo_id: photo_id, photo_url: photo_url)
+            if !@photo.save 
+                no_errors = false
+            end
+        }
         respond_to do |format|
-            if @photo.save
-                format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-                format.json { render action: ‘show’, status: :created, location: @photo }
+            if no_errors
+                print("Saved photo! \n")
+                format.html do
+                    redirect_to '/photos'
+                end
             else
-                format.html { render action: ‘new’ }
-                format.json { render json: @photo.errors, status: :unprocessable_entity }
+                print("Unable to save photo! \n")
+                format.html do
+                    redirect_to '/photos'
+                end
             end
         end
     end
