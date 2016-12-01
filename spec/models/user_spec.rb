@@ -2,12 +2,11 @@ require "spec_helper"
 
 describe User, :type => :model  do 
     
-    @user_one = User.new(:id => 6, :name => "Weird Dance", :email => "hi3@gmail.com", :password => "miseryisme", :major => "CS")
-    it 'should get the member' do 
+     it 'should get the member' do 
          
         @user_three = User.new(:name => "Full Name")
         @user = User.new(:name => "whatver ", :id => 1)
-        @user_three.getMember(6)
+        @user_three.getMember(3)
     end 
     
        
@@ -31,7 +30,7 @@ describe User, :type => :model  do
         
         @user_four = User.new(:name => "Members Yo", :id => 4)
         @user_five = User.new(:name => "Members Two", :id => 5)
-        expect(@user_five.getMemberName(6)).to eq("Weird Dance")
+        expect(@user_five.getMemberName(3)).to eq("sample_officer")
         
     end
     
@@ -39,16 +38,23 @@ describe User, :type => :model  do
         
         @user_four = User.new(:name => "Members Yo", :id => 4)
         @user_five = User.new(:name => "Members Two", :id => 5)
-        expect(@user_five.getMemberEmail(6)).to eq("hi@gmail.com")
+        expect(@user_five.getMemberEmail(3)).to eq("sampleofficer@gmail.com")
     end
     
     it 'should be able to get the member total hours' do 
         
         @user_four = User.new(:name => "Members Yo", :id => 4)
         @user_five = User.new(:name => "Members Two", :id => 5)
-        expect(@user_five.getMemberTotalHours(6)).to eq(0)
+        expect(@user_five.getMemberTotalHours(3)).to eq(30)
     end
-   
+    
+    it 'should be able to get the member semester hours' do 
+        
+        @user_four = User.new(:name => "Members Yo", :id => 4)
+        @user_five = User.new(:name => "Members Two", :id => 5)
+        expect(@user_five.getMemberSemHours(3)).to eq(24)
+    end
+    
     
  
 end 
