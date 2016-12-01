@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe User, :type => :model  do 
     
+    @disposable_one1 = User.create!(:id => 12, :name => "Weird Dance", :email => "hi31@gmail.com", :password => "miseryisme", :major => "CS")
      
     @disposable_one = User.create!(:id => 11, :name => "Weird Dance", :email => "hi31@gmail.com", :password => "miseryisme", :major => "CS")
     @user_one = User.create!(:id => 10, :name => "Weird Dance", :email => "hi3@gmail.com", :password => "miseryisme", :major => "CS")
@@ -98,7 +99,7 @@ describe User, :type => :model  do
     
     it 'should be able to delete another member only if officer (sad path)' do 
         @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
-        @user_four.deleteMember(11)
+        @user_four.deleteMember(12)
     end 
     
         
@@ -109,8 +110,8 @@ describe User, :type => :model  do
    
             
     it 'should be able to edit name only if correct name (happy path)' do 
-        @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
-        @user_four.editName("Naomi")
+        @user_five = User.new(:name => "Members Yo", :id => 13, :is_officer => 0)
+        @user_five.editName("Naomi")
     end 
     
     it 'should be able to edit description' do 
