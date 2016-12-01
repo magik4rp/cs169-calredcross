@@ -6,7 +6,8 @@ class ProfileController < ApplicationController
     
     
     @user = current_user
-    @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
+    # @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
+    @images = current_user.photos
     @events = Event.all.last(3)
     if current_user.level == "gold"
       @level = "gold_status.png"
