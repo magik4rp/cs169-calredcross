@@ -19,6 +19,8 @@ class AuthenAcceptController < ApplicationController
 
   def accept
     
+    @user = current_user
+    
     
     if @user.refresh_token.nil? 
       print "go here"
