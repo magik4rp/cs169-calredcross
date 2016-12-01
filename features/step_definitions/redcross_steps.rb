@@ -12,7 +12,9 @@ end
 
 Given(/^I am logged in$/) do
   '/home'
+  @user_one = User.new
 end
+
 
 When(/^I press the "([^"]*)" button$/) do |arg1|
   #pending # Write code here that turns the phrase above into concrete actions
