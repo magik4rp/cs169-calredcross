@@ -2,7 +2,7 @@ require 'simplecov'
 require 'coveralls' 
 require 'cucumber/rspec/doubles'
 
-#SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
    add_filter 'features/support/selectors.rb'
    add_filter 'app/helpers/application_helper.rb'
