@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   get 'authen_accept/accept'
-
-  resources :galleries
-  post 'galleries/update', :to => 'galleries#update'
-  post 'galleries/add-favorite', :to => 'galleries#addFavorite'
-  post 'galleries/add-photo', :to => 'galleries#addPhoto'
+  post 'photos/add-favorite', :to => 'photos#addFavorite'
   # get 'profile/index'
   post 'profile/update', :to => 'profile#update'
   post 'members/update', :to => 'members#update'
