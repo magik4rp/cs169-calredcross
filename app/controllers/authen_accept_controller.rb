@@ -43,6 +43,7 @@ class AuthenAcceptController < ApplicationController
       print "This is the refresh token"
       print @user.refresh_token
       @user.update_attribute(:refresh_token, auth_client.refresh_token)
+      redirect_to root_path
  end 
     print "goes here"          
       signet = Signet::OAuth2::Client.new(

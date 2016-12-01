@@ -1,6 +1,8 @@
+body.calendar {
+	background-color: #D7D7D8 !important;
+}
 #calendar {
 	position: relative !important;
-    height: 100% !important;
     margin-top: 50px;
     background-color: white;
     padding: 20px;
@@ -13,13 +15,17 @@
 	padding-left: 100px;
 	padding-right: 100px;
 	background-color: #D7D7D8 !important;
+	z-index: -1;
 }
  html, body {
 	font-family: Regular !important;
 	
 }
-
-button, .fc-state-default {
+.calendar-page#signup_bttn {
+	display:none;
+	list-style: none;
+}
+button.fc-state-default {
 	background-image: none !important;
 	background-color: #ED1B2E !important;
 	text-shadow: none !important;

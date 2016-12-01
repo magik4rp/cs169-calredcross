@@ -63,7 +63,25 @@ engines:
   coffeelint:
     enabled: true
   duplication:
-    enabled: false 
+    enabled: false
+    exclude_fingerprints: 
+    
+      - 4043acc03b830baeb6d2c31d8fb62833
+      - e0f3063236d1795dc2118549405b4b19
+      - 7b0fae1a0ff046ee7f15e96a889a3aaf
+      - dca2bf1e0a1e4caf744eb75b0a3a46a1
+      - 5c51294aad6488f7f457b1cb23d0836b
+      - b472394539148270ac0ca7a739d6d215
+      - 15049cb399d56c9e829636f841f994db
+      - fd52d674d603959ab52455f924b6a8f2
+      - 0ecbe97e73febd78f0b415ab4c3ee87b
+      - 6cc7077be16ce8c49f47cc5d50951eb9
+      - f8b25ce211add15af055443693c0829a
+      - 872942c101fe18468600d91bc746847c
+      - c90e6d19d248ff953420d01c95b1008a
+      - c90e6d19d248ff953420d01c95b1008a
+      - f826a8670c335bf127e32915478cfb6c
+      - eb612f80d1d219b43f1675169c676c20
     checks:
       Similar code:
         enabled: false 

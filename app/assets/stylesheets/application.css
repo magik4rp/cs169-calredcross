@@ -12,6 +12,13 @@
  *
  *= require_tree .
  *= require_self
+
  *= require fullcalendar
+
+ *= require owl.carousel
+ *= require owl.theme
+ *= require slick
+ *= require slick-theme
+
  */
 
