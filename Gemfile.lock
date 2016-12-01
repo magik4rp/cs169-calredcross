@@ -373,7 +373,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave (~> 0.10.0)
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   coffee-rails (~> 4.2)
   coveralls
   cucumber-rails
@@ -401,6 +401,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
