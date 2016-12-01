@@ -14,7 +14,7 @@ class ProfileController < ApplicationController
     else
       @level = "bronze_medal.png"
     end
-      
+    
       
       @events = []
       
@@ -54,8 +54,9 @@ class ProfileController < ApplicationController
         
       else  
  
-         if @user.refresh_token.nil?
+         if @user.refresh_token.nil? 
           # need to authorize faaaam 
+          print "goes here 33"
           client_secrets = Google::APIClient::ClientSecrets.load
           auth_client = client_secrets.to_authorization
           auth_client.update!(

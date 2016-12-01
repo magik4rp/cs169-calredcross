@@ -19,8 +19,9 @@ class AuthenAcceptController < ApplicationController
 
   def accept
     
-    @user = current_user
+    
     if @user.refresh_token.nil? 
+      print "go here"
       if params[:error]
         print "Error"
       else 
@@ -160,6 +161,7 @@ class AuthenAcceptController < ApplicationController
     #  print "HASH"
     #  print hash_one.length
     #  print "HASH"
+    
 
   end
 end
