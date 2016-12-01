@@ -114,7 +114,7 @@ describe User, :type => :model  do
       User.create(:id => 11, :name => "Weird Dance", :email => "hi31aaaa@gmail.com", :password => "miseryisme", :major => "CS") 
   
         @user_four = User.new(:name => "Members Yo", :id => 27, :is_officer => 1)
-        @user_four.updateRanking(10)
+        @user_four.updateStatus(10, 1)
     end
     
         
@@ -147,14 +147,7 @@ describe User, :type => :model  do
         @user_four.updateTotalHours(10, 12)
     end
     
-   # it 'should be able to delete another member only if officer (happy path)' do 
-   #          User.create(:id => 10, :name => "Weird Danc1e", :email => "hi3@gmail.com", :password => "miseryisme", :major => "CS")
-   #   User.create(:id => 12, :name => "Weird Dance", :email => "hi31aaaa@gmail.com", :password => "miseryisme", :major => "CS")
-   #   User.create(:id => 11, :name => "Weird Dance", :email => "hi31aaaa@gmail.com", :password => "miseryisme", :major => "CS") 
-  
-   #     @user_four = User.new(:name => "Members Yo", :id => 23, :is_officer => 1, :email => "random5")
-   #     @user_four.deleteMember(11)
-   # end 
+
     
     it 'should be able to delete another member only if officer (sad path)' do 
              User.create(:id => 10, :name => "Weird Danc1e", :email => "hi3@gmail.com", :password => "miseryisme", :major => "CS")

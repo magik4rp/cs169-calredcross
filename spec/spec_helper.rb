@@ -1,8 +1,12 @@
 require 'simplecov'
 require 'coveralls'
  
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.start 
+#SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do 
+  
+   add_filter 'app/controllers/application_controller.rb'
+   add_filter 'app/helpers/application_helper.rb'
+end 
 
  
 
