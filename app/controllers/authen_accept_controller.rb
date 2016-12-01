@@ -33,7 +33,7 @@ class AuthenAcceptController < ApplicationController
         auth_client = client_secrets.to_authorization
         auth_client.update!(
           :scope => 'https://www.googleapis.com/auth/calendar',
-          :redirect_uri => 'http://hiftekhar-hiftekhar.c9users.io:8080/authen_accept/accept',
+          :redirect_uri => 'https://damp-forest-29318.herokuapp/authen_accept/accept',
           :access_type => 'offline'
         )
         auth_client.code = auth_code
