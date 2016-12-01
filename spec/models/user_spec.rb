@@ -93,14 +93,29 @@ describe User, :type => :model  do
     
     it 'should be able to delete another member only if officer (happy path)' do 
         @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 1)
-        @user_four.delete(11)
+        @user_four.deleteMember(11)
     end 
     
     it 'should be able to delete another member only if officer (sad path)' do 
         @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
-        @user_four.delete(11)
+        @user_four.deleteMember(11)
     end 
     
+        
+    it 'should be able to edit name only if correct name (sad path)' do 
+        @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
+        @user_four.editName("")
+    end 
    
- 
+            
+    it 'should be able to edit name only if correct name (happy path)' do 
+        @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
+        @user_four.editName("Naomi")
+    end 
+    
+    it 'should be able to edit description' do 
+        @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 0)
+        @user_four.editDescription("Naomi one")
+    end 
+    
 end 
