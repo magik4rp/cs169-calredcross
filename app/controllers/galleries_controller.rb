@@ -1,12 +1,14 @@
 class GalleriesController < ApplicationController
+  require ‘flickraw’
+  before_action :set_photo, only: [:show, :destroy]
+  before_action :set_flickr, only: [:create, :destroy]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
   # config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
 
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
-    @gallery = Gallery.new
+    @photos = Photo.all
   end
 
   def addFavorite
