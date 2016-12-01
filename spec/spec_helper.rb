@@ -1,7 +1,9 @@
 require "simplecov"
 SimpleCov.start
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+# require "codeclimate-test-reporter"
+# CodeClimate::TestReporter.start
+require 'coveralls'
+Coveralls.wear!
 
 require File.expand_path("../../config/environment", __FILE__)
 
