@@ -6,8 +6,8 @@ class User < ApplicationRecord
   # Set validation
   validates :name, :email, :major, presence: true
   has_many :galleries
-  has_many :fav_photos
-  has_many :photos, through: :fav_photos
+  has_many :favoritephotos
+  has_many :photos, through: :favoritephotos
   
   # Set default values for description.
   after_initialize :init
