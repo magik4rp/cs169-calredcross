@@ -56,5 +56,12 @@ describe User, :type => :model  do
     end
     
     
+    it 'should be able to update ranking if only an officer' do 
+        
+        @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 1)
+        @user_four.updateRanking(3)
+    end
+    
+    
  
 end 
