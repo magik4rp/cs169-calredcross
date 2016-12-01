@@ -2,6 +2,8 @@ require "spec_helper"
 
 describe User, :type => :model  do 
     
+     
+   
     @user_one = User.create!(:id => 10, :name => "Weird Dance", :email => "hi3@gmail.com", :password => "miseryisme", :major => "CS")
     it 'should get the member' do 
          
@@ -45,7 +47,7 @@ describe User, :type => :model  do
         
         @user_four = User.new(:name => "Members Yo", :id => 4)
         @user_five = User.new(:name => "Members Two", :id => 5)
-        expect(@user_five.getMemberEmail(10)).to eq("hi@gmail.com")
+        expect(@user_five.getMemberEmail(10)).to eq("hi3@gmail.com")
     end
     
     it 'should be able to get the member total hours' do 
@@ -68,7 +70,8 @@ describe User, :type => :model  do
         @user_four = User.new(:name => "Members Yo", :id => 4, :is_officer => 1)
         @user_four.updateRanking(10)
     end
+     
     
-    
+   
  
 end 
