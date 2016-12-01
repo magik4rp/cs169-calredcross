@@ -1,6 +1,6 @@
-#require 'simplecov' 
+require 'simplecov' 
 require 'coveralls'
-Coveralls.wear_merged!
+Coveralls.wear!
 #SimpleCov.start do   
 #  add_filter 'features/support/selectors.rb'
 #  add_filter 'features/step_definitions/web_steps.rb' 

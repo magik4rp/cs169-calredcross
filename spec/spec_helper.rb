@@ -1,4 +1,5 @@
 require "simplecov"
+require "coveralls"
 SimpleCov.start
 # require "codeclimate-test-reporter"
 # CodeClimate::TestReporter.start
