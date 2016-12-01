@@ -5,16 +5,500 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+body, html {
+    font: Regular !important;
+    background-color: #ababab;
+    font-family: Regular, sans-serif !important;
+    margin: 0px !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.menu-header {
+    background-color: #ED1B2E;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 50px;
+    
+}
+#home-lightbox-container {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+#lightbox-logo {
+     width: 300px;
+    position: relative;
+    /* margin: 0 auto; */
+    /* margin-left: auto; */
+    transform: translateX(-50%);
+    left: 50%;
+}
+   
+.home-container {
+    position: relative;
+    margin-top: 50px;
+    background-color: #F4F4F4;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
 .round-image-50 {
     background-color: white;
-    border: 1px solid #d9d9d9;
     border-radius: 25px;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
+    height: 40px !important;
+    width: 40px !important;
     overflow: hidden;
     text-align: center;
     img { width: 100% }
+}
+.logo {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu {
+    display: inline-block;
+    /* margin-left: 1000px; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+    height: 50px;
+/*    padding-right: 20px;*/
+}
+.menu li {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 15px;
+    color: white;
+    cursor: pointer;
+    /* padding-left: 10px; */
+    width: 75px;
+
+}
+
+.home_link {
+    color: white !important;
+    /* font-weight: bold !important; */
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+
+.home_link:hover {
+    color: black!important;
+}
+
+#login-lightbox {
+    background-color: white;
+    height: 350px;
+    width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 25px;
+}
+#login_bttn, #signup_bttn {
+    padding: 5px;
+    height: 100%;
+    position: relative;
+    background: white;
+    color: black !important;
+    line-height: 40px;
+    text-align: center;
+}
+#signup_bttn {
+    position:absolute;
+    right: 0px;
+}
+
+#signup-form {
+    display: none;
+}
+#signup-bttn, #signin-bttn {
+    cursor: pointer;
+    font-family: Medium;
+    margin-top: 5px;
+    width: calc(50% - 2px);
+    text-align: center;
+    text-transform: uppercase;
+    color: #ED1B2E;
+    border: solid 1px #ED1B2E;
+    position: relative;
+    float: left;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+}
+
+#remember-me-home {
+    text-align: left;
+    width: 150px;
+    height: 25px;
+    border: none;
+    position: relative;
+    display: inline-block;
+}
+.forgot {
+    position: relative;
+    float: right;
+    display: inline-block;
+}
+#signup-bttn:hover, #signin-bttn:hover {
+    background: #ED1B2E !important;
+    color: white; 
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+/*    height: 400px;*/
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+}
+
+
+.carousel-container {
+    position: relative;
+    display: block;
+    margin: auto;
+    /*height: 400px;*/
+/*    padding-left: 30px;
+    padding-right: 30px;*/
+}
+.crop-height {
+  /* max-width: 1200px; /* native or declared width of img src (if known) */
+    max-height: 600px;
+    overflow: hidden; }
+
+img.carousel-image {
+  /* corrects small inline gap at bottom of containing div */
+  top: -100px;
+    display: block; 
+  width: 100%; /* corrects obscure Firefox bug */
+    max-width: 100%;
+    /* just in case, to force correct aspect ratio */
+    height: auto !important;
+  display: block; /* corrects small inline gap at bottom of containing div */
+  width: 100%; 
+  max-width: 100%;
+  /* just in case, to force correct aspect ratio */
+  height: auto !important;
+  /*width: auto\9; 
+  /* ie8+9 - use modernizr instead of this \9 hack */
+  /* lt ie8 */
+  -ms-interpolation-mode: bicubic;
+    /* optionally force a minimum size if img src size is known: */
+    /* min-height: 320px; /* max-height of .crop-height */
+    /* min-width: 480px; /* proportional to above */ }
+.home-bottom-section {
+    font-size: 16px;
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    position: relative;
+
+}
+
+.symbol {
+    display: inline-block;
+    width: 50px;
+    height: auto;
+}
+
+.copyright-symbol {
+    display: inline-block;
+    width: 20px;
+    height: auto;
+}
+
+.home-left-section {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    margin-right: 20px;
+
+}
+.home-right-section {
+    position: absolute;
+    display: inline-block;
+    width: 49%;
+}
+.bulletin-container {
+    background-color: #FFFFFF;
+    height: 250px;
+}
+
+.upcoming-events-container {
+    background-color: #FFFFFF;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.member-of-month-container {
+    background-color: #FFFFFF;
+    height: 500px;
+    
+}
+
+.section-title {
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bold;
+    font-family: Bold;
+    font-size: large;
+}
+
+.section-header {
+    margin: auto;
+    display: table;
+    padding: 30px;
+    padding-bottom: 15px;
+}
+.home-footer-container {
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin-top: 30px;
+    height: 50px;
+    position: relative;
+    border-top: solid black 2px;
+}
+.home-footer {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+    overflow: scroll;
+    text-align: center;
+    line-height: 50px;
+}
+.home-footer p {
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+.bulletin-description.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+
+.motm-name.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+.motm-comments.home-active {
+    color: #ED1B2E;
+    outline: none !important;
+}
+.motm-avatar {
+    display: table;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+}
+.motm-avatar img{
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    border: solid black 4px;
+
+}
+
+#info_avatar {
+    height: 1px;
+    width: 1px;
+}
+.edit_info input[type="submit"] {
+    display: none;
+}
+.motm-avatar:hover #edit-motm-photo {
+    height: auto;
+    opacity: 0.6;
+}
+#edit-motm-photo {
+    margin: 0px !important;
+    position: absolute !important;
+    padding: 10px !important;
+    bottom: 0px !important;
+    text-align: center;
+    background-color: black;
+    opacity: 0;
+    color: white;
+    width: 200px !important;
+    height: 0px;
+    transition: 0.2s;
+    cursor: pointer;
+    display: block !important;
+}
+input[type="file"]:focus {
+    outline: none;
+}
+
+.bulletin-description {
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+.motm-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+
+.motm-comments {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Frances */
+.slick-dots {
+    bottom: -20px !important; 
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    opacity: 0.4;
+    display: block;
+    width: 10px !important;
+    height: 10px !important;
+    padding: 5px;
+    background-color: white !important;
+    border-radius: 50% !important;
+    border: 0;
+    outline: none;
+    content: none !important;
+}
+.slick-dots li.slick-active button {
+    opacity: 1 !important;
+}
+.slick-dots li button:before {
+    content: none !important;
+}
+.photo-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.3;
+}
+.slick-prev {
+    left: 20px !important;
+    z-index: 10 !important;
+}
+.slick-next {
+    right: 20px !important;
+    z-index: 10 !important;
+}
+.photo-text {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.edit-home-photo {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    background: white;    
+/*    opacity: 0.6;*/
+    cursor: pointer;
+    border-radius: 2px;
+}
+.edit-home-photo-button{
+    width: 15px !important;
+    position: relative !important;
+    opacity: 0.7 !important;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.edit-home-photo-box {
+    position: absolute;
+    right: 35px;
+    top: 10px;
+/*    height: 250px;
+    width: 300px;*/
+    background: white;
+    padding: 15px;
+    display: none;
+}
+.home-cancel, .home-save {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    background: #ED1B2E;
+    height: 30px;
+    width: 100px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+/*    float: right;*/
+}
+.edit-home-photo-box input {
+    position: relative;
+    border-bottom: solid black 1px;
+    width: 100%;
+    display: block;
+}
+.edit-home-photo-box label {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: black;
+    text-align: left;
+    display: block;
+    margin-top: 0px !important;
+}
+#edit-photo-buttons {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 225px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#upcoming-events {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.single-event {
+    padding: 10px;
 }

@@ -20,7 +20,10 @@ class AuthenAcceptController < ApplicationController
   def accept
     
     @user = current_user
+    
+    
     if @user.refresh_token.nil? 
+      print "go here"
       if params[:error]
         print "Error"
       else 
@@ -37,11 +40,14 @@ class AuthenAcceptController < ApplicationController
         auth_client.fetch_access_token!
       end 
       @user.refresh_token = auth_client.refresh_token
+      print "USER TOKEN"
       print "This is the refresh token"
       print @user.refresh_token
+      print "USER TOKEN"
       @user.update_attribute(:refresh_token, auth_client.refresh_token)
+    #  redirect_to root_path
  end 
-              
+    print "goes here"          
       signet = Signet::OAuth2::Client.new(
         client_id: "737968238189-n40p0c73pfbpr9ncmd67a4v84f7msuud.apps.googleusercontent.com",
         client_secret: "opY7uxs0lTAMjYzrm4e19NK4",
@@ -138,17 +144,29 @@ class AuthenAcceptController < ApplicationController
         
         # and start_year == curr_year and start_month == curr_month
         if title.include? "[CRC]" and start_year == curr_year and start_month == curr_month
-          new_array = {"email" => email, "location" => location, "start_year" => start_year, "start_month" => start_month, "start_day" => start_day, "start_hour" =>  start_hour, "start_minutes" => start_minutes, "start_am_or_pm" => start_am_or_pm, "end_year" => end_year, "end_month" => end_month, "end_day" => end_day, "end_hour" => end_hour, "end_minutes" => end_minutes, "end_am_or_pm" => end_am_or_pm} 
+          new_array = {"name" => title, "description" => list.data.items[i].description, "date" => list.data.items[i].start.dateTime, "location" => location} 
           print "hi"
           hash_one << new_array 
         end 
          
         i += 1
       end 
+      
+      params[:hash_one] = hash_one
+      print "HAAASH ONE"
+      print params[:hash_one]
+      
+      if params[:hash_one] == nil
+        print "oops"
+      end 
+      
+      
+      redirect_to profile_index_path(:hash_one => hash_one)
        
-      print "HASH"
-      print hash_one.length
-      print "HASH"
+    #  print "HASH"
+    #  print hash_one.length
+    #  print "HASH"
+    
 
   end
 end

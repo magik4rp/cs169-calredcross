@@ -1,5 +1,213 @@
 <%= render 'navbar' %>
 
-<h1>Home#index</h1>
+<div class="home-container">
+    <div class="carousel-container">
+        <div id="owl-demo" class="home-carousel">
+            <% @images.each do |image| %>
+                <div class="item crop-height" id=<%= image.id %>>
+                    <div class='photo-screen'></div>
+                    <div class='photo-text'>
+                        <%= image.text %>
+                    </div>
+                    <% if current_user and current_user.isOfficer %>
+                        <div class="edit-home-photo" id=<%= image.id %>>
+                            <img class= "edit-home-photo-button" src="images/black_edit.png">
+                        </div>
+                    <%end%>
+                    <div class="edit-home-photo-box">
+                        <input type="text" id=<%= image.id %> class="new-photo-url" placeholder="Add your photo url">
+                        <label for="new-photo-url">Url</label>
+                        <input type="text" id=<%= image.id %> class="new-photo-text" placeholder="Add some text to your photo">
+                        <label for="new-photo-url">Text</label>
+                        <div id="edit-photo-buttons">
+                            <div class="home-cancel">Cancel</div>
+                            <div class="home-save">Save</div>
+                        </div>
+                        
+                    </div>
+                    <%= image_tag(image.url, :class => "carousel-image") %>
+                </div>
+            <%end %>
+        </div>
+    </div>
+    
+    <div class="home-bottom-section">
+        <div class="home-left-section">
+            <div class="bulletin-container">
+                 <% if current_user and current_user.isOfficer %>
+                    <div class="edit-bulletin" id="edit-container">
+                        <img src="images/white_edit.png" id="top-edit">
+                    </div>
+                    <div id="edit-help">
+                        Click here to toggle edit content. Editable text will turn red, uneditable text will turn black.
+                        <div id="edit-help-carrot"></div>
+                    </div>
+                <%end%>
+                <div class="section-header">
+                    <img class="symbol" id="bulletin-symbol" src="/images/bulletin_icon.png"><div class="section-title">BULLETIN</div>
+                </div>
+                <div class="bulletin-description">
+                    <%= @info.bulletin %>
+                </div>
+            </div>
+            <div class="upcoming-events-container">
+                <div class="section-header">
+                    <img class="symbol" id="events-symbol" src="/images/events_icon.png"><div class="section-title">UPCOMING EVENTS</div>
+                </div>
+                <div id="upcoming-events">
+                    <% if @events.present? %>
+                        <% @events.first(4).each do |event| %>
+                            <div class="single-event">
+                                <%= event["summary"] %><br />
+                                <% if event["start"]["date"] %>
+                                    <%= Time.parse(event["start"]["date"]).strftime("%B %d, %Y") %>
+                                <% else %>
+                                    <%= Time.parse(event["start"]["dateTime"]).strftime("%B %d, %Y") %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    <% else %>
+                        No Event Available
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        
+        <div class="home-right-section">
+            <div class="member-of-month-container">
+                <% if current_user and current_user.isOfficer %>
+                    <div class="edit-motm" id="edit-container">
+                        <img src="images/white_edit.png" id="top-edit">
+                    </div>
+                    <div id="edit-help">
+                        Click here to toggle edit content. Editable text will turn red, uneditable text will turn black.
+                        <div id="edit-help-carrot"></div>
+                    </div>
+                <%end%>
+                <div class="section-header">
+                    <img class="symbol" id="mom-symbol" src="/images/member_of_the_month_icon.png"><div class="section-title">MEMBER OF THE MONTH</div>
+                </div>
+                <div class="motm-avatar">
+                    <%= image_tag(@info.avatar.url(:medium), :class => "motm-image") %>
+                    <% if current_user and current_user.isOfficer %>
+                        <%= form_for @info, :url => {:action => :update}, :html => { :multipart => true } do |form| %>
+                            <%= form.file_field :avatar %>
+                            <%= form.submit "upload" %>
+                        <% end %>
+                        <label for="info_avatar" id="edit-motm-photo">Edit Photo</label>
+                    <%end%>
+                </div>
+                
+                <div class="motm-name">
+                    <%=@info.name %>
+                </div>
+                <div class="motm-comments">
+                    <%= @info.comments %>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="home-footer-container">
+        <div class="home-footer">
+            <img class="copyright-symbol" src="images/copyright-symbol.png"><p>2016 Cal Red Cross Association</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var current_photo;
+    $(".home-carousel").slick({
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+    
+    $(".edit-bulletin").click(function() {
+        console.log("EDIT bulletin");
+        $(this).toggleClass("home-active");
+        if (!$(this).hasClass("home-active")) {
+            $.ajax({
+                type : 'post',
+                url : "/home/update",
+                data : {"bulletin": $(".bulletin-description").text()},    
+                dataType : 'json',
+                async : false,
+                context : document.body,
+                success : function(response) {
+                }
+            });
+        }
+        var $div=$('.bulletin-description'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+    });
+    $(".edit-motm").click(function() {
+        console.log("EDIT Member Of The Month");
+        $(this).toggleClass("home-active");
+        if (!$(this).hasClass("home-active")) {
+            $.ajax({
+                type : 'post',
+                url : "/home/update",
+                data : {"motm_name": $(".motm-name").text(),
+                        "motm_comments": $(".motm-comments").text()
+                },    
+                dataType : 'json',
+                async : false,
+                context : document.body,
+                success : function(response) {
+                }
+            });
+        }
+        var $div=$('.motm-name'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+        
+        var $div=$('.motm-comments'), isEditable=$div.is('.editable');
+        $div.prop('contenteditable',!isEditable).toggleClass('editable')
+        $div.toggleClass("home-active");
+    });
+    $('#info_avatar').change(function(e) {
+                    var img = URL.createObjectURL(e.target.files[0]);
+                    $(".motm-image").attr("src", img);
+                    $(".edit_info").submit();
+                });
+    $(".edit-home-photo").click(function() {
+        $(".edit-home-photo-box").toggle();
+        current_photo = $(this).attr("id");
+        console.log("Clicked " + current_photo);
+    });
+    $(".home-cancel").click(function() {
+        $(".edit-home-photo-box").toggle();
+    });
+    $(".home-save").click(function() {
+        $(".edit-home-photo-box").toggle();
+        var url = $("#" + current_photo + ".new-photo-url").val();
+        var text = $("#" + current_photo + ".new-photo-text").val();
+        console.log(url);
+        console.log(text);
+        $.ajax({
+            type : 'post',
+            url : "/home/update_gallery",
+            data : {"url": url,
+                    "text": text,
+                    "photo_id": current_photo
+            },    
+            dataType : 'json',
+            async : false,
+            context : document.body,
+            success : function(response) {
+                $("#" + current_photo + " .carousel-image").attr("src", url);
+                $("#" + current_photo + " .photo-text").text(text);
+            }
+        });
+    });
+
+</script>
+
 
 

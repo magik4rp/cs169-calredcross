@@ -9,14 +9,21 @@ gem 'google-api-client', '0.8.2', require: 'google/api_client'
 
 #gem 'cucumber-rails'
 
+gem 'flickraw'
+gem 'figaro'
+
 gem 'coveralls', require: false
 gem 'devise'
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.3.6'
+
 gem 'momentjs-rails', '~> 2.15', '>= 2.15.1'
 gem 'fullcalendar-rails', '~> 2.8'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+
+gem 'jquery-slick-rails' #For homepage image carousel
+gem 'owlcarousel-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -77,7 +84,8 @@ group :test do
   gem 'webmock'
   gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
-  gem 'codeclimate-test-reporter', require: nil
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,12 +1,15 @@
 class GalleriesController < ApplicationController
+  require 'flickraw'
+  before_action :set_photo, only: [:show, :destroy]
+  # before_action :set_flickr, only: [:create, :destroy]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
   # config.middleware.insert_before Rack::Runtime, "InvalidPostDataInterceptor"
 
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
-    @gallery = Gallery.new
+    @gallery = Photo.all
+    @photos = Photo.all
   end
 
   def addFavorite
@@ -102,7 +105,7 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:name, :description, :image)
+      params.permit(:name, :description, :image)
     end
     
 end

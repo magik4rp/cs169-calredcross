@@ -10,10 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= requre flickraw
 //= require moment
 //= require jquery
 //= require jquery_ujs
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require turbolinks
+//= require owl.carousel
+//= require jquery.slick
 //= require_tree .
+

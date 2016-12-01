@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125015723) do
+ActiveRecord::Schema.define(version: 20161201060325) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20161125015723) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "favoritephotos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_favoritephotos_on_photo_id"
+    t.index ["user_id"], name: "index_favoritephotos_on_user_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -31,14 +40,42 @@ ActiveRecord::Schema.define(version: 20161125015723) do
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
+  create_table "home_images", force: :cascade do |t|
+    t.string   "url"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "info_id"
+    t.index ["info_id"], name: "index_home_images_on_info_id"
+  end
+
   create_table "images", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "infos", force: :cascade do |t|
+    t.string   "bulletin",            default: "This is a bulletin"
+    t.string   "name",                default: "Name Here"
+    t.string   "comments",            default: "Here's where you'd write a cute blurb about the member of the month. Click on me to edit"
+    t.datetime "created_at",                                                                                                               null: false
+    t.datetime "updated_at",                                                                                                               null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "photo_id"
+    t.string   "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +114,7 @@ ActiveRecord::Schema.define(version: 20161125015723) do
     t.integer  "sem_hours",              default: 0
     t.integer  "total_hours",            default: 0
     t.string   "refresh_token"
+    t.string   "correct_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

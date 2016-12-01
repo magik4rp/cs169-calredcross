@@ -25,7 +25,7 @@ script:
 #  - bundle exec rake
     
 after_script:
-  - bundle exec rake send_to_codeclimate 
+   - CODECLIMATE_REPO_TOKEN=d74176fde575088c24c9da69450fe3aa6bdfc53eddbce39b19829ece849acc11 bundle exec codeclimate-test-reporter 
   
   
 addons:

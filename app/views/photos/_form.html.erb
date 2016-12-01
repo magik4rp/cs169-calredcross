@@ -1,0 +1,7 @@
+
+
+<%= form_tag({action: :create}, multipart: true) do %>
+  <label id="add-photos-label" for="photos_">+ Select Photos </label>
+  <%= file_field_tag 'photos[]',  multiple: true%>
+  <%= submit_tag "Submit", :class => "form-submit" %>
+<% end %>
