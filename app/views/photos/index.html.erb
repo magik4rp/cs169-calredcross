@@ -34,6 +34,9 @@
                 <% @photos.each do |photo| %>
                     <div class="photo-container">
                         <div class="save-photo">+</div>
+                        <% if current_user and current_user.is_officer == 1 %>
+                        <%= link_to "X", photo, method: :delete, data: { confirm: "Are you sure you want to delete this photo? "}, :class => "delete-photo" %>
+                        <% end %>
                         <img class="photo" id=<%= photo.id %> src=<%= photo.photo_url %>>
                         <div class="photo-date"> <%= photo.created_at.strftime("%B %d, %Y")%> </div>
                     </div>
