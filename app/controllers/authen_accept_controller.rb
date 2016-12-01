@@ -101,7 +101,7 @@ class AuthenAcceptController < ApplicationController
           location = list.data.items[i].location
         end  
         
-        if list.data.items[i].start.nil? 
+        if list.data.items[i].start.dateTime.nil? 
           start_year = ""
           start_month = ""
           start_day = ""
