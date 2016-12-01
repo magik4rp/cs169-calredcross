@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  require ‘flickraw’
+  require 'flickraw'
   before_action :set_photo, only: [:show, :destroy]
   before_action :set_flickr, only: [:create, :destroy]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
