@@ -1,9 +1,12 @@
-require 'simplecov' 
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear!
-#SimpleCov.start do   
-#  add_filter 'features/support/selectors.rb'
-#  add_filter 'features/step_definitions/web_steps.rb' 
+
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+   add_filter 'features/support/selectors.rb'
+   add_filter 'features/step_definitions/web_steps.rb'
+end
+#SimpleCov.start do    
 #end
 #SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 #SimpleCov.start do

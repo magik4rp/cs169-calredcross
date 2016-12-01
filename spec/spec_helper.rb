@@ -1,10 +1,8 @@
-require "simplecov"
-require "coveralls"
-SimpleCov.start
-# require "codeclimate-test-reporter"
-# CodeClimate::TestReporter.start
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear_merged!
+
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start 
 
 require File.expand_path("../../config/environment", __FILE__)
 
