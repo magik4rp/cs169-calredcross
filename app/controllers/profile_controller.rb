@@ -3,6 +3,8 @@ require 'google/api_client/client_secrets'
 class ProfileController < ApplicationController
 
   def index
+    
+    
     @user = current_user
     @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
     @events = Event.all.last(3)
@@ -12,7 +14,9 @@ class ProfileController < ApplicationController
     else
       @level = "bronze_medal.png"
     end
-
+      
+      
+      @events = []
       
       if params[:hash_one] != nil 
         i = 0 
@@ -48,8 +52,7 @@ class ProfileController < ApplicationController
         end 
          
         
-      else 
-      #@user.refresh_token = nil
+      else  
  
          if @user.refresh_token.nil?
           # need to authorize faaaam 
@@ -62,7 +65,10 @@ class ProfileController < ApplicationController
           )
           redirect_to auth_client.authorization_uri.to_s
         else
-          redirect_to '/authen_accept/accept'
+          
+          @events = []
+          
+          #redirect_to '/authen_accept/accept'
         end  
       end 
     

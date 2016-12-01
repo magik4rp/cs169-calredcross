@@ -41,7 +41,7 @@ class AuthenAcceptController < ApplicationController
       print @user.refresh_token
       @user.update_attribute(:refresh_token, auth_client.refresh_token)
  end 
-              
+    print "goes here"          
       signet = Signet::OAuth2::Client.new(
         client_id: "737968238189-n40p0c73pfbpr9ncmd67a4v84f7msuud.apps.googleusercontent.com",
         client_secret: "opY7uxs0lTAMjYzrm4e19NK4",
