@@ -11,7 +11,7 @@ Given /the following member exists/ do |members_table|
     one.sem_hours = 5
     one.total_hours = "10"
     
-    two = User.new 
+    two = User.new  
     two.name = "Hudo"
     two.email = "jaao@berkeley.edu"
     two.major = "CS"

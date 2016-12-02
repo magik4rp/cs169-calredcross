@@ -9,7 +9,7 @@ engines:
   bundler-audit:
     enabled: true
   csslint:
-    enabled: true
+    enabled: false
     exclude_fingerprints:
     - b736c3186889793c2900cdac4754f2c5
      
@@ -93,9 +93,8 @@ engines:
       - php
   eslint:
     enabled: true
-    exclude_fingerprints:
-    
-    
+    exclude_fingerprints: 
+    - 13313f3802de9924150477f238cfacfc
     - 296e8d392a699a6811c58dbcd31c14cb
     - 74d67202d03dc9640a6235a43af72f3c
     - 38dcbaddfa65e4057105b5ac2eff68a7
@@ -107,8 +106,10 @@ engines:
   fixme:
     enabled: false 
   rubocop:
-    enabled: true
+    enabled: false
     exclude_fingerprints:
+    
+    - 9c4931257c8e2451fb2f75a68463e0e0
     - af907b6c265e7882e0424d46807aff55 
     - a49b3e829b9dc713c2888b744f5b5c17
     - 001b6a004530cb84489c6a2363134b24

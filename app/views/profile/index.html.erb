@@ -88,8 +88,9 @@
             </div>
             
             <div class="tagged-pics">
-                <% @images.first(6).each do |image| %>
+                <% @images.each do |image| %>
                    <%= image_tag(image, :class => "tagged-photo") %>
+                   <img class="tagged-photo" src=<%= image.photo_url %>>
                 <%end %>
             </div>
         </div>

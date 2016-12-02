@@ -15,7 +15,7 @@
                 <div id="add-photo-title">Add photos from your computer.</div>
                 <label id="add-photos-label" for="add-photos">+ Select Photos</label>
                 <input type="file" id="add-photos" name="add-photos" multiple>
-                <%= form_for Gallery.new, html: {multipart: true } do |f| %>
+                <%= form_for @gallery, html: {multipart: true } do |f| %>
                     <%= f.file_field :image %>
                     <%= f.submit %>
                 <% end %>
@@ -29,7 +29,7 @@
                 <div id="add-photos-button">+ Add Photos</div> 
             </div>
             <div class="photos-display">
-                <% @gallery.each do |gallery| %>
+                <% @galleries.each do |gallery| %>
                     <div class="photo-container">
                         <div class="save-photo">+</div>
                         <img class="photo" id=<%= gallery.id %> src=<%= gallery.image_url %>>

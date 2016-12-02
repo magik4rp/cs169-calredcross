@@ -18,15 +18,12 @@ script:
 #  - bundle exec rake db:migrate
 #  - RAILS_ENV=test bundle exec rake db:migrate --trace
 #  - bundle exec rake db:test:prepare 
-#  - bin/rails db:migrate RAILS_ENV=test
-#  - bundle exec rspec 
-#   - bundle exec cucumber
-   - bundle exec rake 
+#  - bin/rails db:migrate RAILS_ENV=test 
+  - bundle exec rake 
 #  - bundle exec rake
     
 after_script:
-   - CODECLIMATE_REPO_TOKEN=d74176fde575088c24c9da69450fe3aa6bdfc53eddbce39b19829ece849acc11 bundle exec codeclimate-test-reporter 
-  
+   - bundle exec rake :test_with_coveralls
   
 addons:
     code_climate:

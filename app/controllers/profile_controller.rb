@@ -6,7 +6,8 @@ class ProfileController < ApplicationController
     
     
     @user = current_user
-    @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
+    # @images = ["lilbub1.jpeg", "lilbub2.jpg", "lilbub4.jpg"]
+    @images = current_user.photos
     @events = Event.all.last(3)
     if current_user.level == "gold"
       @level = "gold_status.png"
@@ -62,7 +63,7 @@ class ProfileController < ApplicationController
           auth_client = client_secrets.to_authorization
           auth_client.update!(
           :scope => 'https://www.googleapis.com/auth/calendar',
-          :redirect_uri => 'http://hiftekhar-hiftekhar.c9users.io:8080/authen_accept/accept',
+          :redirect_uri => 'https://damp-forest-29318.herokuapp.com/authen_accept/accept',
           :access_type => 'offline'
           )
           redirect_to auth_client.authorization_uri.to_s

@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
 
     def addFavorite
         photo_id = params["image"]
-        print(photo_id)
+        print("~~~~~~~~~~~~~ " + photo_id + "\n")
         current_user.photos << Photo.find(photo_id)
     end
     

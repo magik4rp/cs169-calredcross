@@ -17,6 +17,12 @@ class AuthenAcceptController < ApplicationController
   end
 
 
+def current_user
+  return @current_user if defined?(@current_user)
+  @current_user = User.new
+end
+
+
   def accept
     
     @user = current_user
@@ -33,7 +39,7 @@ class AuthenAcceptController < ApplicationController
         auth_client = client_secrets.to_authorization
         auth_client.update!(
           :scope => 'https://www.googleapis.com/auth/calendar',
-          :redirect_uri => 'http://hiftekhar-hiftekhar.c9users.io:8080/authen_accept/accept',
+          :redirect_uri => 'https://damp-forest-29318.herokuapp.com/authen_accept/accept',
           :access_type => 'offline'
         )
         auth_client.code = auth_code
@@ -101,7 +107,7 @@ class AuthenAcceptController < ApplicationController
           location = list.data.items[i].location
         end  
         
-        if list.data.items[i].start.nil? 
+        if list.data.items[i].start.dateTime.nil? 
           start_year = ""
           start_month = ""
           start_day = ""
