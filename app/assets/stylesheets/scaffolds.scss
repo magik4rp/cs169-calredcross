@@ -1,3 +1,27 @@
+@font-face {
+  font-family: Regular;
+  src: url("regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Medium;
+  src: url("medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Bold;
+  src: url("bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: bold;
+}
+@font-face {
+  font-family: Italic;
+  src: url("italic.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
 body {
   background-color: #fff;
   color: #333;
@@ -12,7 +36,6 @@ p, ol, ul, td {
   font-family: Regular, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 pre {

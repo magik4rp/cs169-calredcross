@@ -86,6 +86,7 @@ body {
     vertical-align: top !important;
     top: 50%;
     transform: translateY(-50%);
+    margin-left: 100px;
 }
 input[type="file"]:focus {
     outline: none;
@@ -168,9 +169,7 @@ input[type="file"]:focus {
     color: #ED1B2E;
     outline: none !important;
 }
-.contribution {
-    margin-left: 100px;
-}
+
 .hours {
     display: inline-block;
     position: relative;
