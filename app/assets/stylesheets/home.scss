@@ -78,13 +78,15 @@ body, html {
 /*    padding-right: 20px;*/
 }
 .menu li {
-    vertical-align: middle;
     display: inline-block;
     margin-left: 15px;
     color: white;
     cursor: pointer;
-    /* padding-left: 10px; */
     width: 75px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 50px;
 
 }
 
